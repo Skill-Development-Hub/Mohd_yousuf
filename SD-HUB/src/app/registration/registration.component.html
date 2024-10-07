@@ -6,9 +6,29 @@
             <h1>Applicant Information <hr></h1>
             <mat-label>Student ID:</mat-label>
             <input matInput placeholder="Enter your Student ID" formControlName="firstCtrl" required>
-            <mat-label>Aplicat</mat-label>
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            <mat-label>Application Date:</mat-label>
+            <input matInput formControlName="Date" required>
+          <mat-label>Full Name:</mat-label>
+          <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+          <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+          <input matInput placeholder="Last Name" formControlName="firstCtrl" required>
+          <mat-label>Father's Name::</mat-label>
+          <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+          <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+          <input matInput placeholder="Last Name" formControlName="firstCtrl" required>
+          <mat-label>Date of Birth</mat-label>
+          <input matInput formControlName="Date" required>
+          <mat-label>Phone No:</mat-label>
+          <input matInput placeholder="Enter phone number" formControlname="Number" required>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter email address" >
+          <mat-label>Address(permanent):</mat-label>
+          <textarea name="Address(permanent)" id="Address(permanent)">Enter your permanent address</textarea>
+          <mat-label>Parent/Guardian Contact Details</mat-label>
+          <input matInput placeholder="Enter contact details" formControlName="firstCtrl" required>
+          <mat-label>Total Household Income</mat-label>
+          <input matInput placeholder="Enter household income" formControlName="firstCtrl" required>
+
         </mat-form-field>
         <div>
           <button mat-button matStepperNext>Next</button>
@@ -18,19 +38,31 @@
     <mat-step [stepControl]="secondFormGroup" label="Education">
       <form [formGroup]="secondFormGroup">
         <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
+          <h1>Course Details <hr></h1>
+          <mat-label>Course Applied for</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Enter course name"required>
+          <h2>Qualification Details</h2>
+          <mat-label>Degree</mat-label>
+          <input matInput placeholder="Enter your degree" formControlName="secondCtrl" required>
+          <mat-label>College name</mat-label>
+          <input matInput placeholder="Enter collge name" formControlName="secondCtrl" required>
+          <mat-label>Year of Passing</mat-label>
+          <input matInput placeholder="Enter year of passing" formControlName="secondCtrl" required>
+          <mat-label>Percentage</mat-label>
+          <input matInput placeholder="Enter percentage" formControlName="secondCtrl" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperPrevious>Previous</button>
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
+      <ng-template matStepLabel>Declaration</ng-template>
+      <h1>Declaration and submission <hr></h1>
+      <p>I declare that all the information given here is true and complete to the best of my knowledge. I understand that false or
+        misleading information may result in my rejection of the application.
+      </p>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
