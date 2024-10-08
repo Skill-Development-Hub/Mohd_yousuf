@@ -1,0 +1,90 @@
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffebee, #e8eaf6);
+    padding: 20px;
+  }
+  
+  .signin-card {
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #e63946;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  mat-card-header {
+    background: linear-gradient(to right, #e63946, #e63946);
+    color: white;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 4px;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  mat-card-subtitle {
+    color: #ffcccb;
+  }
+  
+  mat-card-content {
+    padding: 24px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+  
+  button[type="submit"] {
+    background-color: #e63946;
+    color: white;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #c1121f;
+  }
+  
+  mat-card-actions {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media (max-width: 480px) {
+    .signin-card {
+      max-width: 100%;
+    }
+  }
