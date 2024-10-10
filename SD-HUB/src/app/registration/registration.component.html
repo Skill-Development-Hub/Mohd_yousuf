@@ -17,7 +17,7 @@
           <ng-template matStepLabel>Personal Information</ng-template>
           <form [formGroup]="firstFormGroup">
             <div class="step-content">
-              <h1>Applicant Information <hr></h1>
+              <h2>Applicant Information <hr></h2>
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Student ID</mat-label>
@@ -76,7 +76,7 @@
               </div>
               <mat-form-field class="full-width">
                 <mat-label>Address (Permanent)</mat-label>
-                <textarea matInput formControlName="address" rows="3" required></textarea>
+                <textarea matInput formControlName="address" rows="3"  required></textarea>
               </mat-form-field>
               <div class="form-row">
                 <mat-form-field>
@@ -99,12 +99,12 @@
           <ng-template matStepLabel>Education Details</ng-template>
           <form [formGroup]="secondFormGroup">
             <div class="step-content">
-              <h1>Course Details <hr></h1>
+              <h2>Course Details <hr></h2>
               <mat-form-field class="full-width">
                 <mat-label>Course Applied for</mat-label>
                 <input matInput formControlName="courseApplied" required>
               </mat-form-field>
-              <h2>Qualification Details</h2>
+              <h3>Qualification Details</h3>
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Degree</mat-label>
@@ -136,7 +136,7 @@
         <mat-step>
           <ng-template matStepLabel>Declaration</ng-template>
           <div class="step-content">
-            <h1>Declaration and Submission <hr></h1>
+            <h2>Declaration and Submission <hr></h2>
             <mat-checkbox color="primary" required>
               I declare that all the information given here is true and complete to the best of my knowledge. 
               I understand that false or misleading information may result in my rejection of the application.
