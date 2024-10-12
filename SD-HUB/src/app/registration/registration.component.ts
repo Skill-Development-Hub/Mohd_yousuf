@@ -12,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  logoPath = 'assets/images/sd-hub-logo.jpg';
+  declarationForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,15 +43,22 @@ export class RegistrationComponent implements OnInit {
       yearOfPassing: ['', Validators.required],
       percentage: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
     });
+
+    this.declarationForm = this.formBuilder.group({
+      declaration: [false, Validators.required],
+      studentSignature: ['', Validators.required],
+      parentSignature: ['', Validators.required],
+    });
   }
 
   ngOnInit(): void {}
 
   onSubmit(): void {
-    if (this.firstFormGroup.valid && this.secondFormGroup.valid) {
+    if (this.firstFormGroup.valid && this.secondFormGroup.valid && this.declarationForm.valid) {
       const formData = {
         ...this.firstFormGroup.value,
-        ...this.secondFormGroup.value
+        ...this.secondFormGroup.value,
+        ...this.declarationForm.value
       };
       console.log('Registration form submitted', formData);
       this.snackBar.open('Registration successful!', 'Close', { duration: 3000 });

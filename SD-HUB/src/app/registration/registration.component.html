@@ -7,7 +7,7 @@
       <mat-card-title>Student Registration</mat-card-title>
       <mat-card-subtitle>Skills Development Hub</mat-card-subtitle>
       <div class="photo-upload">
-        <span>Add Photo</span>
+        <span>Add Photo <input type="file"></span>
       </div>
     </mat-card-header>
 
@@ -126,27 +126,47 @@
                 </mat-form-field>
               </div>
             </div>
-            <div class="button-row">
+            <div class="pre-button">
               <button mat-button matStepperPrevious>Previous</button>
+            </div>
+            <div class="button-row">
               <button mat-button matStepperNext>Next</button>
             </div>
           </form>
         </mat-step>
 
-        <mat-step>
+        <mat-step [stepControl]="declarationForm">
           <ng-template matStepLabel>Declaration</ng-template>
+          <form [formGroup]="declarationForm">
           <div class="step-content">
             <h2>Declaration and Submission <hr></h2>
-            <mat-checkbox color="primary" required>
+            <mat-checkbox color="primary" >
               I declare that all the information given here is true and complete to the best of my knowledge. 
               I understand that false or misleading information may result in my rejection of the application.
             </mat-checkbox>
           </div>
-          <div class="button-row">
-            <button mat-button matStepperPrevious>Previous</button>
-            <button mat-raised-button color="primary" (click)="onSubmit()">Submit Application</button>
-            <button mat-button (click)="reset()">Reset</button>
+          <mat-form-field>
+            <input matInput placeholder="Student's Signature" formControlName="studentSignature">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Parent/Guardian Signature" formControlName="parentSignature">
+          </mat-form-field>
+          <h4>ENCLOSURES:</h4>
+          <ul>
+            <li>Passport size photograph – 3 No.</li>
+            <li>Copy of Aadhar Card</li>
+            <li>Copy of Photo ID proof</li>
+            <li>Copy of College ID Card</li>
+            <li>Original Certificates</li>
+            <li>Income Certificate</li>
+          </ul>
+          <div class="pre-button">
+          <button mat-button matStepperPrevious>Previous</button>
           </div>
+          <div class="button-row">
+            <button mat-raised-button color="primary" (click)="onSubmit()">Submit Application</button>
+          </div>
+          </form>
         </mat-step>
       </mat-horizontal-stepper>
     </mat-card-content>

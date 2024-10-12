@@ -52,7 +52,7 @@ mat-card-subtitle {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 100px;
+  width: 250px;
   height: 80px;
   border: 2px dashed #ffffff;
   display: flex;
@@ -91,7 +91,7 @@ mat-form-field {
   height: 100px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   color: #e63946;
   margin-top: 24px;
   margin-bottom: 16px;
@@ -114,6 +114,21 @@ hr {
   right: 50px;
   bottom: 15px;
   
+}
+
+.pre-button{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 50px;
+  bottom: 15px;
+
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 button[type="submit"] {
