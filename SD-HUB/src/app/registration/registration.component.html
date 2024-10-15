@@ -7,7 +7,7 @@
       <mat-card-title>Student Registration</mat-card-title>
       <mat-card-subtitle>Skills Development Hub</mat-card-subtitle>
       <div class="photo-upload">
-        <span>Add Photo <input type="file"></span>
+        <p>Add Photo <input type="file"></p>
       </div>
     </mat-card-header>
 
@@ -17,7 +17,7 @@
           <ng-template matStepLabel>Personal Information</ng-template>
           <form [formGroup]="firstFormGroup">
             <div class="step-content">
-              <h2>Applicant Information <hr></h2>
+              <h3>Applicant Information <hr></h3>
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Student ID</mat-label>
@@ -99,12 +99,12 @@
           <ng-template matStepLabel>Education Details</ng-template>
           <form [formGroup]="secondFormGroup">
             <div class="step-content">
-              <h2>Course Details <hr></h2>
+              <h3>Course Details <hr></h3>
               <mat-form-field class="full-width">
                 <mat-label>Course Applied for</mat-label>
                 <input matInput formControlName="courseApplied" required>
               </mat-form-field>
-              <h3>Qualification Details</h3>
+              <h4>Qualification Details</h4>
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Degree</mat-label>
@@ -139,7 +139,7 @@
           <ng-template matStepLabel>Declaration</ng-template>
           <form [formGroup]="declarationForm">
           <div class="step-content">
-            <h2>Declaration and Submission <hr></h2>
+            <h3>Declaration and Submission <hr></h3>
             <mat-checkbox color="primary" >
               I declare that all the information given here is true and complete to the best of my knowledge. 
               I understand that false or misleading information may result in my rejection of the application.
