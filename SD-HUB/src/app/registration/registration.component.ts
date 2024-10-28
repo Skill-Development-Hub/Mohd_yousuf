@@ -17,37 +17,37 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
   ) {
     this.firstFormGroup = this.formBuilder.group({
-      studentId: ['', Validators.required],
-      applicationDate: ['', Validators.required],
-      firstName: ['', Validators.required],
+      studentId: [''],
+      applicationDate: [''],
+      firstName: [''],
       middleName: [''],
-      lastName: ['', Validators.required],
-      fatherFirstName: ['', Validators.required],
+      lastName: [''],
+      fatherFirstName: [''],
       fatherMiddleName: [''],
-      fatherLastName: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      fatherLastName: [''],
+      dateOfBirth: [''],
+      phoneNumber: [''],
       email: ['', [Validators.required, Validators.email]],
-      address: ['', Validators.required],
-      guardianContact: ['', Validators.required],
-      householdIncome: ['', Validators.required]
+      address: [''],
+      guardianContact: [''],
+      householdIncome: ['']
     });
 
     this.secondFormGroup = this.formBuilder.group({
-      courseApplied: ['', Validators.required],
-      degree: ['', Validators.required],
-      collegeName: ['', Validators.required],
-      yearOfPassing: ['', Validators.required],
+      course: ['',Validators.required],
+      degree: [''],
+      collegeName: [''],
+      yearOfPassing: [''],
       percentage: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
     });
 
     this.declarationForm = this.formBuilder.group({
-      declaration: [false, Validators.required],
-      studentSignature: ['', Validators.required],
-      parentSignature: ['', Validators.required],
+      declaration: [false,Validators.required],
+      studentSignature: [''],
+      parentSignature: [''],
     });
   }
 

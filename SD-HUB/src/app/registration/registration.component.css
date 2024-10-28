@@ -9,7 +9,6 @@
 
 .registration-card {
   width: 100%;
-  
   max-width: 1000px;
   border: 2px solid #e63946;
   border-radius: 12px;
@@ -26,42 +25,22 @@ mat-card-header {
 
 .logo-container {
   display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-  width: 300px;
+  width: 180px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 10%;
   background-color: white;
+  margin-right: 50px;
 }
 
-.logo {
-  padding: 4px;
-}
 
 mat-card-title {
   font-size: 24px;
   font-weight: bold;
-  margin: 0;
+ 
 }
 
 mat-card-subtitle {
   color: #ffcccb;
-}
-
-.photo-upload {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 250px;
-  height: 80px;
-  border: 2px dashed #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 12px;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 mat-card-content {
@@ -139,10 +118,5 @@ button[type="submit"] {
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
-  }
-
-  .photo-upload {
-    position: static;
-    margin: 16px auto;
   }
 }

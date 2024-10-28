@@ -6,9 +6,6 @@
       </div>
       <mat-card-title>Student Registration</mat-card-title>
       <mat-card-subtitle>Skills Development Hub</mat-card-subtitle>
-      <div class="photo-upload">
-        <p>Add Photo <input type="file"></p>
-      </div>
     </mat-card-header>
 
     <mat-card-content>
@@ -21,11 +18,11 @@
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Student ID</mat-label>
-                  <input matInput formControlName="studentId" required>
+                  <input matInput formControlName="studentId">
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Application Date</mat-label>
-                  <input matInput [matDatepicker]="picker" formControlName="applicationDate" required>
+                  <input matInput [matDatepicker]="picker" formControlName="applicationDate">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -33,7 +30,7 @@
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>First Name</mat-label>
-                  <input matInput formControlName="firstName" required>
+                  <input matInput formControlName="firstName">
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Middle Name</mat-label>
@@ -41,13 +38,13 @@
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Last Name</mat-label>
-                  <input matInput formControlName="lastName" required>
+                  <input matInput formControlName="lastName">
                 </mat-form-field>
               </div>
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Father's First Name</mat-label>
-                  <input matInput formControlName="fatherFirstName" required>
+                  <input matInput formControlName="fatherFirstName">
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Father's Middle Name</mat-label>
@@ -55,37 +52,37 @@
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Father's Last Name</mat-label>
-                  <input matInput formControlName="fatherLastName" required>
+                  <input matInput formControlName="fatherLastName">
                 </mat-form-field>
               </div>
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Date of Birth</mat-label>
-                  <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" required>
+                  <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth">
                   <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
                   <mat-datepicker #dobPicker></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Phone Number</mat-label>
-                  <input matInput formControlName="phoneNumber" required>
+                  <input matInput formControlName="phoneNumber">
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Email</mat-label>
-                  <input matInput formControlName="email" required>
+                  <input matInput formControlName="email">
                 </mat-form-field>
               </div>
               <mat-form-field class="full-width">
                 <mat-label>Address (Permanent)</mat-label>
-                <textarea matInput formControlName="address" rows="3"  required></textarea>
+                <textarea matInput formControlName="address" rows="3"></textarea>
               </mat-form-field>
               <div class="form-row">
                 <mat-form-field>
-                  <mat-label>Parent/Guardian Contact Details</mat-label>
-                  <input matInput formControlName="guardianContact" required>
+                  <mat-label>Parent Contact Details</mat-label>
+                  <input matInput formControlName="guardianContact">
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Total Household Income</mat-label>
-                  <input matInput formControlName="householdIncome" required>
+                  <input matInput formControlName="householdIncome">
                 </mat-form-field>
               </div>
             </div>
@@ -100,29 +97,36 @@
           <form [formGroup]="secondFormGroup">
             <div class="step-content">
               <h3>Course Details <hr></h3>
-              <mat-form-field class="full-width">
+              <mat-form-field>
                 <mat-label>Course Applied for</mat-label>
-                <input matInput formControlName="courseApplied" required>
-              </mat-form-field>
+                <mat-select formControlName="course">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">Web Development</mat-option>
+                    <mat-option value="option2">Data Analytics</mat-option>
+                    <mat-option value="option3">Accounting + Tally ERP</mat-option>
+                    <mat-option value="option4">Digital Marketing + Graphic Designing</mat-option>
+                    <mat-option value="option5">Office Administration</mat-option>
+                  </mat-select>
+                </mat-form-field>
               <h4>Qualification Details</h4>
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Degree</mat-label>
-                  <input matInput formControlName="degree" required>
+                  <input matInput formControlName="degree">
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>College Name</mat-label>
-                  <input matInput formControlName="collegeName" required>
+                  <input matInput formControlName="collegeName">
                 </mat-form-field>
               </div>
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Year of Passing</mat-label>
-                  <input matInput formControlName="yearOfPassing" required>
+                  <input matInput formControlName="yearOfPassing">
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Percentage</mat-label>
-                  <input matInput formControlName="percentage" required>
+                  <input matInput formControlName="percentage">
                 </mat-form-field>
               </div>
             </div>
@@ -140,7 +144,7 @@
           <form [formGroup]="declarationForm">
           <div class="step-content">
             <h3>Declaration and Submission <hr></h3>
-            <mat-checkbox color="primary" >
+            <mat-checkbox color="primary" formControlName="declaration">
               I declare that all the information given here is true and complete to the best of my knowledge. 
               I understand that false or misleading information may result in my rejection of the application.
             </mat-checkbox>
@@ -149,9 +153,9 @@
             <input matInput placeholder="Student's Signature" formControlName="studentSignature">
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Parent/Guardian Signature" formControlName="parentSignature">
+            <input matInput placeholder="Parent's Signature" formControlName="parentSignature">
           </mat-form-field>
-          <h4>ENCLOSURES:</h4>
+          <h4>Enclosures</h4>
           <ul>
             <li>Passport size photograph – 3 No.</li>
             <li>Copy of Aadhar Card</li>
