@@ -4,10 +4,12 @@
       <div class="logo-container">
         <img src="https://sdhub.in/wp-content/uploads/2024/05/cropped-Skills-Development-Hub-SM-Logos-2.png" alt="SD Hub Logo" class="logo">
       </div>
+      <div class="header-text">
       <mat-card-title>Student Registration</mat-card-title>
       <mat-card-subtitle>Skills Development Hub</mat-card-subtitle>
+      </div>
     </mat-card-header>
-
+  
     <mat-card-content>
       <mat-horizontal-stepper [linear]="isLinear" #stepper>
         <mat-step [stepControl]="firstFormGroup">
@@ -122,7 +124,16 @@
               <div class="form-row">
                 <mat-form-field>
                   <mat-label>Year of Passing</mat-label>
-                  <input matInput formControlName="yearOfPassing">
+                  <mat-select formControlName="yearOfPassing">
+                    <mat-option value="year25">2025</mat-option>
+                    <mat-option value="year24">2024</mat-option>
+                    <mat-option value="year23">2023</mat-option>
+                    <mat-option value="year22">2022</mat-option>
+                    <mat-option value="year21">2021</mat-option>
+                    <mat-option value="year20">2020</mat-option>
+                    <mat-option value="year19">2019</mat-option>
+                    <mat-option value="year18">2018</mat-option>
+                  </mat-select>
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Percentage</mat-label>

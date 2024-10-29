@@ -24,27 +24,37 @@
   }
   
   .logo-container {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
-    margin-bottom: 16px;
-    width: 300px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: white;
+    align-items: center;
+    margin-right: 16px;
   }
   
   .logo {
-    padding: 4px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
   }
   
   mat-card-title {
     font-size: 24px;
     font-weight: bold;
-    margin: 0;
+    margin-bottom: 4px;
+   
+  }
+  
+  .header-text {
+    display: flex;
+    flex-direction: column;
   }
   
   mat-card-subtitle {
     color: #ffcccb;
+    display: flex;
   }
   
   mat-card-content {

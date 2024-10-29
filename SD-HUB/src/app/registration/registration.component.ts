@@ -6,8 +6,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
 })
+
 export class RegistrationComponent implements OnInit {
   isLinear = true;
   firstFormGroup: FormGroup;
@@ -40,7 +41,7 @@ export class RegistrationComponent implements OnInit {
       course: ['',Validators.required],
       degree: [''],
       collegeName: [''],
-      yearOfPassing: [''],
+      yearOfPassing: ['',Validators.required],
       percentage: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
     });
 
@@ -66,10 +67,5 @@ export class RegistrationComponent implements OnInit {
     } else {
       this.snackBar.open('Please fill all required fields', 'Close', { duration: 3000 });
     }
-  }
-
-  reset(): void {
-    this.firstFormGroup.reset();
-    this.secondFormGroup.reset();
   }
 }

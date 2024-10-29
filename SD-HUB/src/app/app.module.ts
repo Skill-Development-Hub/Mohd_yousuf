@@ -20,6 +20,7 @@ import { SigninComponent } from './signin/signin.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatFormFieldModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
