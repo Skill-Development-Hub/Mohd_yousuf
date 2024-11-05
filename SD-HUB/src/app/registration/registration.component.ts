@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { StudentsService } from '../students.service';
 
 @Component({
   selector: 'app-registration',
@@ -19,6 +20,7 @@ export class RegistrationComponent implements OnInit {
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
     private router: Router,
+    private StudentsService: StudentsService
   ) {
     this.firstFormGroup = this.formBuilder.group({
       studentId: [''],
@@ -61,10 +63,15 @@ export class RegistrationComponent implements OnInit {
         ...this.secondFormGroup.value,
         ...this.declarationForm.value
       };
-      console.log('Registration form submitted', formData);
+      this.StudentsService.addstudents(formData).subscribe(
+        (response) => {
+          console.log('Registration successful', response);
       this.snackBar.open('Registration successful!', 'Close', { duration: 3000 });
       this.router.navigate(['/login']);
-    } else {
+        }
+        );
+      }
+     else {
       this.snackBar.open('Please fill all required fields', 'Close', { duration: 3000 });
     }
   }
