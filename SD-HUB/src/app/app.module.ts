@@ -14,19 +14,24 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { provideHttpClient  } from '@angular/common/http';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    NavbarComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatCheckboxModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatToolbarModule,
   ],
   providers: [
     provideAnimationsAsync(),

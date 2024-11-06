@@ -14,27 +14,25 @@
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email" type="email" required>
-            <mat-error *ngIf="signinForm.get('email')?.hasError('required')">Email is required</mat-error>
-            <mat-error *ngIf="signinForm.get('email')?.hasError('email')">Please enter a valid email</mat-error>
           </mat-form-field>
   
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" required>
-            <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
-              <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-error *ngIf="signinForm.get('password')?.hasError('required')">Password is required</mat-error>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" 
+            placeholder="Create a password">
+     <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+       <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+     </button>
           </mat-form-field>
   
           <div class="form-actions">
             <a mat-button color="primary" (click)="forgotPassword()">Forgot Password?</a>
-            <button mat-raised-button color="primary" type="submit" [disabled]="signinForm.invalid">Sign In</button>
+            <button mat-raised-button color="primary" type="submit">Sign In</button>
           </div>
         </form>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button color="primary" (click)="redirectToRegistration()">New User? Register Here</button>
+        <button mat-button color="primary" (click)="redirectToSignup()">New User? Signup</button>
       </mat-card-actions>
     </mat-card>
   </div>

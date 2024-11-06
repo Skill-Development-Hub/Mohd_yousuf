@@ -1,0 +1,62 @@
+<div class="signup-container">
+    <mat-card class="signup-card">
+      <mat-card-header>
+        <div class="logo-container">
+          <img src="https://sdhub.in/wp-content/uploads/2024/05/cropped-Skills-Development-Hub-SM-Logos-2.png" alt="SD Hub Logo" class="logo">
+        </div>
+        <div class="header-text">
+        <mat-card-title>Sign UP</mat-card-title>
+        <mat-card-subtitle>Skills Development Hub</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Student ID</mat-label>
+          <input matInput formControlName="studentId">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Contact Number</mat-label>
+          <input matInput formControlName="contactNumber">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" 
+          placeholder="Create a password">
+   <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+     <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+   </button>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" 
+          formControlName="confirmPassword" placeholder="Confirm your password">
+   <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" type="button">
+     <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+   </button>
+        </mat-form-field>
+  
+  
+        <button mat-flat-button color="warn" type="submit" class="signup-button">
+          Sign Up
+        </button>
+  
+        <p class="login-link">
+          Already have an account? <a routerLink="/signin">Signin</a>
+        </p>
+      </form>
+    </mat-card>
+  </div>

@@ -48,7 +48,7 @@ export class RegistrationComponent implements OnInit {
     });
 
     this.declarationForm = this.formBuilder.group({
-      declaration: [false,Validators.required],
+      declaration: [''],
       studentSignature: [''],
       parentSignature: [''],
     });
@@ -67,7 +67,7 @@ export class RegistrationComponent implements OnInit {
         (response) => {
           console.log('Registration successful', response);
       this.snackBar.open('Registration successful!', 'Close', { duration: 3000 });
-      this.router.navigate(['/login']);
+      this.router.navigate(['/signin']);
         }
         );
       }
