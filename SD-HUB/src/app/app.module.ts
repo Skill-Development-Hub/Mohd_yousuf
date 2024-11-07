@@ -15,6 +15,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { provideHttpClient  } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +25,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { SignupComponent } from './signup/signup.component';
     SigninComponent,
     RegistrationComponent,
     NavbarComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,8 @@ import { SignupComponent } from './signup/signup.component';
     MatSelectModule,
     MatFormFieldModule,
     MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     provideAnimationsAsync(),

@@ -4,13 +4,15 @@ import { SigninComponent } from './signin/signin.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'navbar', component: NavbarComponent },
-  { path: 'signup', component: SignupComponent }
+  { path: 'signup', component: SignupComponent },
+  {path: 'dashboard', component:DashboardComponent}
 ];
 
 @NgModule({

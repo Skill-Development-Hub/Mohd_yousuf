@@ -1,0 +1,50 @@
+<div class="dashboard-container">
+    <!-- Toolbar -->
+    <mat-toolbar color="primary" class="header">
+      <span>SD HUB Dashboard</span>
+      <div class="header-actions">
+        <button mat-icon-button (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+  
+    <!-- sidenavcontainer -->
+    <mat-sidenav-container class="sidenav-container">
+
+      <!-- sidenav_content -->
+      <mat-sidenav mode="side" opened class="sidenav">
+        <mat-list>
+            <mat-list-item>
+            <mat-icon matListItemIcon>dashboard</mat-icon>
+            <div class="matListItemTitle">Dashboard</div>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListItemIcon>school</mat-icon>
+                <div class="matListItemTitle">Faculty</div>
+                </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListItemIcon>groups</mat-icon>
+                <div class="matListItemTitle">Students</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>book</mat-icon>
+                    <div class="matListItemTitle">Courses</div>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>account_circle</mat-icon>
+                        <div class="matListItemTitle">Profile</div>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon matListItemIcon>admin_panel_settings</mat-icon>
+                            <div class="matListItemTitle">Admin</div>
+                            </mat-list-item>
+           </mat-list>
+      </mat-sidenav>
+  
+      
+      <mat-sidenav-content class="content">
+        
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
