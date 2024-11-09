@@ -16,7 +16,7 @@
     background-color: lightpink;
   }
   
-  .header-actions {
+  /* .header-actions {
     display: flex;
     gap: 8px;
   }
@@ -83,9 +83,6 @@
     width: 240px;
     background-color: #fff;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
-    border-color: aqua;
-    border-radius: 10px;
-    
   }
   
   .active-link {
@@ -95,20 +92,87 @@
   
   .matListItemTitle {
     color: #666;
-    /* color: #4F80FF; */
     font-size: 17px;
     height: 20px !important;
   }
- 
-
-  mat-list-item mat-icon {
-    color: #3f51b5;
+  
+  /* Content Styles */
+  .content {
+    padding: 24px;
+    background-color: #f5f5f5;
   }
   
+  /* Summary Grid */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  /* Summary Cards */
+  .summary-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .summary-card mat-card-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .summary-card mat-card-title {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .summary-card mat-card-content {
+    padding: 16px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+  }
+  
+  .summary-item .label {
+    color: #666;
+  }
+  
+  .summary-item .value {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  /* Card Colors */
+  .student-card {
+    background-color: #5de961;
+    color: white;
+  }
+  
+  .teaching-card {
+    background-color: #46d2f5;
+    color: white;
+  }
+  
+  .non-teaching-card {
+    background-color: #F44336;
+    color: white;
+  }
+  
+  .institute-card {
+    background-color: #51e793;
+    color: white;
+  }
+  
+  /* Responsive Design */
   @media (max-width: 960px) {
-    
-    .content {
+    .summary-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       padding: 16px;
+      gap: 16px;
     }
   }
   
@@ -117,7 +181,12 @@
       width: 200px;
     }
   
-    .sidenav mat-list-item span {
-      display: none;
+    .summary-grid {
+      grid-template-columns: 1fr;
+      padding: 12px;
+      gap: 12px;
     }
   }
+
+
+  

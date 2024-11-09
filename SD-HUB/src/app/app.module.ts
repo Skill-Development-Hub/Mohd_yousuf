@@ -17,6 +17,7 @@ import { provideHttpClient  } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -36,7 +39,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RegistrationComponent,
     NavbarComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfileComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +62,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatDividerModule
   ],
   providers: [
     provideAnimationsAsync(),

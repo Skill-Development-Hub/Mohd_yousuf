@@ -1,6 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,27 +7,28 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  @ViewChild('sidenav') sidenav!: MatSidenav;
+  studentSummary = {
+    totalStudents: 700,
+    activeStudents: 500,
+    completedStudents: 200
+  };
 
-  navItems = [
-    { icon: 'dashboard', label: 'Dashboard', link: '/dashboard' },
-    { icon: 'school', label: 'Deans', link: '/deans' },
-    { icon: 'person', label: 'Trainers', link: '/teachers' },
-    { icon: 'groups', label: 'Students', link: '/students' },
-    { icon: 'book', label: 'Courses', link: '/subjects' },
-    { icon: 'newspaper', label: 'News', link: '/news' },
-    { icon: 'account_circle', label: 'Profile', link: '/profile' }
-  ];
+  teachingStaffSummary = {
+    totalStaff: 11,
+    activeStaff: 9,
+    completedStaff: 1
+  };
 
- 
-  constructor(private router: Router) {}
+  nonTeachingStaffSummary = {
+    totalStaff: 4,
+    activeStaff: 2,
+    completedStaff: 1
+  };
 
-  toggleSidenav() {
-    this.sidenav.toggle();
-  }
+  instituteSummary = {
+    totalCourses: 6,
+    ongoingCourses: 6,
+    completedCourses: 3
+  };
 
-  logout() {
-    
-    this.router.navigate(['/signin']);
-  }
 }

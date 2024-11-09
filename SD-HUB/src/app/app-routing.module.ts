@@ -5,14 +5,26 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'navbar', component: NavbarComponent },
   { path: 'signup', component: SignupComponent },
-  {path: 'dashboard', component:DashboardComponent}
+  // {path: 'dashboard', component:DashboardComponent},
+  // { path: 'profile', component: ProfileComponent },
+  {
+    path: '',
+    component: AdminComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'profile', component: ProfileComponent },
+      // Add other routes here
+    ]
+  }
 ];
 
 @NgModule({

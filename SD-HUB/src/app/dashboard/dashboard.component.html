@@ -48,10 +48,10 @@
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div> -->
-
-  <div class="dashboard-container">
+<!-- 
+  <div class="dashboard-container"> -->
     <!-- Top Header -->
-    <mat-toolbar color="primary" class="header">
+    <!-- <mat-toolbar color="primary" class="header">
       <button mat-icon-button (click)="toggleSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
@@ -61,24 +61,118 @@
           <mat-icon>logout</mat-icon>
         </button>
       </div>
-    </mat-toolbar>
+    </mat-toolbar> -->
   
-    <!-- Sidebar and Content -->
-    <mat-sidenav-container class="sidenav-container">
-      <!-- Sidebar -->
-      <mat-sidenav #sidenav mode="over" class="sidenav">
-        <mat-nav-list>
-          <a mat-list-item *ngFor="let item of navItems" 
-             [routerLink]="item.link"
-             routerLinkActive="active-link">
-            <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
-            <span class="matListItemTitle">{{item.label}}</span>
-          </a>
-        </mat-nav-list>
-      </mat-sidenav>
-  
-      <!-- Main Content -->
-      <mat-sidenav-content class="content">
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
+     <!-- Sidebar and Content -->
+  <!-- <mat-sidenav-container class="sidenav-container"> -->
+    <!-- Sidebar -->
+    <!-- <mat-sidenav #sidenav mode="over" class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let item of navItems" 
+           [routerLink]="item.link"
+           routerLinkActive="active-link">
+          <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+          <span class="matListItemTitle">{{item.label}}</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav> -->
+
+    <!-- Main Content -->
+    <!-- <mat-sidenav-content class="content"> -->
+      <h3>Admin Dashboard</h3>
+      <div class="summary-grid">
+        <!-- Student Summary Card -->
+        <mat-card class="summary-card student-card">
+          <mat-card-header>
+            <mat-card-title>Student Summary</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="summary-item">
+              <span class="label">Total Students</span>
+              <span class="value">{{studentSummary.totalStudents}}</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="summary-item">
+              <span class="label">Active Students</span>
+              <span class="value">{{studentSummary.activeStudents}}</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="summary-item">
+              <span class="label">Completed Students</span>
+              <span class="value">{{studentSummary.completedStudents}}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Teaching Staff Summary Card -->
+        <mat-card class="summary-card teaching-card">
+          <mat-card-header>
+            <mat-card-title>Teaching Staff Summary</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="summary-item">
+              <span class="label">Total Teaching Staff</span>
+              <span class="value">{{teachingStaffSummary.totalStaff}}</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="summary-item">
+              <span class="label">Active Teaching Staff</span>
+              <span class="value">{{teachingStaffSummary.activeStaff}}</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="summary-item">
+              <span class="label">Completed Teaching Staff</span>
+              <span class="value">{{teachingStaffSummary.completedStaff}}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Non-Teaching Staff Summary Card -->
+        <mat-card class="summary-card non-teaching-card">
+          <mat-card-header>
+            <mat-card-title>Non-Teaching Staff Summary</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="summary-item">
+              <span class="label">Total Non-Teaching Staff</span>
+              <span class="value">{{nonTeachingStaffSummary.totalStaff}}</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="summary-item">
+              <span class="label">Active Non-Teaching Staff</span>
+              <span class="value">{{nonTeachingStaffSummary.activeStaff}}</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="summary-item">
+              <span class="label">Completed Non-Teaching Staff</span>
+              <span class="value">{{nonTeachingStaffSummary.completedStaff}}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Institute Summary Card -->
+        <mat-card class="summary-card institute-card">
+          <mat-card-header>
+            <mat-card-title>Institute Summary</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="summary-item">
+              <span class="label">Total Courses</span>
+              <span class="value">{{instituteSummary.totalCourses}}</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="summary-item">
+              <span class="label">Ongoing Courses</span>
+              <span class="value">{{instituteSummary.ongoingCourses}}</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="summary-item">
+              <span class="label">Completed Courses</span>
+              <span class="value">{{instituteSummary.completedCourses}}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    <!-- </mat-sidenav-content>
+  </mat-sidenav-container>
+</div> -->
