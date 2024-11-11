@@ -17,4 +17,12 @@ export class StudentsService {
   signup(user: any): Observable<any>{
     return this.http.post<any>(`${this.apiUrl}/signup`, user);
   }
+
+  // signin(user: any): Observable<any>{
+  //   return this.http.post<any>(`${this.apiUrl}/signin`, user);
+  // }
+
+  login(user: any): Observable<any>{
+    return this.http.post<any>(`${this.apiUrl}/login`, user);
+  }
 }

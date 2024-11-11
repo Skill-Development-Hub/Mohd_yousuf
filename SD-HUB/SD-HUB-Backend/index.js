@@ -12,7 +12,7 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 await client.connect();
 console.log("Database Connected");
-const db = client.db('SD-HUB');
+const db = client.db('SD_HUB');
 const collection = db.collection('students');
 const ucollection = db.collection('user');
 
@@ -32,6 +32,29 @@ app.post('/signup', async (req, res) => {
     console.log(inserted);
     res.status(201).json(inserted);
 })
+
+// app.post('/signin', async (req, res) => {
+//     console.log(req.body);
+//     const userdetails = await ucollection.findOne(req.body);
+//     console.log(userdetails);
+//     if(userdetails != 'null')
+//         res.status(201).json(userdetails);
+//     else
+//         res.status(500).json('');
+// })
+
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    console.log({ email })
+    const user = await ucollection.findOne({ email, password });
+    console.log("Login: ",user)
+    if(user != null){
+        res.status(201).json(user);
+    }
+    else{
+        res.status(401).json({ message: 'Invalid credentials'});
+    }
+});
 
 
 app.listen(PORT, () =>{
