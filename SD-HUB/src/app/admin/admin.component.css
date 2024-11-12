@@ -14,7 +14,8 @@
     display: flex;
     justify-content: space-between;
     height: 64px;
-    background-color: #4F80FF;
+    /* background-color: #4F80FF; */
+    background: #d5daf8;
   }
   
   .header-actions {

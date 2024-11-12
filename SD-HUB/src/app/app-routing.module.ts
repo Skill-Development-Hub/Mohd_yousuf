@@ -9,9 +9,10 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/navbar', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'navbar', component: NavbarComponent },
+  { path: 'navbar', component: NavbarComponent},
   { path: 'signup', component: SignupComponent },
   // {path: 'dashboard', component:DashboardComponent},
   // { path: 'profile', component: ProfileComponent },
@@ -19,12 +20,11 @@ const routes: Routes = [
     path: '',
     component: AdminComponent,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profile', component: ProfileComponent },
       // Add other routes here
     ]
-  }
+  },
 ];
 
 @NgModule({

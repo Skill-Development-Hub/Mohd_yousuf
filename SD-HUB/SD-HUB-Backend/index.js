@@ -12,7 +12,7 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 await client.connect();
 console.log("Database Connected");
-const db = client.db('SD_HUB');
+const db = client.db('SD-HUB');
 const collection = db.collection('students');
 const ucollection = db.collection('user');
 
@@ -28,7 +28,7 @@ app.post('/addstudents', async (req, res) => {
 
 app.post('/signup', async (req, res) => {
     console.log(req.body);
-    const inserted = await ucollection.insertOne(req.body);
+    const inserted = await collection.insertOne(req.body);
     console.log(inserted);
     res.status(201).json(inserted);
 })
@@ -54,6 +54,11 @@ app.post('/login', async (req, res) => {
     else{
         res.status(401).json({ message: 'Invalid credentials'});
     }
+});
+
+app.get('/users', async (req, res) => {
+        const users = await collection.find({}).toArray(); 
+        res.status(200).json(users);
 });
 
 

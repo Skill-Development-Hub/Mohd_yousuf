@@ -3,12 +3,13 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #ffebee, #e8eaf6);
+  background: linear-gradient(to bottom, #ffebee, #e7e9f8);
   padding: 20px;
 }
 
 .registration-card {
   width: 100%;
+  margin-top: 50px;
   max-width: 1000px;
   border: 2px solid #e63946;
   border-radius: 12px;

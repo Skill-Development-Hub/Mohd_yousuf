@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StudentsService } from '../students.service';
 
 
 @Component({
@@ -6,10 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  userlist = 0;
+  constructor(
+    private StudentsService: StudentsService,
+  ) {}
   studentSummary = {
-    totalStudents: 700,
-    activeStudents: 500,
+    activestd: 20,
     completedStudents: 200
   };
 
@@ -31,4 +35,10 @@ export class DashboardComponent {
     completedCourses: 3
   };
 
+  ngOnInit(): void {
+    this.StudentsService.getUsers().subscribe(users => {
+      console.log(users);
+      this.userlist = users.length;
+    });
+}
 }

@@ -1,5 +1,5 @@
 .navbar {
-    background: white;
+  background: linear-gradient(to bottom, #ffebee, #dde1f7);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 0;
     position: fixed;
@@ -68,8 +68,7 @@
   }
   
   .contact-btn {
-    background-color: #4285f4 !important;
-    color: white !important;
+    color: rgb(8, 8, 8) !important;
     border-radius: 20px !important;
     padding: 0 20px !important;
     display: flex;
