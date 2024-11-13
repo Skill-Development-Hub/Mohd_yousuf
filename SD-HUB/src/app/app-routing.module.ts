@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
+import { StudentsComponent } from './dashboard/students/students.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/navbar', pathMatch: 'full' },
@@ -22,6 +23,8 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'students', component: StudentsComponent },
+
       // Add other routes here
     ]
   },
