@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTableModule} from '@angular/material/table';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,7 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
+import { StudentsComponent } from './dashboard/students/students.component';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { AdminComponent } from './admin/admin.component';
     SignupComponent,
     DashboardComponent,
     ProfileComponent,
-    AdminComponent
+    AdminComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { AdminComponent } from './admin/admin.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule
   ],
   providers: [
     provideAnimationsAsync(),

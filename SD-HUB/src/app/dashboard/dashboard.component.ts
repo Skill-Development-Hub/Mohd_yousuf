@@ -9,12 +9,14 @@ import { StudentsService } from '../students.service';
 })
 export class DashboardComponent implements OnInit {
   userlist = 0;
+  user = [];
+
   constructor(
     private StudentsService: StudentsService,
   ) {}
   studentSummary = {
-    activestd: 20,
-    completedStudents: 200
+    activestd: 0,
+    completedStudents: 0
   };
 
   teachingStaffSummary = {
@@ -36,9 +38,23 @@ export class DashboardComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.getStatus();
     this.StudentsService.getUsers().subscribe(users => {
       console.log(users);
+      this.user = users;
+      console.log(this.user)
       this.userlist = users.length;
     });
-}
+  }
+
+  getStatus = () => {
+    this.StudentsService.getStudentsStatus().subscribe(std_status => {
+      console.log(std_status);
+      var active = std_status.filter((each: any) => { return each._id == 'active' });
+      this.studentSummary.activestd = active[0].count;
+      
+      var completed = std_status.filter((each: any) => { return each._id == 'completed' });
+      this.studentSummary.completedStudents = completed[0].count;
+    });
+  }
 }

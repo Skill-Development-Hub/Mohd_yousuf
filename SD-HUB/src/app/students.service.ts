@@ -29,4 +29,8 @@ export class StudentsService {
   getUsers(): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/users`);
   }
+
+  getStudentsStatus(): Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/studentsStatus`);
+  }
 }
