@@ -6,21 +6,19 @@ import { StudentsService } from '../../students.service';
 import { DataSource } from '@angular/cdk/collections';
 
 export interface UserData {
-  studentID: number;
+  number: number;
   name: string;
   age: number;
   email: string;
 }
 
 @Component({
-  selector: 'app-students',
-  templateUrl: './students.component.html',
-  styleUrl: './students.component.css'
+  selector: 'app-trainers',
+  templateUrl: './trainers.component.html',
+  styleUrl: './trainers.component.css'
 })
-
-
-export class StudentsComponent  implements AfterViewInit {
-  displayedColumns: string[] = ['studentID', 'name', 'age', 'email'];
+export class TrainersComponent implements AfterViewInit {
+  displayedColumns: string[] = ['number', 'name', 'age', 'email'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator)
@@ -36,7 +34,7 @@ export class StudentsComponent  implements AfterViewInit {
   }
 
   ngOnInit() {
-    this.getStudents(); // Fetch students when the component initializes
+    this.getTrainers(); // Fetch students when the component initializes
   }
 
 
@@ -45,10 +43,10 @@ export class StudentsComponent  implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  getStudents = () => {
-    this.StudentsService.getStudents().subscribe(students => {
-      console.log(students);
-      this.dataSource.data = students; 
+  getTrainers = () => {
+    this.StudentsService.getTrainers().subscribe(trainers => {
+      console.log(trainers);
+      this.dataSource.data = trainers; 
   });
 }
 
@@ -61,3 +59,5 @@ export class StudentsComponent  implements AfterViewInit {
     }
   }
 }
+
+

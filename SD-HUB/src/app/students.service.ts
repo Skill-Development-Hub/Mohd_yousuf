@@ -33,4 +33,16 @@ export class StudentsService {
   getStudentsStatus(): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/studentsStatus`);
   }
+
+  getStudents(): Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/students`);
+  }
+
+  getTrainers(): Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/trainers`);
+  }
+
+  getDeans(): Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/deans`);
+  }
 }

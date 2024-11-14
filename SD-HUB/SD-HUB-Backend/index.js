@@ -73,6 +73,24 @@ app.get('/studentsStatus', async (req, res) => {
     }
 });
 
+// student table
+app.get('/students', async (req, res) => {
+    const collection = db.collection('students');
+    const students = await collection.find({}).toArray(); 
+    res.status(200).json(students);
+});
+
+app.get('/trainers', async (req, res) => {
+    const collection = db.collection('trainers');
+    const students = await collection.find({}).toArray(); 
+    res.status(200).json(students);
+});
+
+app.get('/deans', async (req, res) => {
+    const collection = db.collection('deans');
+    const students = await collection.find({}).toArray(); 
+    res.status(200).json(students);
+});
 
 app.listen(PORT, () =>{
     console.log(`Server is running on http://localhost:${PORT}`);
