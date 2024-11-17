@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { StudentsComponent } from './dashboard/students/students.component';
 import { TrainersComponent } from './dashboard/trainers/trainers.component';
 import { DeansComponent } from './dashboard/deans/deans.component';
+import { CoursesComponent } from './dashboard/courses/courses.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/navbar', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'students', component: StudentsComponent },
       { path: 'trainers', component: TrainersComponent },
       { path: 'deans', component: DeansComponent },
+      { path: 'courses', component: CoursesComponent },
 
       // Add other routes here
     ]

@@ -37,6 +37,7 @@ import { AdminComponent } from './admin/admin.component';
 import { StudentsComponent } from './dashboard/students/students.component';
 import { TrainersComponent } from './dashboard/trainers/trainers.component';
 import { DeansComponent } from './dashboard/deans/deans.component';
+import { CoursesComponent } from './dashboard/courses/courses.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { DeansComponent } from './dashboard/deans/deans.component';
     AdminComponent,
     StudentsComponent,
     TrainersComponent,
-    DeansComponent
+    DeansComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,

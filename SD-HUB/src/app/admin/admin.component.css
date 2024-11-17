@@ -5,7 +5,7 @@
   }
   
   /* Header Styles */
-  .header {
+  /* .header {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,14 +13,35 @@
     z-index: 2;
     display: flex;
     justify-content: space-between;
-    height: 64px;
+    height: 64px; */
     /* background-color: #4F80FF; */
-    background: #d5daf8;
-  }
+    /* background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  } */
+
   
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-title {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
   .header-actions {
     display: flex;
     gap: 8px;
+    background-color: white;
   }
   
   /* Sidenav Styles */

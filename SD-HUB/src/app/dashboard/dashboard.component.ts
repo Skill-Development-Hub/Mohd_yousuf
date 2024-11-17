@@ -20,15 +20,15 @@ export class DashboardComponent implements OnInit {
   };
 
   teachingStaffSummary = {
-    totalStaff: 11,
-    activeStaff: 9,
-    completedStaff: 1
+    totalStaff: 0,
+    activeStaff: 0,
+    guestStaff: 0
   };
 
   nonTeachingStaffSummary = {
     totalStaff: 4,
     activeStaff: 2,
-    completedStaff: 1
+    guestStaff: 1
   };
 
   instituteSummary = {
@@ -39,6 +39,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getStatus();
+    this.get_tStatus();
+    this.gettech();
     this.StudentsService.getUsers().subscribe(users => {
       console.log(users);
       this.user = users;
@@ -57,4 +59,21 @@ export class DashboardComponent implements OnInit {
       this.studentSummary.completedStudents = completed[0].count;
     });
   }
+
+  get_tStatus = () => {
+    this.StudentsService.get_tStatus().subscribe(t_status => {
+      console.log(t_status);
+      var active = t_status.filter((each: any) => { return each._id == 'active' });
+      this.teachingStaffSummary.activeStaff = active[0].count;
+      
+      var completed = t_status.filter((each: any) => { return each._id == 'completed' });
+      this.teachingStaffSummary.guestStaff = completed[0].count;
+    });
+  }
+gettech = () => {
+  this.StudentsService.gettech().subscribe(gettech => {
+    console.log(gettech);
+    this.teachingStaffSummary.totalStaff = gettech.length;
+  });
+}
 }

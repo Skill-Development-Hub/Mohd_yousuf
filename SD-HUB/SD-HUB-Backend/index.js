@@ -12,7 +12,7 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 await client.connect();
 console.log("Database Connected");
-const db = client.db('SD_HUB');
+const db = client.db('SD-HUB');
 const collection = db.collection('students');
 const ucollection = db.collection('user');
 
@@ -61,12 +61,30 @@ app.get('/users', async (req, res) => {
         res.status(200).json(users);
 });
 
+app.get('/gettech', async (req, res) => {
+    const collection = db.collection('trainers');
+    const gettech = await collection.find({}).toArray(); 
+    res.status(200).json(gettech);
+});
+
 app.get('/studentsStatus', async (req, res) => {
     const collection = db.collection('students');
     const std_status = await collection.aggregate([ { $group: { _id: "$status", count: { $sum: 1 } }} ]).toArray();
 
     if(std_status != null){
         res.status(201).json(std_status);
+    }
+    else{
+        res.status(401).json({ message: 'No Data'});
+    }
+});
+
+app.get('/tStatus', async (req, res) => {
+    const collection = db.collection('trainers');
+    const t_status = await collection.aggregate([ { $group: { _id: "$status", count: { $sum: 1 } }} ]).toArray();
+
+    if(t_status != null){
+        res.status(201).json(t_status);
     }
     else{
         res.status(401).json({ message: 'No Data'});
