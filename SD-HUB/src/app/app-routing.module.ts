@@ -12,6 +12,8 @@ import { TrainersComponent } from './dashboard/trainers/trainers.component';
 import { DeansComponent } from './dashboard/deans/deans.component';
 import { CoursesComponent } from './dashboard/courses/courses.component';
 
+import { AuthGuard } from './auth.guard';
+
 const routes: Routes = [
   { path: '', redirectTo: '/navbar', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
@@ -23,6 +25,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profile', component: ProfileComponent },

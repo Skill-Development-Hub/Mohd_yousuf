@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { StudentsService } from '../students.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -20,6 +21,7 @@ export class SigninComponent implements OnInit {
     private router: Router,
     private snackBar: MatSnackBar,
     private StudentsService: StudentsService,
+    private authService: AuthService,
   ) {
     this.signinForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -39,6 +41,7 @@ export class SigninComponent implements OnInit {
     //     this.snackBar.open('Sign in successful!', 'Close', { duration: 3000 });
     //   this.router.navigate(['/dashboard']); 
     // });
+      this.login({email, password });
       this.StudentsService.login({email, password }).subscribe({
         next: (v) => {
           console.log(`observerA: ${v}`);
@@ -51,6 +54,15 @@ export class SigninComponent implements OnInit {
         complete: () => console.info('Complete')
       });
     }
+  }
+
+  login(creds: any): void {
+    // Here you should authenticate the user with your API and retrieve a token
+    const token = 'dummy-jwt-token';  // Replace with actual token from API
+    // Call AuthService to save the token and expiry time
+    this.authService.login(token, creds);
+    // After successful login, redirect to the previously requested route or dashboard
+    this.router.navigate(['/dashboard']);
   }
 
   forgotPassword(): void {
