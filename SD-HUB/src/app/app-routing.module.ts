@@ -13,6 +13,7 @@ import { DeansComponent } from './dashboard/deans/deans.component';
 import { CoursesComponent } from './dashboard/courses/courses.component';
 
 import { AuthGuard } from './auth.guard';
+import { NewsComponent } from './dashboard/news/news.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/navbar', pathMatch: 'full' },
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'trainers', component: TrainersComponent },
       { path: 'deans', component: DeansComponent },
       { path: 'courses', component: CoursesComponent },
+      { path: 'news', component: NewsComponent },
 
       // Add other routes here
     ]

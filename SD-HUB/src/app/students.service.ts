@@ -53,4 +53,8 @@ export class StudentsService {
   getDeans(): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/deans`);
   }
+
+  getCourses(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/courses`);
+  }
 }

@@ -110,6 +110,12 @@ app.get('/deans', async (req, res) => {
     res.status(200).json(students);
 });
 
+app.get('/courses', async (req, res) => {
+    const collection = db.collection('courses');
+    const courses = await collection.find({}).toArray(); 
+    res.status(200).json(courses);
+});
+
 app.listen(PORT, () =>{
     console.log(`Server is running on http://localhost:${PORT}`);
 })

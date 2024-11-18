@@ -21,7 +21,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-
+import { MatChipsModule } from '@angular/material/chips';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +38,7 @@ import { StudentsComponent } from './dashboard/students/students.component';
 import { TrainersComponent } from './dashboard/trainers/trainers.component';
 import { DeansComponent } from './dashboard/deans/deans.component';
 import { CoursesComponent } from './dashboard/courses/courses.component';
+import { NewsComponent } from './dashboard/news/news.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { CoursesComponent } from './dashboard/courses/courses.component';
     StudentsComponent,
     TrainersComponent,
     DeansComponent,
-    CoursesComponent
+    CoursesComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,8 @@ import { CoursesComponent } from './dashboard/courses/courses.component';
     MatDividerModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatChipsModule
   ],
   providers: [
     provideAnimationsAsync(),
