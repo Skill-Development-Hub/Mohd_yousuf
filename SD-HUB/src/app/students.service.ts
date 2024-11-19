@@ -18,12 +18,12 @@ export class StudentsService {
     return this.http.post<any>(`${this.apiUrl}/signup`, user);
   }
 
-  // signin(user: any): Observable<any>{
-  //   return this.http.post<any>(`${this.apiUrl}/signin`, user);
-  // }
+  studentSignin(credentials: any): Observable<any>{
+    return this.http.post<any>(`${this.apiUrl}/student-signin`, credentials);
+  }
 
-  login(user: any): Observable<any>{
-    return this.http.post<any>(`${this.apiUrl}/login`, user);
+  adminSignin(credentials: any): Observable<any>{
+    return this.http.post<any>(`${this.apiUrl}/admin-signin`, credentials);
   }
 
   getUsers(): Observable<any>{

@@ -60,7 +60,21 @@
   mat-card-content {
     padding: 24px;
   }
+
+  .user-type-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
   
+  mat-button-toggle-group {
+    border-radius: 20px;
+  }
+  
+  mat-button-toggle {
+    min-width: 120px;
+  }
+ 
   form {
     display: flex;
     flex-direction: column;
@@ -97,4 +111,4 @@
     .signin-card {
       max-width: 100%;
     }
-  }
+  } 

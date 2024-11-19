@@ -22,6 +22,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatChipsModule } from '@angular/material/chips';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -80,7 +81,8 @@ import { NewsComponent } from './dashboard/news/news.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonToggleModule
   ],
   providers: [
     provideAnimationsAsync(),
