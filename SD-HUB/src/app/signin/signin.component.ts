@@ -55,7 +55,7 @@ export class SigninComponent implements OnInit {
         this.studentsService.studentSignin(credentials).subscribe({
           next: (response) => {
             this.authService.signin(response.token, { ...credentials, role: 'student' });
-            this.snackBar.open('Student sign-in successful!', 'Close', { duration: 3000 });
+            this.snackBar.open(`${response.message}`, 'Close', { duration: 3000 });
             this.router.navigate(['/student-dashboard']);
           },
           error: (error) => {

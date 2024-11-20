@@ -31,26 +31,41 @@ app.post('/addstudents', async (req, res) => {
 
 app.post('/signup', async (req, res) => {
     console.log(req.body);
-    const inserted = await collection.insertOne(req.body);
+    req.body['role'] = 'student';
+    const inserted = await ucollection.insertOne(req.body);
     console.log(inserted);
-    res.status(401).json({ message: 'Invalid credentials'});
+    res.status(200).json(inserted);
+});
+
+app.post('/approve', async (req, res) => {
+    console.log(req.body);
+    const updateResult = await collection.updateOne({ email: req.body.email }, { $set: { status: 'active' } });
+    console.log('Updated documents =>', updateResult);
+    res.status(200).json(updateResult);
 });
 
 app.post('/student-signin', async (req, res) => {
     const { email, password } = req.body;
     try {
-      const student = await collection.findOne({ email, password });
+      const student = await ucollection.findOne({ email, password });
+      console.log(student);
       
       if (student) {
-        const token = jwt.sign({ id: student._id, email: student.email, role: 'student' }, SECRET_KEY, { expiresIn: '1h' });
-        res.status(200).json({
-          token,
-          user: {
-            id: student._id,
-            email: student.email,
-            role: 'student'
-          }
-        });
+        if(student.status != 'pending'){
+          const token = jwt.sign({ id: student._id, email: student.email, role: 'student' }, SECRET_KEY, { expiresIn: '1h' });
+          res.status(200).json({
+            token,
+            user: {
+              id: student._id,
+              email: student.email,
+              role: 'student'
+            },
+            message: 'Student sign-in successful!'
+          });
+        }
+        else{
+          res.status(200).json({ message: 'Student acccount inactive' });
+        }
       } else {
         res.status(401).json({ message: 'Invalid student credentials' });
       }

@@ -80,6 +80,8 @@
   .summary-card mat-card-title {
     font-size: 18px;
     margin: 0;
+    font-weight: 1000;
+    color: #666;
   }
   
   .summary-card mat-card-content {
@@ -95,6 +97,7 @@
   
   .summary-item .label {
     color: #666;
+    font-weight: 1000;
   }
   
   .summary-item .value {
@@ -114,7 +117,7 @@
   }
   
   .non-teaching-card {
-    background-color: #F44336;
+    background-color: #82d7ec;
     color: white;
   }
   
