@@ -10,6 +10,10 @@ export class StudentsService {
 
   constructor(private http: HttpClient) { }
 
+  generateUniqueId(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/generate-unique-id`);
+  }
+
   addstudents(students: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/addstudents`, students);
   }
@@ -26,7 +30,11 @@ export class StudentsService {
     return this.http.post<any>(`${this.apiUrl}/admin-signin`, credentials);
   }
 
-  getUsers(): Observable<any>{
+  getsignupusers(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/signupusers`);
+  }
+
+  getUsers(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/users`);
   }
 

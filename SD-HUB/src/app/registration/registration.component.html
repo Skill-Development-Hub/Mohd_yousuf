@@ -20,8 +20,8 @@
               <h3>Applicant Information <hr></h3>
               <div class="form-row">
                 <mat-form-field>
-                  <mat-label>Student ID</mat-label>
-                  <input matInput formControlName="studentId">
+                  <mat-label>Unique ID</mat-label>
+                  <input matInput formControlName="uniqueId" readonly>
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label>Application Date</mat-label>
@@ -109,6 +109,7 @@
                     <mat-option value="Accounting + Tally ERP">Accounting + Tally ERP</mat-option>
                     <mat-option value="Digital Marketing + Graphic Designing">Digital Marketing + Graphic Designing</mat-option>
                     <mat-option value="Office Administration">Office Administration</mat-option>
+                    <mat-option value="System Engineering">System Engineering</mat-option>
                   </mat-select>
                 </mat-form-field>
               <h4>Qualification Details</h4>
@@ -126,6 +127,9 @@
                 <mat-form-field>
                   <mat-label>Year of Passing</mat-label>
                   <mat-select formControlName="yearOfPassing">
+                    <mat-option value="year28">2028</mat-option>
+                    <mat-option value="year27">2027</mat-option>
+                    <mat-option value="year26">2026</mat-option>
                     <mat-option value="year25">2025</mat-option>
                     <mat-option value="year24">2024</mat-option>
                     <mat-option value="year23">2023</mat-option>

@@ -15,9 +15,38 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 await client.connect();
 console.log("Database Connected");
-const db = client.db('SD_HUB');
+const db = client.db('SD-HUB');
 const collection = db.collection('students');
 const ucollection = db.collection('user');
+
+// const transporter = nodemailer.createTransport({
+//   host: 'smtp.example.com',
+//   port: 587,
+//   secure: false,
+//   auth: {
+//     user: 'your_email@example.com',
+//     pass: 'your_email_password'
+//   }
+// });
+
+function generateUniqueId() {
+  return Math.floor(1000 + Math.random() * 9000).toString();
+}
+
+app.get('/generate-unique-id', async (req, res) => {
+  let uniqueId;
+  let isUnique = false;
+
+  while (!isUnique) {
+    uniqueId = generateUniqueId();
+    const existingStudent = await collection.findOne({ uniqueId });
+    if (!existingStudent) {
+      isUnique = true;
+    }
+  }
+
+  res.json({ uniqueId });
+});
 
 
 app.post('/addstudents', async (req, res) => {
@@ -102,6 +131,11 @@ app.post('/student-signin', async (req, res) => {
 app.get('/users', async (req, res) => {
         const users = await collection.find({}).toArray(); 
         res.status(200).json(users);
+});
+
+app.get('/signupusers', async (req, res) => {
+  const users = await ucollection.find({}).toArray(); 
+  res.status(200).json(users);
 });
 
 app.get('/gettech', async (req, res) => {

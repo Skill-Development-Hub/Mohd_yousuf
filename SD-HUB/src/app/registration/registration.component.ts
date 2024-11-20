@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   declarationForm: FormGroup;
+  uniqueId: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,7 +24,7 @@ export class RegistrationComponent implements OnInit {
     private StudentsService: StudentsService
   ) {
     this.firstFormGroup = this.formBuilder.group({
-      studentId: [''],
+      uniqueId: ['', [Validators.required, Validators.pattern('^[0-9]{4}$')]],
       applicationDate: [''],
       firstName: [''],
       middleName: [''],
@@ -54,7 +55,22 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.generateUniqueId();
+  }
+
+  generateUniqueId(): void {
+    this.StudentsService.generateUniqueId().subscribe(
+      (response: { uniqueId: string }) => {
+        this.uniqueId = response.uniqueId;
+        this.firstFormGroup.patchValue({ uniqueId: this.uniqueId });
+      },
+      (error) => {
+        console.error('Error generating unique ID:', error);
+        this.snackBar.open('Error generating unique ID', 'Close', { duration: 3000 });
+      }
+    );
+  }
 
   onSubmit(): void {
     if (this.firstFormGroup.valid && this.secondFormGroup.valid && this.declarationForm.valid) {

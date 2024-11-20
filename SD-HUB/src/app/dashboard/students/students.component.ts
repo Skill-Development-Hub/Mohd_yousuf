@@ -1,63 +1,91 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { StudentsService } from '../../students.service';
-import { DataSource } from '@angular/cdk/collections';
 
 export interface UserData {
-  studentID: number;
+  course: string;
   name: string;
-  age: number;
+  contactNumber: number;
+  password: string;
+  confirmPassword: string;
+  email: string;
+  status: string;
+}
+
+export interface StudentData {
+  uniqueId: string;
+  firstName: string;
+  lastName: string;
+  applicationDate: string;
+  course: string;
   email: string;
 }
 
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
-  styleUrl: './students.component.css'
+  styleUrls: ['./students.component.css']
 })
+export class StudentsComponent implements OnInit, AfterViewInit {
+  displayedUserColumns: string[] = ['course', 'name', 'contactNumber', 'email', 'status'];
+  displayedStudentColumns: string[] = ['uniqueId', 'firstName', 'lastName', 'applicationDate', 'course', 'email'];
+  
+  userDataSource: MatTableDataSource<UserData>;
+  studentDataSource: MatTableDataSource<StudentData>;
 
+  @ViewChild('userPaginator') userPaginator!: MatPaginator;
+  @ViewChild('studentPaginator') studentPaginator!: MatPaginator;
+  @ViewChild('userSort') userSort!: MatSort;
+  @ViewChild('studentSort') studentSort!: MatSort;
 
-export class StudentsComponent  implements AfterViewInit {
-  displayedColumns: string[] = ['studentID', 'name', 'age', 'email'];
-  dataSource: MatTableDataSource<UserData>;
-
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
-  @ViewChild(MatSort)
-  sort!: MatSort;
-
-  constructor(
-    private StudentsService: StudentsService,
-  ) {
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource<UserData>();
+  constructor(private studentsService: StudentsService) {
+    this.userDataSource = new MatTableDataSource<UserData>();
+    this.studentDataSource = new MatTableDataSource<StudentData>();
   }
 
   ngOnInit() {
-    this.getStudents(); // Fetch students when the component initializes
+    this.getUsers();
+    this.getStudents();
   }
-
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.userDataSource.paginator = this.userPaginator;
+    this.userDataSource.sort = this.userSort;
+    this.studentDataSource.paginator = this.studentPaginator;
+    this.studentDataSource.sort = this.studentSort;
   }
 
-  getStudents = () => {
-    this.StudentsService.getStudents().subscribe(students => {
-      console.log(students);
-      this.dataSource.data = students; 
-  });
-}
+  getUsers() {
+    this.studentsService.getsignupusers().subscribe(users => {
+      console.log('Users:', users);
+      this.userDataSource.data = users;
+    });
+  }
 
-  applyFilter(event: Event) {
+  getStudents() {
+    this.studentsService.getUsers().subscribe(students => {
+      console.log('Students:', students);
+      this.studentDataSource.data = students;
+    });
+  }
+
+  applyUserFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.userDataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+    if (this.userDataSource.paginator) {
+      this.userDataSource.paginator.firstPage();
+    }
+  }
+
+  applyStudentFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.studentDataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.studentDataSource.paginator) {
+      this.studentDataSource.paginator.firstPage();
     }
   }
 }
