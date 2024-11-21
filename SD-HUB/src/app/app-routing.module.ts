@@ -14,10 +14,14 @@ import { CoursesComponent } from './dashboard/courses/courses.component';
 
 import { AuthGuard } from './auth.guard';
 import { NewsComponent } from './dashboard/news/news.component';
+import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/navbar', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'aboutus', component: AboutusComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'navbar', component: NavbarComponent},
   { path: 'signup', component: SignupComponent },

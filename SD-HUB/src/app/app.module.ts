@@ -41,6 +41,8 @@ import { TrainersComponent } from './dashboard/trainers/trainers.component';
 import { DeansComponent } from './dashboard/deans/deans.component';
 import { CoursesComponent } from './dashboard/courses/courses.component';
 import { NewsComponent } from './dashboard/news/news.component';
+import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import { NewsComponent } from './dashboard/news/news.component';
     TrainersComponent,
     DeansComponent,
     CoursesComponent,
-    NewsComponent
+    NewsComponent,
+    HomeComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
