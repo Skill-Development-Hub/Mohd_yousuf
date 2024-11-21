@@ -15,19 +15,9 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 await client.connect();
 console.log("Database Connected");
-const db = client.db('SD-HUB');
+const db = client.db('SD_HUB');
 const collection = db.collection('students');
 const ucollection = db.collection('user');
-
-// const transporter = nodemailer.createTransport({
-//   host: 'smtp.example.com',
-//   port: 587,
-//   secure: false,
-//   auth: {
-//     user: 'your_email@example.com',
-//     pass: 'your_email_password'
-//   }
-// });
 
 function generateUniqueId() {
   return Math.floor(1000 + Math.random() * 9000).toString();

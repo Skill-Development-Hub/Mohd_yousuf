@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 950px;
     background: linear-gradient(to bottom, #ffebee, #e8eaf6);
     padding: 20px;
   }
@@ -68,7 +68,7 @@
   
   mat-form-field {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
   }
 
   mat-card-actions {
