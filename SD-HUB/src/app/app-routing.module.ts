@@ -16,13 +16,16 @@ import { AuthGuard } from './auth.guard';
 import { NewsComponent } from './dashboard/news/news.component';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AptituedTestComponent } from './aptitued-test/aptitued-test.component';
+import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/navbar', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
-  { path: 'registration', component: RegistrationComponent },
+  // { path: 'aptitue', component: AptituedTestComponent },
+  // { path: 'registration', component: RegistrationComponent },
   { path: 'navbar', component: NavbarComponent},
   { path: 'signup', component: SignupComponent },
   // {path: 'dashboard', component:DashboardComponent},
@@ -39,8 +42,16 @@ const routes: Routes = [
       { path: 'deans', component: DeansComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'news', component: NewsComponent },
-
       // Add other routes here
+    ]
+  },
+  {
+    path: '',
+    component: StdDashboardComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'aptitude', component: AptituedTestComponent },
+      { path: 'registration', component: RegistrationComponent },
     ]
   },
 ];

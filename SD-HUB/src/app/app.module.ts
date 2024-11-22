@@ -24,6 +24,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,6 +44,8 @@ import { CoursesComponent } from './dashboard/courses/courses.component';
 import { NewsComponent } from './dashboard/news/news.component';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AptituedTestComponent } from './aptitued-test/aptitued-test.component';
+import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 
 
 @NgModule({
@@ -61,7 +64,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     CoursesComponent,
     NewsComponent,
     HomeComponent,
-    AboutusComponent
+    AboutusComponent,
+    AptituedTestComponent,
+    StdDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +93,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     MatSortModule,
     MatChipsModule,
     MatButtonToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatRadioModule
   ],
   providers: [
     provideAnimationsAsync(),
