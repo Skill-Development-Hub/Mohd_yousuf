@@ -13,12 +13,12 @@ export class AdminComponent {
 
   navItems = [
     { icon: 'dashboard', label: 'Dashboard', link: '/dashboard' },
-    { icon: 'school', label: 'Deans', link: '/deans' },
     { icon: 'person', label: 'Trainers', link: '/trainers' },
     { icon: 'groups', label: 'Students', link: '/students' },
     { icon: 'book', label: 'Courses', link: '/courses' },
+    { icon: 'library_books', label: 'Syllabus', link: '/syllabus' },
     { icon: 'newspaper', label: 'News', link: '/news' },
-    { icon: 'account_circle', label: 'Profile', link: '/profile' }
+    { icon: 'account_circle', label: 'Profile', link: '/profile' },
   ];
 
   constructor(

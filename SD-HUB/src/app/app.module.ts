@@ -46,6 +46,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AptituedTestComponent } from './aptitued-test/aptitued-test.component';
 import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
+import { SyllabusComponent } from './dashboard/syllabus/syllabus.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
     HomeComponent,
     AboutusComponent,
     AptituedTestComponent,
-    StdDashboardComponent
+    StdDashboardComponent,
+    SyllabusComponent
   ],
   imports: [
     BrowserModule,

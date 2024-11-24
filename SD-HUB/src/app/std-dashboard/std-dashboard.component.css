@@ -17,7 +17,9 @@
     /* background-color: #4F80FF; */
     /* background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
   } */
-
+  mat-icon{
+    color: white;
+  }
   
 .header {
   position: fixed;
@@ -28,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   height: 64px;
-  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  background-color: #008080;
   color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -41,7 +43,6 @@
   .header-actions {
     display: flex;
     gap: 8px;
-    background-color: white;
   }
   
   /* Sidenav Styles */

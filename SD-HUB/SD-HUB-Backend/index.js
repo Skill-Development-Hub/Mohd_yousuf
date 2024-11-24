@@ -15,7 +15,7 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 await client.connect();
 console.log("Database Connected");
-const db = client.db('SD_HUB');
+const db = client.db('SD-HUB');
 const collection = db.collection('students');
 const ucollection = db.collection('user');
 
@@ -63,61 +63,95 @@ app.post('/approve', async (req, res) => {
     res.status(200).json(updateResult);
 });
 
-app.post('/student-signin', async (req, res) => {
-    const { email, password } = req.body;
-    try {
-      const student = await ucollection.findOne({ email, password });
-      console.log(student);
+// app.post('/student-signin', async (req, res) => {
+//     const { email, password } = req.body;
+//     try {
+//       const student = await ucollection.findOne({ email, password });
+//       console.log(student);
       
-      if (student) {
-        if(student.status != 'pending'){
-          const token = jwt.sign({ id: student._id, email: student.email, role: 'student' }, SECRET_KEY, { expiresIn: '1h' });
-          res.status(200).json({
-            token,
-            user: {
-              id: student._id,
-              email: student.email,
-              role: 'student'
-            },
-            message: 'Student sign-in successful!'
-          });
-        }
-        else{
-          res.status(200).json({ message: 'Student acccount inactive' });
-        }
-      } else {
-        res.status(401).json({ message: 'Invalid student credentials' });
-      }
-    } catch (error) {
-      console.error('Student signin error:', error);
-      res.status(500).json({ message: 'Server error' });
-    }
-  });
+//       if (student) {
+//         if(student.status != 'pending'){
+//           const token = jwt.sign({ id: student._id, email: student.email, role: 'student' }, SECRET_KEY, { expiresIn: '1h' });
+//           res.status(200).json({
+//             token,
+//             user: {
+//               id: student._id,
+//               email: student.email,
+//               role: 'student'
+//             },
+//             message: 'Student sign-in successful!'
+//           });
+//         }
+//         else{
+//           res.status(200).json({ message: 'Student acccount inactive' });
+//         }
+//       } else {
+//         res.status(401).json({ message: 'Invalid student credentials' });
+//       }
+//     } catch (error) {
+//       console.error('Student signin error:', error);
+//       res.status(500).json({ message: 'Server error' });
+//     }
+//   });
   
-  app.post('/admin-signin', async (req, res) => {
-    const { email, password } = req.body;
-    try {
-      const admin = await ucollection.findOne({ email, password, role: 'admin' });
+  // app.post('/admin-signin', async (req, res) => {
+  //   const { email, password } = req.body;
+  //   try {
+  //     const admin = await ucollection.findOne({ email, password, role: 'admin' });
       
-      if (admin) {
-        const token = jwt.sign({ id: admin._id, email: admin.email, role: 'admin' }, SECRET_KEY, { expiresIn: '1h' });
+  //     if (admin) {
+  //       const token = jwt.sign({ id: admin._id, email: admin.email, role: 'admin' }, SECRET_KEY, { expiresIn: '1h' });
+  //       res.status(200).json({
+  //         token,
+  //         user: {
+  //           id: admin._id,
+  //           email: admin.email,
+  //           role: 'admin'
+  //         }
+  //       });
+  //     } else {
+  //       res.status(401).json({ message: 'Invalid admin credentials' });
+  //     }
+  //   } catch (error) {
+  //     console.error('Admin signin error:', error);
+  //     res.status(500).json({ message: 'Server error' });
+  //   }
+  // });
+
+  app.post('/signin', async (req, res) => {
+    const { email, password, role } = req.body;
+    try {
+      const user = await ucollection.findOne({ email, password, role });
+      
+      if (user) {
+        if(user.status === 'pending') {
+          res.status(200).json({ message: 'Account is pending activation' });
+          return;
+        }
+  
+        const token = jwt.sign(
+          { id: user._id, email: user.email, role: user.role },
+          SECRET_KEY,
+          { expiresIn: '1h' }
+        );
+  
         res.status(200).json({
           token,
           user: {
-            id: admin._id,
-            email: admin.email,
-            role: 'admin'
-          }
+            id: user._id,
+            email: user.email,
+            role: user.role
+          },
+          message: `${role.charAt(0).toUpperCase() + role.slice(1)} sign-in successful!`
         });
       } else {
-        res.status(401).json({ message: 'Invalid admin credentials' });
+        res.status(401).json({ message: 'Invalid credentials' });
       }
     } catch (error) {
-      console.error('Admin signin error:', error);
+      console.error('Sign-in error:', error);
       res.status(500).json({ message: 'Server error' });
     }
   });
-
 app.get('/users', async (req, res) => {
         const users = await collection.find({}).toArray(); 
         res.status(200).json(users);

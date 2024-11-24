@@ -11,6 +11,7 @@ import { StudentsComponent } from './dashboard/students/students.component';
 import { TrainersComponent } from './dashboard/trainers/trainers.component';
 import { DeansComponent } from './dashboard/deans/deans.component';
 import { CoursesComponent } from './dashboard/courses/courses.component';
+import { SyllabusComponent } from './dashboard/syllabus/syllabus.component';
 
 import { AuthGuard } from './auth.guard';
 import { NewsComponent } from './dashboard/news/news.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
       { path: 'deans', component: DeansComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'news', component: NewsComponent },
+      { path: 'syllabus', component: SyllabusComponent },
       // Add other routes here
     ]
   },
