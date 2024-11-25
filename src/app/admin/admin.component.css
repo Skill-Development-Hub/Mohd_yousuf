@@ -1,0 +1,82 @@
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Header Styles */
+  /* .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    height: 64px; */
+    /* background-color: #4F80FF; */
+    /* background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  } */
+mat-icon{
+  color: white;
+}
+  
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  /* background: linear-gradient(135deg, #008080   0%, #008080   100%); */
+  background-color: #2e53aa;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-title {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+  .header-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  /* Sidenav Styles */
+  .sidenav-container {
+    flex: 1;
+    margin-top: 64px;
+  }
+  
+  .sidenav {
+    width: 240px;
+    background-color: #fff;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  
+  .active-link {
+    background-color: rgba(63, 81, 181, 0.1);
+    color: #3f51b5;
+  }
+  
+  .matListItemTitle {
+    color: #666;
+    font-size: 17px;
+    height: 20px !important;
+  }
+  
+  /* Content Styles */
+  .content {
+    padding: 24px;
+    background-color: #f5f5f5;
+  }
+  
+  @media (max-width: 600px) {
+    .sidenav {
+      width: 200px;
+    }
+  }

@@ -1,0 +1,152 @@
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: linear-gradient(to bottom, #ffebee, #e7e9f8); */
+  background-color: #fff;
+  padding: 0;
+}
+
+.registration-card {
+  width: 100%;
+  margin-top: 50px;
+  max-width: 1000px;
+  border: 1px solid #2e53aa;
+  border-radius: 12px;
+  overflow: hidden;
+  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+mat-card-header {
+  background: #2e53aa;
+  color: white;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 4px;
+ 
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-subtitle {
+  color: #fff;
+  display: flex;
+}
+
+mat-card-content {
+  padding: 24px;
+}
+
+mat-horizontal-stepper {
+  background-color: transparent;
+}
+
+.step-content {
+  padding: 10px 0;
+}
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #fff !important;
+  /* border: 1px solid #2e53aa;
+  border-bottom: none; */
+}
+
+
+
+
+
+
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+mat-form-field{
+  width: 100%;
+  height: 65px;
+}
+.full-width {
+  width: 100%;
+  height: 100px;
+}
+
+h1, h2, h3, h4 {
+  color: #2e53aa;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #2e53aa;
+  margin: 8px 0 16px;
+}
+
+.mat-checkbox {
+  margin-bottom: 16px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 50px;
+  bottom: 15px;
+  
+}
+
+.pre-button{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 50px;
+  bottom: 15px;
+
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+button[type="submit"] {
+  background-color: #2e53aa;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

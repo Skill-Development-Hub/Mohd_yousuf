@@ -1,0 +1,34 @@
+<div class="layout-container">
+    <!-- Top Header -->
+    <mat-toolbar color="primary" class="header">
+      <button mat-icon-button (click)="toggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="header-title">Skills Development Hub</span>
+      <div class="header-actions">
+        <button mat-icon-button (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+  
+    <!-- Sidebar and Content -->
+    <mat-sidenav-container class="sidenav-container">
+      <!-- Sidebar -->
+      <mat-sidenav #sidenav mode="over" class="sidenav">
+        <mat-nav-list>
+          <a mat-list-item *ngFor="let item of navItems" 
+             [routerLink]="item.link"
+             routerLinkActive="active-link">
+            <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+            <span class="matListItemTitle">{{item.label}}</span>
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <!-- Main Content -->
+      <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

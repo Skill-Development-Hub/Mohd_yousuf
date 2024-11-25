@@ -1,0 +1,17 @@
+.news-container {
+    padding: 24px;
+  }
+  
+  .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .news-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
