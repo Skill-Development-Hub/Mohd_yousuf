@@ -1,0 +1,133 @@
+.registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffebee, #e8eaf6);
+    padding: 20px;
+  }
+  
+  .registration-card {
+    width: 100%;
+    
+    max-width: 1000px;
+    border: 2px solid #e63946;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  mat-card-header {
+    background: linear-gradient(to right, #e63946, #e63946);
+    color: white;
+    padding: 16px;
+    position: relative;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    width: 300px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  
+  .logo {
+    padding: 4px;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  mat-card-subtitle {
+    color: #ffcccb;
+  }
+  
+  .photo-upload {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 100px;
+    height: 80px;
+    border: 2px dashed #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  mat-card-content {
+    padding: 24px;
+  }
+  
+  mat-horizontal-stepper {
+    background-color: transparent;
+  }
+  
+  .step-content {
+    padding: 10px 0;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  mat-form-field {
+    width: 100%;
+    height: 70px;
+  }
+  
+  .full-width {
+    width: 100%;
+    height: 100px;
+  }
+  
+  h1, h2, h3 {
+    color: #e63946;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #e63946;
+    margin: 8px 0 16px;
+  }
+  
+  .mat-checkbox {
+    margin-bottom: 16px;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 50px;
+    bottom: 15px;
+    
+  }
+  
+  button[type="submit"] {
+    background-color: #e63946;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .photo-upload {
+      position: static;
+      margin: 16px auto;
+    }
+  }

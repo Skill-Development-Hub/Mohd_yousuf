@@ -1,0 +1,8 @@
+table {
+    width: 100%;
+  }
+
+  .button{
+    display: flex;
+    justify-content: space-between;
+  }

@@ -1,0 +1,47 @@
+<div class="profile-container">
+    <mat-card class="profile-card">
+      <div class="profile-header">
+        <div class="avatar-container">
+          <mat-icon class="avatar-icon">account_circle</mat-icon>
+        </div>
+        <div class="profile-title">
+          <h2>{{adminProfile.name}}</h2>
+          <p class="role">{{adminProfile.role}}</p>
+        </div>
+      </div>
+  
+      <mat-divider></mat-divider>
+  
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>email</mat-icon>
+          <div matListItemTitle>Email</div>
+          <div matListItemLine>{{adminProfile.email}}</div>
+        </mat-list-item>
+  
+        <mat-list-item>
+          <mat-icon matListItemIcon>fingerprint</mat-icon>
+          <div matListItemTitle>Login</div>
+          <div matListItemLine>{{adminProfile.loginId}}</div>
+        </mat-list-item>
+  
+        <mat-list-item>
+          <mat-icon matListItemIcon>event</mat-icon>
+          <div matListItemTitle>Registered</div>
+          <div matListItemLine>{{adminProfile.registered}}</div>
+        </mat-list-item>
+  
+        <mat-list-item>
+          <mat-icon matListItemIcon>cake</mat-icon>
+          <div matListItemTitle>Date of birth</div>
+          <div matListItemLine>{{adminProfile.dateOfBirth}}</div>
+        </mat-list-item>
+  
+        <mat-list-item>
+          <mat-icon matListItemIcon>phone</mat-icon>
+          <div matListItemTitle>Phone number</div>
+          <div matListItemLine>{{adminProfile.phoneNumber}}</div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>

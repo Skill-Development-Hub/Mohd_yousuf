@@ -1,0 +1,154 @@
+<div class="registration-container">
+    <mat-card class="registration-card">
+      <mat-card-header>
+        <div class="logo-container">
+          <img src="https://sdhub.in/wp-content/uploads/2024/05/cropped-Skills-Development-Hub-SM-Logos-2.png" alt="SD Hub Logo" class="logo">
+        </div>
+        <mat-card-title>Student Registration</mat-card-title>
+        <mat-card-subtitle>Skills Development Hub</mat-card-subtitle>
+        <div class="photo-upload">
+          <span>Add Photo</span>
+        </div>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <mat-horizontal-stepper [linear]="isLinear" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Personal Information</ng-template>
+            <form [formGroup]="firstFormGroup">
+              <div class="step-content">
+                <h2>Applicant Information <hr></h2>
+                <div class="form-row">
+                  <mat-form-field>
+                    <mat-label>Student ID</mat-label>
+                    <input matInput formControlName="studentId" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Application Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="applicationDate" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="form-row">
+                  <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Middle Name</mat-label>
+                    <input matInput formControlName="middleName">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" required>
+                  </mat-form-field>
+                </div>
+                <div class="form-row">
+                  <mat-form-field>
+                    <mat-label>Father's First Name</mat-label>
+                    <input matInput formControlName="fatherFirstName" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Father's Middle Name</mat-label>
+                    <input matInput formControlName="fatherMiddleName">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Father's Last Name</mat-label>
+                    <input matInput formControlName="fatherLastName" required>
+                  </mat-form-field>
+                </div>
+                <div class="form-row">
+                  <mat-form-field>
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" required>
+                    <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dobPicker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneNumber" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" required>
+                  </mat-form-field>
+                </div>
+                <mat-form-field class="full-width">
+                  <mat-label>Address (Permanent)</mat-label>
+                  <textarea matInput formControlName="address" rows="3"  required></textarea>
+                </mat-form-field>
+                <div class="form-row">
+                  <mat-form-field>
+                    <mat-label>Parent/Guardian Contact Details</mat-label>
+                    <input matInput formControlName="guardianContact" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Total Household Income</mat-label>
+                    <input matInput formControlName="householdIncome" required>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="button-row">
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+  
+          <mat-step [stepControl]="secondFormGroup">
+            <ng-template matStepLabel>Education Details</ng-template>
+            <form [formGroup]="secondFormGroup">
+              <div class="step-content">
+                <h2>Course Details <hr></h2>
+                <mat-form-field class="full-width">
+                  <mat-label>Course Applied for</mat-label>
+                  <input matInput formControlName="courseApplied" required>
+                </mat-form-field>
+                <h3>Qualification Details</h3>
+                <div class="form-row">
+                  <mat-form-field>
+                    <mat-label>Degree</mat-label>
+                    <input matInput formControlName="degree" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>College Name</mat-label>
+                    <input matInput formControlName="collegeName" required>
+                  </mat-form-field>
+                </div>
+                <div class="form-row">
+                  <mat-form-field>
+                    <mat-label>Year of Passing</mat-label>
+                    <input matInput formControlName="yearOfPassing" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Percentage</mat-label>
+                    <input matInput formControlName="percentage" required>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="button-row">
+                <button mat-button matStepperPrevious>Previous</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+  
+          <mat-step>
+            <ng-template matStepLabel>Declaration</ng-template>
+            <div class="step-content">
+              <h2>Declaration and Submission <hr></h2>
+              <mat-checkbox color="primary" required>
+                I declare that all the information given here is true and complete to the best of my knowledge. 
+                I understand that false or misleading information may result in my rejection of the application.
+              </mat-checkbox>
+            </div>
+            <div class="button-row">
+              <button mat-button matStepperPrevious>Previous</button>
+              <button mat-raised-button color="primary" (click)="onSubmit()">Submit Application</button>
+              <button mat-button (click)="reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </mat-card-content>
+    </mat-card>
+  </div>

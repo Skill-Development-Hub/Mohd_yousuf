@@ -1,0 +1,194 @@
+<app-navbar></app-navbar>
+<div class="registration-container">
+  <mat-card class="registration-card">
+    <mat-card-header>
+      <div class="logo-container">
+        <img src="https://sdhub.in/wp-content/uploads/2024/05/cropped-Skills-Development-Hub-SM-Logos-2.png" alt="SD Hub Logo" class="logo">
+      </div>
+      <div class="header-text">
+      <mat-card-title>Student Registration</mat-card-title>
+      <mat-card-subtitle>Skills Development Hub</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <ng-template matStepLabel>Personal Information</ng-template>
+          <form [formGroup]="firstFormGroup">
+            <div class="step-content">
+              <h3>Applicant Information <hr></h3>
+              <div class="form-row">
+                <mat-form-field>
+                  <mat-label>Unique ID</mat-label>
+                  <input matInput formControlName="uniqueId" readonly>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Application Date</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="applicationDate">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="form-row">
+                <mat-form-field>
+                  <mat-label>First Name</mat-label>
+                  <input matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Middle Name</mat-label>
+                  <input matInput formControlName="middleName">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Last Name</mat-label>
+                  <input matInput formControlName="lastName">
+                </mat-form-field>
+              </div>
+              <div class="form-row">
+                <mat-form-field>
+                  <mat-label>Father's First Name</mat-label>
+                  <input matInput formControlName="fatherFirstName">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Father's Middle Name</mat-label>
+                  <input matInput formControlName="fatherMiddleName">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Father's Last Name</mat-label>
+                  <input matInput formControlName="fatherLastName">
+                </mat-form-field>
+              </div>
+              <div class="form-row">
+                <mat-form-field>
+                  <mat-label>Date of Birth</mat-label>
+                  <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth">
+                  <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                  <mat-datepicker #dobPicker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Phone Number</mat-label>
+                  <input matInput formControlName="phoneNumber">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email">
+                </mat-form-field>
+              </div>
+              <mat-form-field class="full-width">
+                <mat-label>Address (Permanent)</mat-label>
+                <textarea matInput formControlName="address" rows="3"></textarea>
+              </mat-form-field>
+              <div class="form-row">
+                <mat-form-field>
+                  <mat-label>Parent Contact Details</mat-label>
+                  <input matInput formControlName="guardianContact">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Total Household Income</mat-label>
+                  <input matInput formControlName="householdIncome">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="button-row">
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+          <ng-template matStepLabel>Education Details</ng-template>
+          <form [formGroup]="secondFormGroup">
+            <div class="step-content">
+              <h3>Course Details <hr></h3>
+              <mat-form-field>
+                <mat-label>Course Applied for</mat-label>
+                <mat-select formControlName="course">
+                    <mat-option>None</mat-option>
+                    <mat-option value="Web Development">Web Development</mat-option>
+                    <mat-option value="Data Analytics">Data Analytics</mat-option>
+                    <mat-option value="Accounting + Tally ERP">Accounting + Tally ERP</mat-option>
+                    <mat-option value="Digital Marketing + Graphic Designing">Digital Marketing + Graphic Designing</mat-option>
+                    <mat-option value="Office Administration">Office Administration</mat-option>
+                    <mat-option value="System Engineering">System Engineering</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              <h4>Qualification Details</h4>
+              <div class="form-row">
+                <mat-form-field>
+                  <mat-label>Degree</mat-label>
+                  <input matInput formControlName="degree">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>College Name</mat-label>
+                  <input matInput formControlName="collegeName">
+                </mat-form-field>
+              </div>
+              <div class="form-row">
+                <mat-form-field>
+                  <mat-label>Year of Passing</mat-label>
+                  <mat-select formControlName="yearOfPassing">
+                    <mat-option value="year28">2028</mat-option>
+                    <mat-option value="year27">2027</mat-option>
+                    <mat-option value="year26">2026</mat-option>
+                    <mat-option value="year25">2025</mat-option>
+                    <mat-option value="year24">2024</mat-option>
+                    <mat-option value="year23">2023</mat-option>
+                    <mat-option value="year22">2022</mat-option>
+                    <mat-option value="year21">2021</mat-option>
+                    <mat-option value="year20">2020</mat-option>
+                    <mat-option value="year19">2019</mat-option>
+                    <mat-option value="year18">2018</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Percentage</mat-label>
+                  <input matInput formControlName="percentage">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="pre-button">
+              <button mat-button matStepperPrevious>Previous</button>
+            </div>
+            <div class="button-row">
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="declarationForm">
+          <ng-template matStepLabel>Declaration</ng-template>
+          <form [formGroup]="declarationForm">
+          <div class="step-content">
+            <h3>Declaration and Submission <hr></h3>
+            <mat-checkbox color="primary" formControlName="declaration">
+              I declare that all the information given here is true and complete to the best of my knowledge. 
+              I understand that false or misleading information may result in my rejection of the application.
+            </mat-checkbox>
+          </div>
+          <mat-form-field>
+            <input matInput placeholder="Student's Signature" formControlName="studentSignature">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Parent's Signature" formControlName="parentSignature">
+          </mat-form-field>
+          <h4>Enclosures</h4>
+          <ul>
+            <li>Passport size photograph – 3 No.</li>
+            <li>Copy of Aadhar Card</li>
+            <li>Copy of Photo ID proof</li>
+            <li>Copy of College ID Card</li>
+            <li>Original Certificates</li>
+            <li>Income Certificate</li>
+          </ul>
+          <div class="pre-button">
+          <button mat-button matStepperPrevious>Previous</button>
+          </div>
+          <div class="button-row">
+            <button mat-raised-button color="primary" (click)="onSubmit()">Submit Application</button>
+          </div>
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card-content>
+  </mat-card>
+</div>

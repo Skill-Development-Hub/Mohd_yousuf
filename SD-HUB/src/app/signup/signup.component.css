@@ -1,0 +1,123 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 950px;
+    background: linear-gradient(to bottom, #ffebee, #e8eaf6);
+    padding: 20px;
+  }
+  
+  .signup-card {
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #e63946;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  mat-card-header {
+    background: linear-gradient(to right, #e63946, #e63946);
+    color: white;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .logo-container {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4px;
+   
+  }
+  
+  .header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-card-subtitle {
+    color: #ffcccb;
+    display: flex;
+  }
+  
+  mat-card-content {
+    padding: 24px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  mat-card-actions {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media (max-width: 480px) {
+    .signup-card {
+      max-width: 100%;
+    }
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 16px;
+    margin: 1rem 0;
+    background-color: #f44336 !important;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin: 1rem 0 0;
+    color: #666;
+  }
+  
+  .login-link a {
+    color: #f44336;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive adjustments */
+  /* @media (max-width: 480px) {
+    .signup-card {
+      padding: 1.5rem;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .subtitle {
+      font-size: 14px;
+    }
+  } */
