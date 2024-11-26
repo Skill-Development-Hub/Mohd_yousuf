@@ -593,11 +593,11 @@ export class AptituedTestComponent implements OnInit {
     private router: Router
   ) {
     this.personalInfoForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['',],
       fullName: [''],
       gender: [''],
       phoneNumber: [''],
-      courseApplied: ['', Validators.required]
+      courseApplied: ['']
     });
   }
 
