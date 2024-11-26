@@ -21,7 +21,7 @@ import { AptituedTestComponent } from './aptitued-test/aptitued-test.component';
 import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/navbar', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },

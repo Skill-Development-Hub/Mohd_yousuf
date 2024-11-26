@@ -1,27 +1,46 @@
-# SDHUB
+"SD HUB Management Portal"
+This project is a management portal created using Angular for the frontend and Node.js for the backend.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+"Prerequisites"
+1.Git Configuration:
 
-## Development server
+-> git config --global user.email "ymohd022@gmail.com"
+-> git config --global user.name "mohd"
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2.Initialize and Clone the Repository:
 
-## Code scaffolding
+-> git init
+-> git clone https://github.com/Skill-Development-Hub/Mohd_yousuf.git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+or add the remote origin if the repository is already initialized:
 
-## Build
+-> git remote add origin https://github.com/Skill-Development-Hub/Mohd_yousuf.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3.Pull Latest Changes:
 
-## Running unit tests
+-> git pull
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+5.Push Changes (if any modifications are made):
 
-## Running end-to-end tests
+-> git add .
+-> git commit -m "Your message here"
+-> git push -u origin main
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+"Steps to Set Up the Project"
+1.Install Node.js
 
-## Further help
+2.Install Angular CLI:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+-> npm install -g @angular/cli
+
+3.Create an Angular Project:
+
+-> ng new <app-name> --standalone false
+
+4.Add Angular Material:
+
+-> ng add @angular/material
+
+5.Generate a Component:
+
+-> ng generate component <component-name>                            

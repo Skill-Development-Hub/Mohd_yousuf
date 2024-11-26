@@ -16,6 +16,9 @@
     height: 64px;
     background-color: #4F80FF;
   }
+  mat-card-header{
+    border-bottom: 1px solid #fff !important;
+  }
   
   .header-actions {
     display: flex;
@@ -80,8 +83,8 @@
   .summary-card mat-card-title {
     font-size: 18px;
     margin: 0;
-    font-weight: 900;
-    color:#212121;
+    /* font-weight: 900; */
+    color:#fff;
   }
   
   .summary-card mat-card-content {
@@ -93,36 +96,37 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 0;
+    border-bottom: 1px solid #fff;
   }
   
   .summary-item .label {
-    color:#212121;
-    font-weight: 1000;
+    color:#fff;
+    /* font-weight: 1000; */
   }
   
   .summary-item .value {
-    font-weight: 500;
+    /* font-weight: 500; */
     font-size: 18px;
   }
   
   /* Card Colors */
   .student-card {
-    background-color: #28C76F ;
+    background-color: #2e53aa ;
     color: white;
   }
   
   .teaching-card {
-    background-color: #00CFE8 ;
+    background-color: #2e53aa ;
     color: white;
   }
   
   .non-teaching-card {
-    background-color: #00CFE8 ;
+    background-color: #2e53aa ;
     color: white;
   }
   
   .institute-card {
-    background-color: #FF9F43;
+    background-color: #2e53aa;
     color: white;
   }
   
