@@ -12,8 +12,8 @@ export class StdDashboardComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   navItems = [
-    { icon: 'quiz', label: 'aptitude', link: '/aptitude' },
-    { icon: 'how_to_reg', label: 'register', link: '/registration' }
+    { icon: 'quiz', label: 'Entrance Test', link: '/aptitude' },
+    { icon: 'how_to_reg', label: 'Application Form', link: '/registration' }
   ];
 
   constructor(

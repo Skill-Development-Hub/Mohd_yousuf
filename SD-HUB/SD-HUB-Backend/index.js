@@ -15,7 +15,7 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 await client.connect();
 console.log("Database Connected");
-const db = client.db('SD-HUB');
+const db = client.db('SD_HUB');
 const collection = db.collection('students');
 const ucollection = db.collection('user');
 

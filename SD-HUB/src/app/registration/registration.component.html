@@ -19,11 +19,11 @@
             <div class="step-content">
               <h3>Applicant Information <hr></h3>
               <div class="form-row">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Unique ID</mat-label>
                   <input matInput formControlName="uniqueId" readonly>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Application Date</mat-label>
                   <input matInput [matDatepicker]="picker" formControlName="applicationDate">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -31,59 +31,59 @@
                 </mat-form-field>
               </div>
               <div class="form-row">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>First Name</mat-label>
                   <input matInput formControlName="firstName">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Middle Name</mat-label>
                   <input matInput formControlName="middleName">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Last Name</mat-label>
                   <input matInput formControlName="lastName">
                 </mat-form-field>
               </div>
               <div class="form-row">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Father's First Name</mat-label>
                   <input matInput formControlName="fatherFirstName">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Father's Middle Name</mat-label>
                   <input matInput formControlName="fatherMiddleName">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Father's Last Name</mat-label>
                   <input matInput formControlName="fatherLastName">
                 </mat-form-field>
               </div>
               <div class="form-row">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Date of Birth</mat-label>
                   <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth">
                   <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
                   <mat-datepicker #dobPicker></mat-datepicker>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Phone Number</mat-label>
                   <input matInput formControlName="phoneNumber">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Email</mat-label>
                   <input matInput formControlName="email">
                 </mat-form-field>
               </div>
-              <mat-form-field class="full-width">
+              <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Address (Permanent)</mat-label>
-                <textarea matInput formControlName="address" rows="3"></textarea>
+                <textarea matInput formControlName="address" rows="2"></textarea>
               </mat-form-field>
               <div class="form-row">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Parent Contact Details</mat-label>
                   <input matInput formControlName="guardianContact">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Total Household Income</mat-label>
                   <input matInput formControlName="householdIncome">
                 </mat-form-field>
@@ -100,7 +100,7 @@
           <form [formGroup]="secondFormGroup">
             <div class="step-content">
               <h3>Course Details <hr></h3>
-              <mat-form-field>
+              <mat-form-field appearance="outline">
                 <mat-label>Course Applied for</mat-label>
                 <mat-select formControlName="course">
                     <mat-option>None</mat-option>
@@ -114,17 +114,17 @@
                 </mat-form-field>
               <h4>Qualification Details</h4>
               <div class="form-row">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Degree</mat-label>
                   <input matInput formControlName="degree">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>College Name</mat-label>
                   <input matInput formControlName="collegeName">
                 </mat-form-field>
               </div>
               <div class="form-row">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Year of Passing</mat-label>
                   <mat-select formControlName="yearOfPassing">
                     <mat-option value="year28">2028</mat-option>
@@ -140,7 +140,7 @@
                     <mat-option value="year18">2018</mat-option>
                   </mat-select>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <mat-label>Percentage</mat-label>
                   <input matInput formControlName="percentage">
                 </mat-form-field>
@@ -165,10 +165,10 @@
               I understand that false or misleading information may result in my rejection of the application.
             </mat-checkbox>
           </div>
-          <mat-form-field>
+          <mat-form-field appearance="outline">
             <input matInput placeholder="Student's Signature" formControlName="studentSignature">
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field appearance="outline">
             <input matInput placeholder="Parent's Signature" formControlName="parentSignature">
           </mat-form-field>
           <h4>Enclosures</h4>
