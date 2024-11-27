@@ -208,6 +208,48 @@ hr{
 } */
 
 /* Base styles */
+
+.sub-nav{
+  height: 50px;
+  background-color: #2e53aa;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.phone-mail{
+  display: flex;
+  width: 50%;
+  margin-left: 50px;
+}
+.phone{
+  display: flex;
+  align-items: center;
+}
+.phone p{
+  margin: auto;
+  margin-left: 5px;
+}
+.mail{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.mail p{
+  margin: auto;
+  margin-left: 5px;
+}
+.nav-icon{
+  width: 50%;
+  text-align: end;
+  margin-right: 50px;
+  
+}
+.nav-icon a img{
+  width: 20px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
 .bg_img {
     position: relative;
     background-image: url('/bg_img1.png');
@@ -218,7 +260,7 @@ hr{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
   
   .dark-overlay {
@@ -285,6 +327,7 @@ hr{
     margin-top: 20px;
     color: #2e53aa;
     font-size: 20px;
+    font-weight: bold;
   }
   
   .training-prog-sub {

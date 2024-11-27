@@ -23,6 +23,7 @@
     "@angular/platform-server": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.5",
+    "@fortawesome/free-brands-svg-icons": "^6.7.1",
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "moment": "^2.30.1",

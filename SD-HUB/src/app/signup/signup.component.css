@@ -1,10 +1,55 @@
+.sub-nav{
+  height: 50px;
+  background-color: #2e53aa;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.phone-mail{
+  display: flex;
+  width: 50%;
+  margin-left: 50px;
+}
+.phone{
+  display: flex;
+  align-items: center;
+}
+.phone p{
+  margin: auto;
+  margin-left: 5px;
+}
+.mail{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.mail p{
+  margin: auto;
+  margin-left: 5px;
+}
+.nav-icon{
+  width: 50%;
+  text-align: end;
+  margin-right: 50px;
+  
+}
+.nav-icon a img{
+  width: 20px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+
+
+
+
 .signup-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 950px;
     background-color: #fff;
-    padding: 20px;
+    height: fit-content;
+    margin-top: 20px;
+    padding-bottom: 20px;
     
   }
   
@@ -44,7 +89,7 @@
   }
   
   mat-card-title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     /* margin-bottom: 4px; */
    
