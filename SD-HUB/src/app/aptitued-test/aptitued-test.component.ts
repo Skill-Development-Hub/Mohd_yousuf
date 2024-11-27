@@ -73,7 +73,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: '96' },
             { value: 'c', text: '120' }
           ],
-          correctAnswer: 'c'
+          correctAnswer: 'a'
         },
         {
           id: 'np2',
@@ -98,7 +98,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: '55' },
             { value: 'c', text: '59' }
           ],
-          correctAnswer: 'c'
+          correctAnswer: 'b'
         },
       ]
     },
@@ -113,7 +113,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Plentiful' },
             { value: 'c', text: 'Scarce' }
           ],
-          correctAnswer: 'c'
+          correctAnswer: 'b'
         },
         {
           id: 'vr2',
@@ -122,7 +122,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'a', text: 'True' },
             { value: 'b', text: 'False' },
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
       ]
     },
@@ -145,7 +145,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'a', text: 'True' },
             { value: 'b', text: 'False' },
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
       ]
     },
@@ -160,7 +160,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'QTPKJI' },
             { value: 'c', text: 'QTCPIG' },
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'c'
         }
       ]
       },
@@ -175,7 +175,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'South' },
             { value: 'c', text: 'West' },
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
         {
           id: 'ds2',
@@ -200,7 +200,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Shoe' },
             { value: 'c', text: 'Sandal' },
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
         {
           id: 'a2',
@@ -210,7 +210,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Cream' },
             { value: 'c', text: 'Cheese' },
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
       ]
     },
@@ -225,7 +225,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: '16' },
             { value: 'c', text: '18' },
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
       ]
     }
@@ -243,7 +243,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Albert Einstein' },
             { value: 'c', text: 'Marie Curie' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
         {
           id: 'fs2',
@@ -253,7 +253,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Alexander Fleming' },
             { value: 'c', text: 'Louis Pasteur' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
       ]
     },
@@ -278,7 +278,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Amazon' },
             { value: 'c', text: 'Mississippi' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
       ]
     },
@@ -303,7 +303,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Mother Teresa' },
             { value: 'c', text: 'Florence Nightingale' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
       ]
     },
@@ -318,7 +318,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Thomas Edison' },
             { value: 'c', text: 'Nikola Tesla' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
         {
           id: 'fi2',
@@ -328,7 +328,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: '1975' },
             { value: 'c', text: '1945' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'c'
         },
       ]
     },
@@ -353,7 +353,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Taj Mahal' },
             { value: 'c', text: 'Pyramids of Giza' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'c'
         },
       ]
     },
@@ -368,7 +368,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Tennis' },
             { value: 'c', text: 'Soccer' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
         {
           id: 's2',
@@ -403,7 +403,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Steve Jobs' },
             { value: 'c', text: 'Mark Zuckerberg' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'a'
         },
       ]
     },
@@ -428,7 +428,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'b', text: 'Ban Ki-moon' },
             { value: 'c', text: 'António Guterres' }
           ],
-          correctAnswer: 'b'
+          correctAnswer: 'c'
         },
       ]
     },
@@ -461,7 +461,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'ii', text: 'Straw man' },
             { value: 'iii', text: 'False cause' }
           ],
-          correctAnswer: 'ii'
+          correctAnswer: 'i'
         },
       ]
     },
@@ -476,7 +476,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'ii', text: 'The claim is unreliable because it lacks specific evidence or sources.' },
             { value: 'iii', text: 'The claim is unreliable because it is based on personal anecdotes.' }
           ],
-          correctAnswer: 'ii'
+          correctAnswer: 'i'
         },
       ]
     },
@@ -491,7 +491,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'ii', text: "Carry it in your hands to ensure it doesn't break." },
             { value: 'iii', text: 'Place it loosely in a bag to prevent damage.' }
           ],
-          correctAnswer: 'ii'
+          correctAnswer: 'i'
         },
       ]
     },
@@ -506,7 +506,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'ii', text: 'Learning' },
             { value: 'iii', text: 'Health' }
           ],
-          correctAnswer: 'ii'
+          correctAnswer: 'i'
         },
       ]
     },
@@ -551,7 +551,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'ii', text: 'Longer recess periods disrupt the school day.' },
             { value: 'iii', text: 'Longer recess periods make students lazy.' }
           ],
-          correctAnswer: 'ii'
+          correctAnswer: 'i'
         },
       ]
     },
@@ -566,7 +566,7 @@ export class AptituedTestComponent implements OnInit {
             { value: 'ii', text: 'It will be sunny.' },
             { value: 'iii', text: 'It will remain cloudy but not rain.' }
           ],
-          correctAnswer: 'ii'
+          correctAnswer: 'i'
         },
       ]
     },
