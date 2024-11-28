@@ -5,17 +5,28 @@
     height: 950px;
     background-color: #fff;
     padding: 20px;
+    margin-top: 50px;
     
   }
-  
+  .animation{
+    width: 40%;
+  }
+  .animation iframe{
+    margin-right: 0;
+    
+  }
+  .signup{
+    width: 40%;
+  }
   .signup-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     /* border: 1px solid #2e53aa; */
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
     background-color: #fff;
+    margin: auto;
     
   }
   

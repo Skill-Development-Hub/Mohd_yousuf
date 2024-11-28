@@ -117,10 +117,12 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background: #fff; */
-    background: #F9FBFD;
-    padding: 20px;
+    background: #fff;
+    /* background: #F9FBFD; */
+    /* padding: 20px; */
+    /* gap: 150px; */
   }
+
   
   .signin-card {
     width: 100%;
@@ -129,8 +131,19 @@
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
-    /* background-color: #fff; */
-    background-color: #F9FBFD;
+    background-color: #fff;
+    margin: auto;
+
+    /* background-color: #F9FBFD; */
+  }
+  .animation{
+    
+    width: 40%;
+    text-align: center;
+  }
+  .signin{
+
+    width: 40%;
   }
   
   mat-card-header {
@@ -221,6 +234,34 @@
   
   @media (max-width: 480px) {
     .signin-card {
-      max-width: 100%;
+      /* max-width: 100%; */
+      display: block;
+    }
+    .signin-container {
+      display: flex;
+      /* justify-content: center; */
+      /* align-items: center; */
+      flex-direction: column;
+      /* min-height: 100vh; */
+      /* background: #fff; */
+      background: #fff;
+      /* padding: 20px; */
+      gap: 0 !important;
+      margin: 0;
+      
+    }
+    .signin{
+      width: 100%;
+    }
+    .animation{
+      margin: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .animation iframe{
+      width: 400px;
+      margin-bottom: 0 !important;
+      border: 1px solid;
+      
     }
   }

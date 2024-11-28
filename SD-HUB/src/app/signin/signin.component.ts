@@ -81,6 +81,7 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { StudentsService } from '../students.service';
 import { AuthService } from '../services/auth.service';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 @Component({
   selector: 'app-signin',

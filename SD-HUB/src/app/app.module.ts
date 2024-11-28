@@ -26,6 +26,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -98,7 +99,8 @@ import { SyllabusComponent } from './dashboard/syllabus/syllabus.component';
     MatButtonToggleModule,
     MatTabsModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule
   ],
   providers: [
     provideAnimationsAsync(),
