@@ -1,0 +1,68 @@
+.sub-nav{
+    height: 50px;
+    background-color: #2e53aa;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+  }
+  .phone-mail{
+    display: flex;
+    width: 30%;
+    margin-left: 50px;
+    
+  }
+  .phone{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid; */
+  }
+  .phone p{
+    margin: auto;
+    margin-left: 5px;
+  }
+  .mail{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    
+  }
+  .mail p{
+    margin: auto;
+    margin-left: 5px;
+  }
+  .nav-icon{
+    width: 30%;
+    text-align: end;
+    margin-right: 50px;
+    
+    
+  }
+  .nav-icon a img{
+    width: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+
+  .main-coures-main{
+    padding: 50px 100px;
+  }
+  .main-coures-main h1{
+    text-align: center;
+    color: #2e53aa;
+    font-weight: bold;
+  }
+  .course{
+    border: 1px solid;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    margin: auto;
+  }
+  .courses{
+    width: 25%;
+    height: 200px;
+    border: 1px solid;
+  }

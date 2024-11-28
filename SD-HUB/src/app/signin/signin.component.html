@@ -94,14 +94,14 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-  
+
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email" type="email" required>
             <mat-error *ngIf="signinForm.get('email')?.hasError('required')">Email is required</mat-error>
             <mat-error *ngIf="signinForm.get('email')?.hasError('email')">Please enter a valid email</mat-error>
           </mat-form-field>
-  
+
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
             <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" required>
@@ -110,7 +110,7 @@
             </button>
             <mat-error *ngIf="signinForm.get('password')?.hasError('required')">Password is required</mat-error>
           </mat-form-field>
-  
+
           <div class="form-actions">
             <a class="mat-btn" mat-button (click)="forgotPassword()">Forgot Password?</a>
             <button mat-raised-button color="" type="submit" [disabled]="!signinForm.valid">
@@ -126,4 +126,35 @@
       </mat-card-actions>
     </mat-card>
   </div>
+</div>
+
+
+<div class="footer">
+  <div class="sub">
+    <div class="footer-sub">
+      <div class="footer-sub-des">
+        <img src="./sd-hub-white.png" alt="" />
+        <p>
+          We believe that access to quality education should not be limited by
+          financial constraints, and we strive to level the playing field for
+          all.
+        </p>
+      </div>
+    </div>
+    <div class="footer-sub">
+      <div class="footer-sub-des">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="./home">Home</a></li>
+          <li><a href="./about-us">AboutUS</a></li>
+          <li><a href="#">Courses</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <p>
+    © Managed by Professionals Solidarity Forum. Sponsored by Support for
+    Educational & Economic Development & Helping Hands Foundation.
+  </p>
 </div>

@@ -3,16 +3,20 @@
     background-color: #2e53aa;
     color: #fff;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
+    
   }
   .phone-mail{
     display: flex;
-    width: 50%;
+    width: 30%;
     margin-left: 50px;
+    
   }
   .phone{
     display: flex;
     align-items: center;
+    /* border: 1px solid; */
   }
   .phone p{
     margin: auto;
@@ -22,15 +26,17 @@
     display: flex;
     align-items: center;
     margin-left: 10px;
+    
   }
   .mail p{
     margin: auto;
     margin-left: 5px;
   }
   .nav-icon{
-    width: 50%;
+    width: 30%;
     text-align: end;
     margin-right: 50px;
+    
     
   }
   .nav-icon a img{
@@ -53,7 +59,7 @@
 .main-about h1{
     text-align: center;
     color: #2e53aa;
-    margin-top: 150px;
+    margin-top: 100px;
     font-weight: bold;
 }
 .dedicate{
@@ -61,11 +67,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #86a4eb;
+    color: #fff !important;
+}
+.sponsored{
+    background-color: #86a4eb;
+    color: #fff !important;
 }
 .dedicate-des{
     width: 50%;
     padding: 0 80px;
-    color: gray;
+    /* color: gray; */
 }
 .dedicate-img{
     width: 50%;
@@ -81,7 +93,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    /* width: 80%; */
     margin: auto;
     padding-top: 0 !important;
 }
@@ -98,6 +110,7 @@
     height: 200px;
     background-color: #2e53aa;
     padding: 50px 100px;
+    margin-top: 50px;
 }
 .sub{
     display: flex;
@@ -106,6 +119,7 @@
 .footer-sub{
     width: 50%;
     padding: 20px;
+    text-align: center;
 }
 /* .footer-sub-des{
     width: 50%;

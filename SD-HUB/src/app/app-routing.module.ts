@@ -19,12 +19,14 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AptituedTestComponent } from './aptitued-test/aptitued-test.component';
 import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
+import { MainCourseComponent } from './main-course/main-course.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
+  { path: 'main-course', component: MainCourseComponent },
   // { path: 'aptitue', component: AptituedTestComponent },
   // { path: 'registration', component: RegistrationComponent },
   { path: 'navbar', component: NavbarComponent},

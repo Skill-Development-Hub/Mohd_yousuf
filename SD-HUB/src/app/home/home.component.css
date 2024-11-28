@@ -214,16 +214,20 @@ hr{
   background-color: #2e53aa;
   color: #fff;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  
 }
 .phone-mail{
   display: flex;
-  width: 50%;
+  width: 30%;
   margin-left: 50px;
+  
 }
 .phone{
   display: flex;
   align-items: center;
+  /* border: 1px solid; */
 }
 .phone p{
   margin: auto;
@@ -233,15 +237,17 @@ hr{
   display: flex;
   align-items: center;
   margin-left: 10px;
+  
 }
 .mail p{
   margin: auto;
   margin-left: 5px;
 }
 .nav-icon{
-  width: 50%;
+  width: 30%;
   text-align: end;
   margin-right: 50px;
+  
   
 }
 .nav-icon a img{
@@ -326,7 +332,7 @@ hr{
     text-transform: uppercase;
     margin-top: 20px;
     color: #2e53aa;
-    font-size: 20px;
+    font-size: 30px !important;
     font-weight: bold;
   }
   
@@ -341,10 +347,12 @@ hr{
   .technologies {
     height: 120px;
     width: calc(50% - 10px);
-    border: 1px solid rgb(138, 134, 134);
+    /* border: 1px solid rgb(138, 134, 134); */
     display: flex;
     align-items: center;
     padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
   }
   
   .technologies img {
@@ -432,6 +440,7 @@ hr{
   .footer-sub {
     width: 100%;
     padding: 10px 0;
+    text-align: center;
   }
   
   .footer-sub-des img {
@@ -441,6 +450,7 @@ hr{
   .footer-sub-des p {
     color: white;
     font-size: 14px;
+    
   }
   
   .footer-sub-des h6 {
