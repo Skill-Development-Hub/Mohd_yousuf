@@ -15,7 +15,7 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 await client.connect();
 console.log("Database Connected");
-const db = client.db('SD-HUB');
+const db = client.db('SD_HUB');
 const collection = db.collection('students');
 const ucollection = db.collection('user');
 
@@ -215,6 +215,12 @@ app.get('/courses', async (req, res) => {
     const collection = db.collection('courses');
     const courses = await collection.find({}).toArray(); 
     res.status(200).json(courses);
+});
+
+app.get('/aptitude', async (req, res) => {
+    const collection = db.collection('aptitude_test');
+    const questions = await collection.find({}).toArray(); 
+    res.status(200).json(questions);
 });
 
 app.listen(PORT, () =>{

@@ -70,7 +70,7 @@ import { SyllabusComponent } from './dashboard/syllabus/syllabus.component';
     AboutusComponent,
     AptituedTestComponent,
     StdDashboardComponent,
-    SyllabusComponent
+    SyllabusComponent,
   ],
   imports: [
     BrowserModule,
