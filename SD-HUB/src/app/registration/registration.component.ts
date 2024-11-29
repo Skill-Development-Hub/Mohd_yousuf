@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit {
     private StudentsService: StudentsService
   ) {
     this.firstFormGroup = this.formBuilder.group({
-      uniqueId: ['', [Validators.required, Validators.pattern('^[0-9]{4}$')]],
+      uniqueId: ['',],
       applicationDate: [''],
       firstName: [''],
       middleName: [''],

@@ -1,4 +1,4 @@
-.sub-nav{
+/* .sub-nav{
   height: 50px;
   background-color: #2e53aa;
   color: #fff;
@@ -16,7 +16,6 @@
 .phone{
   display: flex;
   align-items: center;
-  /* border: 1px solid; */
 }
 .phone p{
   margin: auto;
@@ -78,7 +77,6 @@
 .signup-card {
   width: 100%;
   max-width: 500px;
-  /* border: 1px solid #2e53aa; */
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
@@ -114,7 +112,6 @@ mat-card-header {
 mat-card-title {
   font-size: 24px;
   font-weight: bold;
-  /* margin-bottom: 4px; */
 
 }
 
@@ -149,10 +146,10 @@ mat-card-actions {
   padding: 16px;
   display: flex;
   justify-content: center;
-}
+} */
 
 /* ----------------Footer---------------- */
-.footer{
+/* .footer{
   height: 200px;
   background-color: #2e53aa;
   padding: 50px 100px;
@@ -225,7 +222,7 @@ hr{
 
 .login-link a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Responsive adjustments */
 /* @media (max-width: 480px) {
@@ -241,3 +238,263 @@ hr{
       font-size: 14px;
     }
   } */
+
+  .sub-nav {
+    background-color: #2e53aa;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .phone-mail {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .phone, .mail {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .phone p, .mail p {
+    margin: 0;
+    margin-left: 5px;
+  }
+  
+  .nav-icon a {
+    margin-left: 10px;
+  }
+  
+  .nav-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .signup-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .animation {
+    width: 100%;
+    max-width: 530px;
+    height: 535px;
+    margin-bottom: 20px;
+  }
+  
+  .signup {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .signup-card {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  mat-card-header {
+    background: #2e53aa;
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-container {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  mat-card-subtitle {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 0;
+  }
+  
+  mat-card-content {
+    padding: 24px;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 16px;
+    margin: 1rem 0;
+    background-color: #2e53aa !important;
+    color: white;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin: 1rem 0 0;
+    color: #666;
+  }
+  
+  .login-link a {
+    color: #2e53aa;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer {
+    background-color: #2e53aa;
+    color: white;
+    padding: 50px 20px;
+  }
+  
+  .sub {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .footer-sub {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-sub-des img {
+    width: 150px;
+    max-width: 100%;
+  }
+  
+  .footer-sub-des h6 {
+    margin-top: 0;
+  }
+  
+  .footer-sub-des ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .footer-sub-des ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-sub-des ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+  }
+  
+  .footer p {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .signup-container {
+      flex-wrap: nowrap;
+    }
+  
+    .animation {
+      width: 40%;
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  
+    .signup {
+      width: 40%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .sub-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .phone-mail {
+      margin-bottom: 10px;
+    }
+  
+    .nav-icon {
+      align-self: flex-end;
+    }
+  
+    mat-card-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .logo-container {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  
+    .header-text {
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    mat-card-title {
+      font-size: 20px;
+    }
+  
+    mat-card-subtitle {
+      font-size: 14px;
+    }
+  
+    .signup-button {
+      font-size: 14px;
+    }
+  }

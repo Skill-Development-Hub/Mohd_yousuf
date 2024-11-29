@@ -1,4 +1,4 @@
-.sub-nav{
+/* .sub-nav{
     height: 50px;
     background-color: #2e53aa;
     color: #fff;
@@ -16,7 +16,6 @@
   .phone{
     display: flex;
     align-items: center;
-    /* border: 1px solid; */
   }
   .phone p{
     margin: auto;
@@ -83,4 +82,138 @@
     margin: 10px;
     margin-left: 0;
     color: #2e53aa;
+  } */
+  .sub-nav {
+    background-color: #2e53aa;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .phone-mail {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .phone, .mail {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .phone p, .mail p {
+    margin: 0;
+    margin-left: 5px;
+  }
+  
+  .nav-icon a {
+    margin-left: 10px;
+  }
+  
+  .nav-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .main-courses-main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .course-h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .course-h1 h1 {
+    color: #2e53aa;
+    font-size: 2.5rem;
+  }
+  
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .course-card {
+    background-color: #f7f9ff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .course-img {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .course-description {
+    padding: 20px;
+  }
+  
+  .course-description h5 {
+    color: #2e53aa;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .course-description p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .sub-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .phone-mail {
+      margin-bottom: 10px;
+    }
+  
+    .nav-icon {
+      align-self: flex-end;
+    }
+  
+    .course-h1 h1 {
+      font-size: 2rem;
+    }
+  
+    .course-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .course-h1 h1 {
+      font-size: 1.8rem;
+    }
+  
+    .course-description h5 {
+      font-size: 1.1rem;
+    }
+  
+    .course-description p {
+      font-size: 0.8rem;
+    }
   }
