@@ -60,9 +60,27 @@
     height: fit-content;
     padding: 20px;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    
   }
   .courses{
     width: 25%;
-    height: 200px;
+    height: 550px;
     border: 1px solid;
+    padding: 15px;
+  }
+  .courses-img{
+    height: 250px;
+  }
+  .courses-img img{
+    height: 250px;
+    width: 100%;
+  }
+  .courses-description h5{
+    margin: 10px;
+    margin-left: 0;
+    color: #2e53aa;
   }

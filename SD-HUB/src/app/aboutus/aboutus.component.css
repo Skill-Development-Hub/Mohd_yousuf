@@ -67,12 +67,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #86a4eb;
-    color: #fff !important;
+    background-color: #f7f9ff;
+    color: black !important;
 }
 .sponsored{
-    background-color: #86a4eb;
-    color: #fff !important;
+    background-color: #f7f9ff;
+    color: black !important;
 }
 .dedicate-des{
     width: 50%;
