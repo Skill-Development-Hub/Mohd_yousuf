@@ -1,0 +1,214 @@
+[
+    {
+        "tag": "greeting",
+        "patterns": [
+            "Hi",
+            "Hello",
+            "Hey",
+            "Good morning",
+            "Good afternoon",
+            "Good evening",
+            "How are you"
+        ],
+        "responses": [
+            "Hello! Welcome to SD Hub. How can I assist you today?",
+            "Hi there! I'm here to help you with information about our training programs and courses.",
+            "Welcome to SD Hub! I'd be happy to help you with any questions about our educational programs."
+        ]
+    },
+    {
+        "tag": "about_sd_hub",
+        "patterns": [
+            "What is SD Hub",
+            "Tell me about SD Hub",
+            "What does SD Hub do",
+            "What is Skills Development Hub"
+        ],
+        "responses": [
+            "SD Hub (Skills Development Hub) is dedicated to empowering individuals to build successful careers. We offer comprehensive training programs in various technologies and professional skills.",
+            "We are a leading training institute focused on equipping individuals with core domain skills, soft skills, and language training to thrive in the competitive job market."
+        ]
+    },
+    {
+        "tag": "courses",
+        "patterns": [
+            "What courses do you offer",
+            "Tell me about your programs",
+            "What can I learn here",
+            "Available courses",
+            "Training programs"
+        ],
+        "responses": [
+            "We offer a wide range of courses including: TALLY, Angular, MongoDB, CSS3, HTML5, JavaScript, Python, Node.js, TypeScript, SQL, Power BI, Excel, Express.js, and WordPress.",
+            "Our training programs cover various technologies and skills needed in today's job market, from web development to data analysis. Would you like specific information about any course?"
+        ]
+    },
+    {
+        "tag": "registration",
+        "patterns": [
+            "How to register",
+            "How can I enroll",
+            "Registration process",
+            "How to join courses",
+            "Enrollment procedure"
+        ],
+        "responses": [
+            "You can register for our courses through our website's registration form or by visiting our center. Would you like me to guide you through the registration process?",
+            "The registration process is simple: 1. Fill out the registration form 2. Choose your course 3. Complete the admission process. Would you like the registration form link?"
+        ]
+    },
+    {
+        "tag": "career_guidance",
+        "patterns": [
+            "Need career advice",
+            "Career guidance",
+            "Which course should I choose",
+            "Career counseling",
+            "Course selection help"
+        ],
+        "responses": [
+            "Our career guidance counselors can help you understand and make informed decisions about your career path. Would you like to schedule a counseling session?",
+            "We provide personalized career guidance to help you choose the right course based on your interests and career goals. Our counselors are here to help you make the best choice."
+        ]
+    },
+    {
+        "tag": "job_opportunities",
+        "patterns": [
+            "Job opportunities",
+            "Placement assistance",
+            "Will I get a job",
+            "Job placement",
+            "Career opportunities"
+        ],
+        "responses": [
+            "We offer comprehensive placement assistance and maintain strong relationships with industry partners. Our programs are designed to make you job-ready and competitive in the market.",
+            "Our job-oriented training programs are designed to enhance your employability. We provide interview preparation, soft skills training, and placement support."
+        ]
+    },
+    {
+        "tag": "contact",
+        "patterns": [
+            "How to contact",
+            "Contact information",
+            "Phone number",
+            "Email address",
+            "Office location"
+        ],
+        "responses": [
+            "You can contact us at +91-9146984162 or email us at umarshahba2000gmail.com. Our team will be happy to assist you.",
+            "Feel free to reach out to us through phone (+91-9146984162) or email (umarshahba2000gmail.com) for any queries."
+        ]
+    },
+    {
+        "tag": "course_duration",
+        "patterns": [
+            "How long are the courses",
+            "Course duration",
+            "Program length",
+            "Time to complete",
+            "Training duration"
+        ],
+        "responses": [
+            "Course durations vary depending on the program and level. We offer flexible timing options to accommodate different schedules. Would you like details about a specific course?",
+            "Each course has a different duration based on the complexity and depth of the subject. Please let me know which course you're interested in for specific duration details."
+        ]
+    },
+    {
+        "tag": "fees",
+        "patterns": [
+            "What are the fees",
+            "Course fees",
+            "Program cost",
+            "Training fees",
+            "Payment options"
+        ],
+        "responses": [
+            "Our course fees vary depending on the program. We offer flexible payment options and competitive rates. Please specify the course you're interested in for detailed fee information.",
+            "We maintain transparent and competitive fee structures. The cost depends on the course and duration. Which course would you like to know about?"
+        ]
+    },
+    {
+        "tag": "certification",
+        "patterns": [
+            "Do you provide certificates",
+            "Certification",
+            "Course completion certificate",
+            "Is it certified",
+            "Certificate validity"
+        ],
+        "responses": [
+            "Yes, we provide industry-recognized certificates upon successful completion of our courses. These certificates add value to your professional profile.",
+            "All our courses come with certification upon successful completion. Our certificates are well-recognized in the industry and can enhance your resume."
+        ]
+    },
+    {
+        "tag": "training_methodology",
+        "patterns": [
+            "How do you teach",
+            "Teaching method",
+            "Training approach",
+            "Learning methodology",
+            "Class structure"
+        ],
+        "responses": [
+            "Our training methodology includes practical hands-on sessions, real-world projects, and comprehensive theory classes. We focus on interactive learning and industry-relevant skills.",
+            "We follow a practical approach with hands-on training, projects, and personalized attention. Our courses are designed to be comprehensive, practical, and industry-oriented."
+        ]
+    },
+    {
+        "tag": "batch_timings",
+        "patterns": [
+            "What are the class timings",
+            "Batch timing",
+            "When do classes start",
+            "Class schedule",
+            "Training schedule"
+        ],
+        "responses": [
+            "We offer flexible batch timings including morning, afternoon, and evening batches to accommodate different schedules. Please let us know your preferred timing.",
+            "Multiple batch options are available throughout the day. We can help you choose a batch that best suits your schedule."
+        ]
+    },
+    {
+        "tag": "placement_support",
+        "patterns": [
+            "Tell me about placement support",
+            "Interview preparation",
+            "Job assistance",
+            "Placement training",
+            "Career support"
+        ],
+        "responses": [
+            "Our placement support includes interview preparation, soft skills training, resume building, and direct connections with potential employers.",
+            "We provide comprehensive placement assistance including mock interviews, personality development, and regular job updates from our industry partners."
+        ]
+    },
+    {
+        "tag": "infrastructure",
+        "patterns": [
+            "Tell me about facilities",
+            "Learning environment",
+            "Infrastructure",
+            "Lab facilities",
+            "Training center"
+        ],
+        "responses": [
+            "We have state-of-the-art computer labs, modern classrooms, and all necessary facilities to ensure a conducive learning environment.",
+            "Our training center is equipped with modern infrastructure including computer labs, comfortable classrooms, and all required learning resources."
+        ]
+    },
+    {
+        "tag": "faculty",
+        "patterns": [
+            "Who are the trainers",
+            "Faculty information",
+            "Teaching staff",
+            "Trainer experience",
+            "About faculty"
+        ],
+        "responses": [
+            "Our faculty members are industry experts with extensive practical experience. They bring real-world insights and current industry practices to the classroom.",
+            "We have experienced trainers who are working professionals and experts in their respective fields, ensuring quality education and practical knowledge transfer."
+        ]
+    }
+]

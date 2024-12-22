@@ -27,6 +27,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -50,6 +51,7 @@ import { AptituedTestComponent } from './aptitued-test/aptitued-test.component';
 import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 import { SyllabusComponent } from './dashboard/syllabus/syllabus.component';
 import { MainCourseComponent } from './main-course/main-course.component';
+import { ChatWidgetComponent } from './chat-widget/chat-widget.component';
 
 
 @NgModule({
@@ -73,6 +75,7 @@ import { MainCourseComponent } from './main-course/main-course.component';
     StdDashboardComponent,
     SyllabusComponent,
     MainCourseComponent,
+    ChatWidgetComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +105,8 @@ import { MainCourseComponent } from './main-course/main-course.component';
     MatTabsModule,
     MatRadioModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync(),
