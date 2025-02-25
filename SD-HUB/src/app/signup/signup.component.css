@@ -239,42 +239,7 @@ hr{
     }
   } */
 
-  .sub-nav {
-    background-color: #2e53aa;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
   
-  .phone-mail {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .phone, .mail {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    margin-bottom: 5px;
-  }
-  
-  .phone p, .mail p {
-    margin: 0;
-    margin-left: 5px;
-  }
-  
-  .nav-icon a {
-    margin-left: 10px;
-  }
-  
-  .nav-icon img {
-    width: 20px;
-    height: 20px;
-  }
   
   .signup-container {
     display: flex;

@@ -1,39 +1,4 @@
 /* Existing styles */
-.sub-nav {
-    height: 50px;
-    background-color: #2e53aa;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-  }
-  
-  .phone-mail {
-    display: flex;
-    align-items: center;
-  }
-  
-  .phone, .mail {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-  }
-  
-  .phone p, .mail p {
-    margin: 0;
-    margin-left: 5px;
-  }
-  
-  .nav-icon {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-icon a img {
-    width: 20px;
-    margin-left: 10px;
-  }
   
   .main-about h2 {
     color: #2e53aa;

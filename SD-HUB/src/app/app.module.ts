@@ -51,6 +51,7 @@ import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 import { SyllabusComponent } from './dashboard/syllabus/syllabus.component';
 import { MainCourseComponent } from './main-course/main-course.component';
 import { ChatWidgetComponent } from './chat-widget/chat-widget.component';
+import { BannerComponent } from './banner/banner.component';
 import { ConfirmationDialogComponent } from './aptitued-test/confirmation-dialog.component';
 
 
@@ -76,13 +77,13 @@ import { ConfirmationDialogComponent } from './aptitued-test/confirmation-dialog
     SyllabusComponent,
     MainCourseComponent,
     ChatWidgetComponent,
+    BannerComponent,
     ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     AppRoutingModule,
     MatCardModule,
     MatInputModule,
