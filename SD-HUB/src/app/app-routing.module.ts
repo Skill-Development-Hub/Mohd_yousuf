@@ -36,7 +36,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profile', component: ProfileComponent },
@@ -52,7 +52,7 @@ const routes: Routes = [
   {
     path: '',
     component: StdDashboardComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: 'aptitude', component: AptituedTestComponent },
       { path: 'registration', component: RegistrationComponent },

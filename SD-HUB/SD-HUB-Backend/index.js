@@ -18,8 +18,8 @@ app.use(express.json());
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'your_password',
-  database: 'SD-HUB'
+  password: '',
+  database: 'sd-hub'
 };
 
 const pool = mysql.createPool(dbConfig);
