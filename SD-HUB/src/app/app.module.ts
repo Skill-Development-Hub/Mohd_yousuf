@@ -28,7 +28,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,6 +52,7 @@ import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 import { SyllabusComponent } from './dashboard/syllabus/syllabus.component';
 import { MainCourseComponent } from './main-course/main-course.component';
 import { ChatWidgetComponent } from './chat-widget/chat-widget.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -76,11 +77,13 @@ import { ChatWidgetComponent } from './chat-widget/chat-widget.component';
     SyllabusComponent,
     MainCourseComponent,
     ChatWidgetComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     MatCardModule,
     MatInputModule,

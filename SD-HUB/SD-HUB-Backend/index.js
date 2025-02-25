@@ -224,6 +224,27 @@ app.get('/aptitude', async (req, res) => {
   res.status(200).json(rows);
 });
 
+
+// Add to your existing Express server
+app.post('/contact', async (req, res) => {
+  try {
+    const { name, email, subject, message } = req.body;
+    const connection = await pool.getConnection();
+    
+    await connection.query(
+      'INSERT INTO contacts (name, email, subject, message) VALUES (?, ?, ?, ?)',
+      [name, email, subject, message]
+    );
+    
+    connection.release();
+    res.status(201).json({ message: 'Contact form submitted successfully' });
+  } catch (error) {
+    console.error('Database error:', error);
+    res.status(500).json({ error: 'Failed to submit contact form' });
+  }
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

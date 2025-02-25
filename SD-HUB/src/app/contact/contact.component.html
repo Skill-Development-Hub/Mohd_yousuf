@@ -1,0 +1,71 @@
+<div class="sub-nav">
+    <div class="phone-mail">
+      <div class="phone">
+        <span class="material-icons"> phone </span>
+        <p>+91 955-012-5050</p>
+      </div>
+      <div class="mail">
+       <mat-icon>mail</mat-icon> 
+        <p>enquiry.sdhub&#64;gmail.com</p>
+      </div>
+    </div>
+    <div class="nav-icon">
+      <a href="#"><img src="./Instagram-logo.png" alt=""></a>
+      <a href="#"><img src="./linked1.png" alt=""></a>
+    </div>
+  </div>
+
+<app-navbar></app-navbar>
+
+<!-- contact.component.html -->
+
+
+
+
+
+
+      
+<div class="contact-container">
+    <h2>Contact Us</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" formControlName="name">
+        <div *ngIf="submitted && contactForm.controls['name'].errors" class="error">
+          Name is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" formControlName="email">
+        <div *ngIf="submitted && contactForm.controls['email'].errors" class="error">
+          Valid email is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Subject:</label>
+        <input type="text" formControlName="subject">
+        <div *ngIf="submitted && contactForm.controls['subject'].errors" class="error">
+          Subject is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Message:</label>
+        <textarea formControlName="message"></textarea>
+        <div *ngIf="submitted && contactForm.controls['message'].errors" class="error">
+          Message must be at least 10 characters
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="submitted && contactForm.invalid">
+        Send Message
+      </button>
+  
+      <div *ngIf="success" class="success-message">
+        Message sent successfully!
+      </div>
+    </form>
+  </div>
