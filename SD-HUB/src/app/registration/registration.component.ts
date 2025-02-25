@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { StudentsService } from '../students.service';
 
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -16,6 +17,7 @@ export class RegistrationComponent implements OnInit {
   secondFormGroup: FormGroup;
   declarationForm: FormGroup;
   uniqueId: string = '';
+  isPursuing: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,6 +45,7 @@ export class RegistrationComponent implements OnInit {
     this.secondFormGroup = this.formBuilder.group({
       course: ['',Validators.required],
       degree: [''],
+      stream: [''],
       collegeName: [''],
       yearOfPassing: ['',Validators.required],
       percentage: ['', [Validators.required, Validators.min(0), Validators.max(100)]]
@@ -57,6 +60,15 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.generateUniqueId();
+    this.secondFormGroup.get('yearOfPassing')?.valueChanges.subscribe(value => {
+      this.isPursuing = value === 'pursuing';
+      if (this.isPursuing) {
+        this.secondFormGroup.get('currentYear')?.setValidators([Validators.required]);
+      } else {
+        this.secondFormGroup.get('currentYear')?.clearValidators();
+      }
+      this.secondFormGroup.get('currentYear')?.updateValueAndValidity();
+    });
   }
 
   generateUniqueId(): void {

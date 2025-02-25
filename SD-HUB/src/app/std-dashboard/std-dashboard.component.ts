@@ -10,6 +10,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class StdDashboardComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;
+  testSubmitted = false;
 
   navItems = [
     { icon: 'quiz', label: 'Entrance Test', link: '/aptitude' },
