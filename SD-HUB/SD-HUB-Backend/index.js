@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import nodemailer from 'nodemailer';
 
 const app = express();
 const PORT = 3000;
@@ -23,6 +24,16 @@ const dbConfig = {
 };
 
 const pool = mysql.createPool(dbConfig);
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false, // Use TLS
+  auth: {
+    user: 'mohdyousuf9059@gmail.com',
+    pass: 'jjfi atzp frdz znil'
+  }
+});
 
 app.post('/chat', async (req, res) => {
   try {
@@ -225,21 +236,37 @@ app.get('/aptitude', async (req, res) => {
 });
 
 
-// Add to your existing Express server
 app.post('/contact', async (req, res) => {
   try {
-    const { name, email, subject, message } = req.body;
+    const { name, email, phone, message } = req.body;
     const connection = await pool.getConnection();
     
+    // Insert into database
     await connection.query(
-      'INSERT INTO contacts (name, email, subject, message) VALUES (?, ?, ?, ?)',
-      [name, email, subject, message]
+      'INSERT INTO contacts (name, email, phone, message) VALUES (?, ?, ?, ?)',
+      [name, email, phone, message]
     );
     
     connection.release();
+
+    // Send email
+    const mailOptions = {
+      from: 'mohdyousuf@gmail.com',
+      to: 'mohdyousuf9059@gmail.com',
+      subject: 'New Contact Form Submission',
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
+        Message: ${message}
+      `
+    };
+
+    await transporter.sendMail(mailOptions);
+
     res.status(201).json({ message: 'Contact form submitted successfully' });
   } catch (error) {
-    console.error('Database error:', error);
+    console.error('Error:', error);
     res.status(500).json({ error: 'Failed to submit contact form' });
   }
 });

@@ -53,6 +53,7 @@ import { MainCourseComponent } from './main-course/main-course.component';
 import { ChatWidgetComponent } from './chat-widget/chat-widget.component';
 import { BannerComponent } from './banner/banner.component';
 import { ConfirmationDialogComponent } from './aptitued-test/confirmation-dialog.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { ConfirmationDialogComponent } from './aptitued-test/confirmation-dialog
     MainCourseComponent,
     ChatWidgetComponent,
     BannerComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

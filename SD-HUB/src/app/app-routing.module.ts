@@ -22,6 +22,7 @@ import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 import { MainCourseComponent } from './main-course/main-course.component';
 import { ContactComponent } from './contact/contact.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
@@ -32,9 +33,9 @@ const routes: Routes = [
   // { path: 'registration', component: RegistrationComponent },
   { path: 'navbar', component: NavbarComponent},
   { path: 'signup', component: SignupComponent },
+  { path: 'contact', component: ContactComponent },
   // {path: 'dashboard', component:DashboardComponent},
   // { path: 'profile', component: ProfileComponent },
-  {path: 'contact', component:ContactComponent},
   {
     path: '',
     component: AdminComponent,
