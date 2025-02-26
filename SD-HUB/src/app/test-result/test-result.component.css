@@ -1,0 +1,24 @@
+.results-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: #2e53aa;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th.mat-header-cell {
+    background-color: #f5f5f5;
+    color: #2e53aa;
+    font-weight: bold;
+  }
+
+  .mat-row:nth-child(even) {
+    background-color: #f8f8f8;
+  }

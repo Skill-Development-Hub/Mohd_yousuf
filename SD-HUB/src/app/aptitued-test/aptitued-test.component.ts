@@ -17,6 +17,8 @@ export class AptituedTestComponent implements OnInit {
   aptitudeQuestions: any = [];
   generalKnowledgeQuestions: any = [];
   criticalThinkingQuestions: any = [];
+  answers: { [key: string]: string } = {};
+  isLoading = true;
   
   constructor(
     private formBuilder: FormBuilder,
@@ -26,28 +28,42 @@ export class AptituedTestComponent implements OnInit {
     private aptitudeService: AptitudeService
   ) {
     this.personalInfoForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       fullName: ['', Validators.required],
       gender: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       courseApplied: ['', Validators.required]
     });
   }
 
   ngOnInit() {
+    this.loadQuestions();
+  }
+
+  loadQuestions() {
+    this.isLoading = true;
     this.aptitudeService.getQuestions().subscribe({
-      next: (value) => {
-        this.aptitudeQuestions = value.filter((each: any) => each.aptitudeQuestions)[0]['aptitudeQuestions'];
-        this.generalKnowledgeQuestions = value.filter((each: any) => each.generalKnowledgeQuestions)[0]['generalKnowledgeQuestions'];
-        this.criticalThinkingQuestions = value.filter((each: any) => each.criticalThinkingQuestions)[0]['criticalThinkingQuestions'];
+      next: (response) => {
+        if (response && response.length > 0) {
+          const data = response[0];
+          this.aptitudeQuestions = data.aptitudeQuestions || [];
+          this.generalKnowledgeQuestions = data.generalKnowledgeQuestions || [];
+          this.criticalThinkingQuestions = data.criticalThinkingQuestions || [];
+        }
+        this.isLoading = false;
       },
-      error: (err) => {
-        console.log(err);
-      },
-      complete: () => {
-        console.log("Successfully fetched Questions");
-      },
+      error: (error) => {
+        console.error('Error loading questions:', error);
+        this.snackBar.open('Error loading questions. Please try again.', 'Close', {
+          duration: 3000
+        });
+        this.isLoading = false;
+      }
     });
+  }
+
+  onAnswerSelect(questionId: string, answer: string) {
+    this.answers[questionId] = answer;
   }
 
   onSubmit() {
@@ -59,18 +75,24 @@ export class AptituedTestComponent implements OnInit {
       if (result) {
         if (this.personalInfoForm.valid) {
           const testData = {
-            ...this.personalInfoForm.value,
+            personalInfo: this.personalInfoForm.value,
+            answers: this.answers
           };
-          // Submit test data to backend
-          // this.aptitudeService.submitTest(testData).subscribe({
-          //   next: (response) => {
-          //     this.snackBar.open('Test submitted successfully!', 'Close', { duration: 3000 });
-          //     this.router.navigate(['/test-complete']);
-          //   },
-          //   error: (error) => {
-          //     this.snackBar.open('Error submitting test. Please try again.', 'Close', { duration: 3000 });
-          //   }
-          // });
+          
+          this.aptitudeService.submitTest(testData).subscribe({
+            next: () => {
+              this.snackBar.open('Test submitted successfully!', 'Close', {
+                duration: 3000
+              });
+              this.router.navigate(['/test-complete']);
+            },
+            error: (error) => {
+              console.error('Error submitting test:', error);
+              this.snackBar.open('Error submitting test. Please try again.', 'Close', {
+                duration: 3000
+              });
+            }
+          });
         }
       }
     });

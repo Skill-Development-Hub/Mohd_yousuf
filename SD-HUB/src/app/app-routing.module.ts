@@ -21,6 +21,7 @@ import { AptituedTestComponent } from './aptitued-test/aptitued-test.component';
 import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 import { MainCourseComponent } from './main-course/main-course.component';
 import { ContactComponent } from './contact/contact.component';
+import { TestResultComponent } from './test-result/test-result.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,7 @@ const routes: Routes = [
       { path: 'courses', component: CoursesComponent },
       { path: 'news', component: NewsComponent },
       { path: 'syllabus', component: SyllabusComponent },
+      { path: 'test-result', component: TestResultComponent },
       // Add other routes here
     ]
   },

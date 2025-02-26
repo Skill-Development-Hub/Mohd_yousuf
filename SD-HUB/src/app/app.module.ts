@@ -28,6 +28,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,6 +56,7 @@ import { BannerComponent } from './banner/banner.component';
 import { ConfirmationDialogComponent } from './aptitued-test/confirmation-dialog.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { TestResultComponent } from './test-result/test-result.component';
 
 
 @NgModule({
@@ -82,7 +84,8 @@ import { FooterComponent } from './footer/footer.component';
     BannerComponent,
     ConfirmationDialogComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    TestResultComponent
   ],
   imports: [
     BrowserModule,
@@ -113,6 +116,7 @@ import { FooterComponent } from './footer/footer.component';
     MatRadioModule,
     MatDialogModule,
     MatGridListModule,
+    MatProgressSpinnerModule,
     FormsModule
   ],
   providers: [

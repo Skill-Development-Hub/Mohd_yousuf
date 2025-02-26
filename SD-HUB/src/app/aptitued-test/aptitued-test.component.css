@@ -124,6 +124,20 @@
       justify-content: center;
     }
   } */
+
+  /* Add to your existing CSS */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.loading-spinner p {
+  margin-top: 1rem;
+  color: #666;
+}
    .test-container {
   max-width: 1200px;
   margin: 0 auto;

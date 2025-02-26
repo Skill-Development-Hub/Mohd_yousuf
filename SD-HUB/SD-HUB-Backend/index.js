@@ -231,7 +231,7 @@ app.get('/courses', async (req, res) => {
 });
 
 app.get('/aptitude', async (req, res) => {
-  const [rows] = await pool.query('SELECT * FROM aptitude_test');
+  const [rows] = await pool.query('SELECT * FROM questions');
   res.status(200).json(rows);
 });
 
@@ -271,6 +271,30 @@ app.post('/contact', async (req, res) => {
   }
 });
 
+app.post('/submit-test', async (req, res) => {
+  try {
+    const testData = req.body;
+    const [result] = await pool.query(
+      'INSERT INTO test_results (email, fullName, gender, courseApplied, marksScored) VALUES (?, ?, ?, ?, ?)',
+      [testData.email, testData.fullName, testData.gender, testData.courseApplied, testData.marksScored]
+    );
+    res.status(201).json({ message: 'Test submitted successfully' });
+  } catch (error) {
+    console.error('Error submitting test:', error);
+    res.status(500).json({ error: 'Failed to submit test' });
+  }
+});
+
+// Get test results
+app.get('/test-results', async (req, res) => {
+  try {
+    const [rows] = await pool.query('SELECT email, fullName, gender, courseApplied, marksScored FROM test_results');
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error('Error fetching test results:', error);
+    res.status(500).json({ error: 'Failed to fetch test results' });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

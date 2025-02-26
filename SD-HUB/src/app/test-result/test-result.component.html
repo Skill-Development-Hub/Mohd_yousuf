@@ -1,0 +1,37 @@
+<div class="results-container">
+    <h2>Test Results</h2>
+    <table mat-table [dataSource]="results" class="mat-elevation-z8">
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let result">{{result.email}}</td>
+      </ng-container>
+
+      <!-- Full Name Column -->
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef>Full Name</th>
+        <td mat-cell *matCellDef="let result">{{result.fullName}}</td>
+      </ng-container>
+
+      <!-- Gender Column -->
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef>Gender</th>
+        <td mat-cell *matCellDef="let result">{{result.gender}}</td>
+      </ng-container>
+
+      <!-- Course Applied Column -->
+      <ng-container matColumnDef="courseApplied">
+        <th mat-header-cell *matHeaderCellDef>Course Applied</th>
+        <td mat-cell *matCellDef="let result">{{result.courseApplied}}</td>
+      </ng-container>
+
+      <!-- Marks Scored Column -->
+      <ng-container matColumnDef="marksScored">
+        <th mat-header-cell *matHeaderCellDef>Marks Scored</th>
+        <td mat-cell *matCellDef="let result">{{result.marksScored}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
