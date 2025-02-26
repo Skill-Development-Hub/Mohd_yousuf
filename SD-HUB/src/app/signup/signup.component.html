@@ -197,18 +197,12 @@
               <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
           </mat-form-field>
-
-          <mat-form-field appearance="outline">
-            <mat-label>Status</mat-label>
-            <input matInput formControlName="status" readonly />
-          </mat-form-field>
-
           <button mat-flat-button color="warn" type="submit" class="signup-button">
             Submit
           </button>
 
           <p class="login-link">
-            Already have an account? <a routerLink="/signin">Signin</a>
+            Already have an account? <a routerLink="/signin">Sign-in</a>
           </p>
         </form>
       </mat-card-content>
@@ -217,3 +211,4 @@
 </div>
 
 <app-footer></app-footer>
+<app-chat-widget></app-chat-widget>
