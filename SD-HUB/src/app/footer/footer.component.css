@@ -28,17 +28,20 @@
     display: flex;
     align-items: center; /* Aligns images to the same baseline */
     gap: 10px; /* Adjust spacing between images */
+    justify-content: center;
 }
 
 .sponsors img {
-    height: 100px; /* Set a fixed height */
+    height: 150px; /* Set a fixed height */
     width: auto; /* Maintain aspect ratio */
     object-fit: contain;
-    background-color: white; 
+    /* background-color: white;  */
     /* Add white background to each image */
     padding: 5px; /* Adds spacing inside the background */
-    border-radius: 5px; /* Optional: rounds the corners slightly */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    /* border-radius: 5px;  */
+    /* Optional: rounds the corners slightly */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+    /* Optional: adds a subtle shadow */
 }
   
   .logo {
@@ -49,9 +52,9 @@
   .mission-text {
     font-size: 1rem;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
-    padding-bottom: 3%;
+    padding-bottom: 0%;
   }
   
   .right-section {
