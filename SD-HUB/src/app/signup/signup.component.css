@@ -351,58 +351,7 @@ hr{
     text-decoration: underline;
   }
   
-  .footer {
-    background-color: #2e53aa;
-    color: white;
-    padding: 50px 20px;
-  }
   
-  .sub {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .footer-sub {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .footer-sub-des img {
-    width: 150px;
-    max-width: 100%;
-  }
-  
-  .footer-sub-des h6 {
-    margin-top: 0;
-  }
-  
-  .footer-sub-des ul {
-    padding-left: 0;
-    list-style: none;
-  }
-  
-  .footer-sub-des ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-sub-des ul li a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  hr {
-    border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 20px 0;
-  }
-  
-  .footer p {
-    text-align: center;
-    margin-bottom: 0;
-  }
   
   @media (min-width: 768px) {
     .signup-container {
@@ -421,18 +370,7 @@ hr{
   }
   
   @media (max-width: 767px) {
-    .sub-nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .phone-mail {
-      margin-bottom: 10px;
-    }
-  
-    .nav-icon {
-      align-self: flex-end;
-    }
+    
   
     mat-card-header {
       flex-direction: column;

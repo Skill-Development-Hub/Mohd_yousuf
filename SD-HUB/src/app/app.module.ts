@@ -54,6 +54,7 @@ import { ChatWidgetComponent } from './chat-widget/chat-widget.component';
 import { BannerComponent } from './banner/banner.component';
 import { ConfirmationDialogComponent } from './aptitued-test/confirmation-dialog.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { ContactComponent } from './contact/contact.component';
     ChatWidgetComponent,
     BannerComponent,
     ConfirmationDialogComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
