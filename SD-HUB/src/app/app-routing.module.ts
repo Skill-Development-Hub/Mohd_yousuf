@@ -12,6 +12,7 @@ import { TrainersComponent } from './dashboard/trainers/trainers.component';
 import { DeansComponent } from './dashboard/deans/deans.component';
 import { CoursesComponent } from './dashboard/courses/courses.component';
 import { SyllabusComponent } from './dashboard/syllabus/syllabus.component';
+import { StaffComponent } from './staff/staff.component';
 
 import { AuthGuard } from './auth.guard';
 import { NewsComponent } from './dashboard/news/news.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
+  {path: 'staff', component: StaffComponent},
   { path: 'main-course', component: MainCourseComponent },
   // { path: 'aptitue', component: AptituedTestComponent },
   // { path: 'registration', component: RegistrationComponent },
@@ -37,6 +39,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   // {path: 'dashboard', component:DashboardComponent},
   // { path: 'profile', component: ProfileComponent },
+  
   {
     path: '',
     component: AdminComponent,
@@ -51,6 +54,8 @@ const routes: Routes = [
       { path: 'news', component: NewsComponent },
       { path: 'syllabus', component: SyllabusComponent },
       { path: 'test-result', component: TestResultComponent },
+      
+
       // Add other routes here
     ]
   },

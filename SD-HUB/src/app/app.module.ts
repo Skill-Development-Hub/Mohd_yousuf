@@ -57,6 +57,7 @@ import { ConfirmationDialogComponent } from './aptitued-test/confirmation-dialog
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { TestResultComponent } from './test-result/test-result.component';
+import { StaffComponent } from './staff/staff.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
 
@@ -87,6 +88,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     ContactComponent,
     FooterComponent,
     TestResultComponent,
+    StaffComponent,
     GalleryComponent
   ],
   imports: [
