@@ -1,0 +1,102 @@
+<header class="skills-header">
+    <div class="header-container">
+      <div class="header-content">
+        <h1 class="header-title">Skills Development Hub</h1>
+        
+        <nav class="header-nav">
+          <ul>
+            <!-- <li><a href="#" class="nav-link">Login</a></li> -->
+            <li class="profile-dropdown">
+              <a href="#" class="nav-link">Profile ▼</a>
+              <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">My Account</a>
+                <!-- <a href="#" class="dropdown-item">Settings</a> -->
+                <a href="#" class="dropdown-item">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-divider"></div>
+    </div>
+  </header>
+
+
+
+
+
+
+<div class="container">
+    <h2>Daily Attendance</h2>
+    
+    <div class="date-selector">
+      <input type="date" [(ngModel)]="selectedDate" (change)="onDateChange()">
+    </div>
+  
+    <div class="current-date-status">
+      <p>
+        Selected Date: {{ selectedDate | date:'fullDate' }}
+        <span *ngIf="isHoliday" class="holiday-label">(Holiday)</span>
+        <span *ngIf="!isWorkingDay(selectedDate) && !isHoliday" class="non-working-label">(Non-working Day)</span>
+      </p>
+  
+      <div *ngIf="isWorkingDay(selectedDate) && !isHoliday" class="attendance-controls">
+        <button 
+          class="btn-present"
+          [class.active]="currentAttendance.status === 'present'"
+          (click)="markPresent()"
+        >
+          Mark Present
+        </button>
+        
+        <div class="absent-section">
+          <button 
+            class="btn-absent"
+            [class.active]="currentAttendance.status === 'absent'"
+            (click)="markAbsent()"
+          >
+            Mark Absent
+          </button>
+          
+          <select 
+            *ngIf="currentAttendance.status === 'absent'"
+            class="reason-dropdown"
+            [(ngModel)]="currentAttendance.reason"
+            (change)="updateReason()"
+          >
+            <option value="" disabled selected>Select Reason</option>
+            <option *ngFor="let reason of absenceReasons" [value]="reason">
+              {{ reason }}
+            </option>
+          </select>
+        </div>
+      </div>
+  
+      <div *ngIf="!isWorkingDay(selectedDate) || isHoliday" class="non-working-message">
+        Attendance not required for this day
+      </div>
+  
+      <!-- Submit Button -->
+      <div *ngIf="isWorkingDay(selectedDate) && !isHoliday" class="submit-section">
+        <button 
+          class="btn-submit"
+          (click)="onSubmit()"
+          [disabled]="!currentAttendance.status"
+        >
+          Submit Attendance
+        </button>
+      </div>
+  
+      <!-- Success Message -->
+      <div *ngIf="showSuccessMessage" class="success-message">
+        Attendance submitted successfully!
+      </div>
+    </div>
+  
+    <div class="statistics">
+      <h3>Statistics</h3>
+      <div>Total Working Days: {{ totalWorkingDays }}</div>
+      <div>Total Present Days: {{ totalPresent }}</div>
+      <div>Total Absent Days: {{ totalAbsent }}</div>
+    </div>
+  </div>
