@@ -1,124 +1,139 @@
-<!-- <div class="sub-nav">
-  <div class="phone-mail">
-    <div class="phone">
-      <span class="material-icons"> phone </span>
-      <p>+91-9146984162</p>
-    </div>
-    <div class="mail">
-      <span class="material-icons"> email </span>
-      <p>umarshahba2000gmail.com</p>
-    </div>
-  </div>
-  <div class="nav-icon">
-    <a href="#"><img src="./Instagram-logo.png" alt=""></a>
-    <a href="#"><img src="./linked1.png" alt=""></a>
-  </div>
-</div>
+<app-banner></app-banner>
 <app-navbar></app-navbar>
 
-<div class="main-coures-main">
+<div class="main-courses-main">
   <div class="course-h1">
     <h1>Courses</h1>
   </div>
-  <div class="course">
-
-    <div class="courses">
-      <div class="courses-img">
-        <img src="./Digital-Marketing-course.jpg" alt="">
+  <div class="course-grid">
+    <div class="course-card">
+      <div class="course-img">
+        <img src="./Digital-Marketing-course.jpg" alt="Digital Marketing">
       </div>
-      <div class="courses-description">
+      <div class="course-description">
         <h5>Digital Marketing</h5>
-        <p>Digital marketing refers to the use of online channels and platforms to promote products, services, or
-          brands. It includes strategies like search engine optimization (SEO), social media marketing, content
-          marketing, email campaigns, pay-per-click (PPC) advertising, and influencer partnerships.</p>
+        <p>Digital marketing uses online platforms to promote products and services. This course covers SEO, PPC advertising, social media marketing, and email campaigns. You’ll learn to optimize websites, create ads, and engage audiences on Instagram and Facebook. It focuses on analyzing performance to boost business impact. Perfect for beginners or marketers aiming to enhance skills.</p>
+        <button class="more-details-btn" (click)="openModal('digitalMarketing')">More Details</button>
       </div>
     </div>
 
-    <div class="courses">
-      <div class="courses-img">
-        <img src="./data-analytics.jpg" alt="">
+    <div class="course-card">
+      <div class="course-img">
+        <img src="./data-analytics.jpg" alt="Data Analytics">
       </div>
-      <div class="courses-description">
+      <div class="course-description">
         <h5>Data Analytics</h5>
-        <p>Data analytics is the process of examining and interpreting large sets of data to uncover patterns, trends,
-          and insights that can inform decision-making. It involves using statistical tools, algorithms, and software to
-          analyze structured and unstructured data.</p>
+        <p>Data analytics transforms raw data into insights for decision-making. This course teaches you to collect and analyze datasets using Python, SQL, and Excel. You’ll explore statistical analysis, visualization, and predictive modeling to identify trends and solve business problems. Ideal for those eager to master data-driven strategies.</p>
+        <button class="more-details-btn" (click)="openModal('dataAnalytics')">More Details</button>
       </div>
     </div>
 
-    <div class="courses">
-      <div class="courses-img">
-        <img src="./web-development.webp" alt="">
+    <div class="course-card">
+      <div class="course-img">
+        <img src="./web-development.webp" alt="Web Development">
       </div>
-      <div class="courses-description">
+      <div class="course-description">
         <h5>Web Development</h5>
-        <p>Web development is the process of building and maintaining websites or web applications. It involves a range
-          of tasks including designing the user interface (UI), creating the structure and functionality of the site,
-          and ensuring it runs smoothly across different devices and browsers.</p>
+        <p>Web development builds functional websites using frontend and backend skills. This course covers HTML, CSS, JavaScript, and frameworks like React. You’ll learn to design responsive interfaces and manage databases and APIs. It prepares creative problem-solvers for careers in a fast-evolving tech industry.</p>
+        <button class="more-details-btn" (click)="openModal('webDevelopment')">More Details</button>
       </div>
     </div>
 
-    <div class="courses">
-      <div class="courses-img">
-        <img src="./office-admin.jpg" alt="">
+    <div class="course-card">
+      <div class="course-img">
+        <img src="./sys-engg.png" alt="System Engineering">
       </div>
-      <div class="courses-description">
-        <h5>Web Development</h5>
-        <p>Web development is the process of building and maintaining websites or web applications. It involves a range
-          of tasks including designing the user interface (UI), creating the structure and functionality of the site,
-          and ensuring it runs smoothly across different devices and browsers.</p>
+      <div class="course-description">
+        <h5>System Engineering</h5>
+        <p>System engineering designs and manages complex systems over their life cycles. This course covers architecture, risk assessment, and integration of hardware and software. You’ll learn modeling and optimization techniques for real-world applications. Ideal for those tackling big-picture technical challenges.</p>
+        <button class="more-details-btn" (click)="openModal('systemEngineering')">More Details</button>
       </div>
     </div>
-  </div> -->
-  <app-banner></app-banner>  
-  <app-navbar></app-navbar>
-  
-  <div class="main-courses-main">
-    <div class="course-h1">
-      <h1>Courses</h1>
+
+    <div class="course-card">
+      <div class="course-img">
+        <img src="./acc+tall.png" alt="Accounting + Tally ERP">
+      </div>
+      <div class="course-description">
+        <h5>Accounting + Tally ERP</h5>
+        <p>Accounting + Tally ERP blends financial management with software skills. This course teaches bookkeeping, taxation, and Tally ERP for inventory and payroll management. You’ll master GST compliance and streamline accounts. Perfect for aspiring accountants seeking practical, tech-driven training.</p>
+        <button class="more-details-btn" (click)="openModal('accountingTally')">More Details</button>
+      </div>
     </div>
-    <div class="course-grid">
-      <div class="course-card">
-        <div class="course-img">
-          <img src="./Digital-Marketing-course.jpg" alt="Digital Marketing">
-        </div>
-        <div class="course-description">
-          <h5>Digital Marketing</h5>
-          <p>Digital marketing refers to the use of online channels and platforms to promote products, services, or brands. It includes strategies like search engine optimization (SEO), social media marketing, content marketing, email campaigns, pay-per-click (PPC) advertising, and influencer partnerships.</p>
-        </div>
+
+    <div class="course-card">
+      <div class="course-img">
+        <img src="./office-admin.jpg" alt="Office Administration">
       </div>
-  
-      <div class="course-card">
-        <div class="course-img">
-          <img src="./data-analytics.jpg" alt="Data Analytics">
-        </div>
-        <div class="course-description">
-          <h5>Data Analytics</h5>
-          <p>Data analytics is the process of examining and interpreting large sets of data to uncover patterns, trends, and insights that can inform decision-making. It involves using statistical tools, algorithms, and software to analyze structured and unstructured data.</p>
-        </div>
-      </div>
-  
-      <div class="course-card">
-        <div class="course-img">
-          <img src="./web-development.webp" alt="Web Development">
-        </div>
-        <div class="course-description">
-          <h5>Web Development</h5>
-          <p>Web development is the process of building and maintaining websites or web applications. It involves a range of tasks including designing the user interface (UI), creating the structure and functionality of the site, and ensuring it runs smoothly across different devices and browsers.</p>
-        </div>
-      </div>
-  
-      <div class="course-card">
-        <div class="course-img">
-          <img src="./office-admin.jpg" alt="Office Administration">
-        </div>
-        <div class="course-description">
-          <h5>Office Administration</h5>
-          <p>Office administration involves managing and coordinating the day-to-day operations of a business or organization. This includes tasks such as scheduling, record-keeping, communication management, and ensuring the smooth functioning of office systems and procedures.</p>
-        </div>
+      <div class="course-description">
+        <h5>Office Administration</h5>
+        <p>Office administration ensures smooth business operations. This course covers task coordination, MS Office skills, and resource management. You’ll learn scheduling, documentation, and HR basics. Ideal for those aiming to excel in administrative support roles with practical tools.</p>
+        <button class="more-details-btn" (click)="openModal('officeAdministration')">More Details</button>
       </div>
     </div>
   </div>
+</div>
 
-  <app-footer></app-footer>
-  <app-chat-widget></app-chat-widget>
+<!-- Modal Popups with Expanded Content -->
+<div class="modal" id="digitalMarketing">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal('digitalMarketing')">×</span>
+    <img src="./Digital-Marketing-course.jpg" alt="Digital Marketing">
+    <h2>Digital Marketing</h2>
+    <p>Digital marketing leverages the internet to promote brands and services using strategies like SEO and PPC advertising. This course teaches you to optimize websites for Google, craft ads, and engage audiences on Instagram and Facebook. You’ll master social media and email marketing to drive conversions, plus use analytics to measure success. Hands-on projects include creating ad campaigns and boosting search rankings. Emerging trends like influencer marketing are covered, preparing you for a dynamic career. Taught by Hanumanth Rao Uppe, this training offers practical skills for marketing success.</p>
+    <p><strong>Trainer: Hanumanth Rao Uppe</strong></p>
+  </div>
+</div>
+
+<div class="modal" id="dataAnalytics">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal('dataAnalytics')">×</span>
+    <img src="./data-analytics.jpg" alt="Data Analytics">
+    <h2>Data Analytics</h2>
+    <p>Data analytics turns raw data into insights for industries like finance and marketing. This course covers collecting and analyzing data with Python, SQL, and Excel. You’ll learn statistical analysis, visualization with Tableau, and predictive modeling to spot trends. Practical projects include forecasting trends and interpreting sales data. It also addresses data ethics for privacy. Designed for beginners, it prepares you for roles like data analyst. Trainer Uwaish Hussain provides expert guidance to master data-driven strategies.</p>
+    <p><strong>Trainer: Uwaish Hussain</strong></p>
+  </div>
+</div>
+
+<div class="modal" id="webDevelopment">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal('webDevelopment')">×</span>
+    <img src="./web-development.webp" alt="Web Development">
+    <h2>Web Development</h2>
+    <p>Web development builds websites with frontend and backend skills. This course teaches HTML, CSS, and JavaScript for responsive designs, plus React and Angular frameworks. You’ll learn backend programming with Node.js, database management with MongoDB, and API creation. Projects include portfolio sites and e-commerce platforms. It covers security, optimization, and Git, preparing you for full-stack developer roles. Mohammed Tajjamul Ali’s expert guidance ensures you thrive in this fast-paced field.</p>
+    <p><strong>Trainer: Mohammed Tajjamul Ali</strong></p>
+  </div>
+</div>
+
+<div class="modal" id="systemEngineering">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal('systemEngineering')">×</span>
+    <img src="./sys-engg.png" alt="System Engineering">
+    <h2>System Engineering</h2>
+    <p>System engineering designs and manages complex systems across their life cycles. This course teaches system architecture, risk assessment, and integration using SysML tools. You’ll optimize performance and reliability for applications like aerospace and IT. Practical exercises include designing smart city systems. It covers project management and emerging trends like IoT, preparing you for engineering careers.</p>
+    <p><strong>Trainer:</strong> TBD</p>
+  </div>
+</div>
+
+<div class="modal" id="accountingTally">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal('accountingTally')">×</span>
+    <img src="./acc+tall.png" alt="Accounting + Tally ERP">
+    <h2>Accounting + Tally ERP</h2>
+    <p>Accounting + Tally ERP combines financial management with software skills. This course covers bookkeeping, taxation, and Tally ERP for inventory and payroll. You’ll learn GST compliance, invoice processing, and financial reporting through practical exercises. It includes cost management and automation to boost efficiency. Ideal for accountants and business owners, it offers a tech-driven edge. No trainer is specified, but it ensures hands-on expertise for accounting roles.</p>
+    <p><strong>Trainer: Syed Shaida Hussain</strong> TBD</p>
+  </div>
+</div>
+
+<div class="modal" id="officeAdministration">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal('officeAdministration')">×</span>
+    <img src="./office-admin.jpg" alt="Office Administration">
+    <h2>Office Administration</h2>
+    <p>Office administration manages daily business operations efficiently. This course teaches task coordination, MS Office skills, and resource management. You’ll master scheduling, documentation, and HR basics like onboarding. Practical exercises include drafting emails and organizing files. It covers time management and digital tools like cloud storage, preparing you for administrative roles. Taught by Syed Shahda Hussain, it offers actionable skills for office success.</p>
+    <p><strong>Trainer: Syeda Talat Fatima</strong></p>
+  </div>
+</div>
+
+<app-footer></app-footer>
+<app-chat-widget></app-chat-widget>

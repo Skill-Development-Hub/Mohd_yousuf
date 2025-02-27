@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-right: -100px;
   }
   
   .logo img {

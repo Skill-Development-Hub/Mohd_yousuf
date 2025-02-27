@@ -57,6 +57,7 @@ import { ConfirmationDialogComponent } from './aptitued-test/confirmation-dialog
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { TestResultComponent } from './test-result/test-result.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { TestResultComponent } from './test-result/test-result.component';
     ConfirmationDialogComponent,
     ContactComponent,
     FooterComponent,
-    TestResultComponent
+    TestResultComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
