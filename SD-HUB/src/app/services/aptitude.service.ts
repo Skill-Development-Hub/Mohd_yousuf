@@ -39,7 +39,7 @@ export class AptitudeService {
               options: [
                 { text: q.option_a, value: 'a' },
                 { text: q.option_b, value: 'b' },
-                { text: q.option_c, value: 'c' }
+                ...(q.option_c ? [{ text: q.option_c, value: 'c' }] : [])
               ],
               correctAnswer: q.correct_option
             }))
@@ -51,7 +51,7 @@ export class AptitudeService {
               options: [
                 { text: q.option_a, value: 'a' },
                 { text: q.option_b, value: 'b' },
-                { text: q.option_c, value: 'c' }
+                ...(q.option_c ? [{ text: q.option_c, value: 'c' }] : [])
               ],
               correctAnswer: q.correct_option
             }))
@@ -63,7 +63,7 @@ export class AptitudeService {
               options: [
                 { text: q.option_a, value: 'a' },
                 { text: q.option_b, value: 'b' },
-                { text: q.option_c, value: 'c' }
+                ...(q.option_c ? [{ text: q.option_c, value: 'c' }] : [])
               ],
               correctAnswer: q.correct_option
             }))
