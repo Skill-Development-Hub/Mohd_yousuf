@@ -9,6 +9,7 @@ interface AttendanceRecord {
 }
 
 
+
 @Component({
   selector: 'app-staff',
   templateUrl: './staff.component.html',
@@ -24,7 +25,7 @@ export class StaffComponent implements OnInit {
     new Date('2024-01-26'),
   ];
   showSuccessMessage = false;
-  userId = 1; // Replace with actual user ID from auth
+  userId = 1;
 
   constructor(private attendanceService: AttendanceService) {}
 
@@ -66,6 +67,11 @@ export class StaffComponent implements OnInit {
       };
       this.showSuccessMessage = false;
     }
+  }
+
+  // ADDED MISSING METHOD
+  updateReason() {
+    this.showSuccessMessage = false;
   }
 
   onSubmit() {
