@@ -59,6 +59,9 @@ import { FooterComponent } from './footer/footer.component';
 import { TestResultComponent } from './test-result/test-result.component';
 import { StaffComponent } from './staff/staff.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { TrainerDialogComponent } from './dashboard/trainers/trainer-dialog/trainer-dialog.component';
+import { UserDialogComponent } from './dashboard/students/user-dialog/user-dialog.component';
+import { StudentDialogComponent } from './dashboard/students/student-dialog/student-dialog.component';
 import { StakeholderDashComponent } from './stakeholder-dash/stakeholder-dash.component';
 import { TrainerComponent } from './trainer/trainer.component';
 
@@ -94,7 +97,10 @@ import { TrainerComponent } from './trainer/trainer.component';
     StakeholderDashComponent,
     TrainerComponent,
     StaffComponent,
-    GalleryComponent
+    GalleryComponent,
+    TrainerDialogComponent,
+    UserDialogComponent,
+    StudentDialogComponent
   ],
   imports: [
     BrowserModule,

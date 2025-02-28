@@ -18,8 +18,24 @@ export class StudentsService {
     return this.http.post<any>(`${this.apiUrl}/addstudents`, students);
   }
 
+  updateStudent(student: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/students/${student.id}`, student);
+  }
+
+  deleteStudent(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/students/${id}`);
+  }
+
   signup(user: any): Observable<any>{
     return this.http.post<any>(`${this.apiUrl}/signup`, user);
+  }
+
+  updateUser(user: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/users/${user.id}`, user);
+  }
+
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/users/${id}`);
   }
 
   // studentSignin(credentials: any): Observable<any>{
@@ -61,6 +77,19 @@ export class StudentsService {
     return this.http.get<any>(`${this.apiUrl}/trainers`);
   }
 
+   // New methods for trainer CRUD operations
+   addTrainer(trainer: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/trainers`, trainer);
+  }
+
+  updateTrainer(trainer: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/trainers/${trainer.id}`, trainer);
+  }
+
+  deleteTrainer(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/trainers/${id}`);
+  }
+  
   getDeans(): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/deans`);
   }

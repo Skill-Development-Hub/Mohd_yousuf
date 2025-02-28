@@ -1,9 +1,15 @@
 <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
   <mat-tab label="Users">
-    <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyUserFilter($event)" placeholder="Ex. name or email" #userInput>
-    </mat-form-field>
+    <div class="button">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyUserFilter($event)" placeholder="Ex. name or email" #userInput>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="openAddUserDialog()">
+        <mat-icon>add</mat-icon>
+        Add User
+      </button>
+    </div>
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="userDataSource" matSort #userSort="matSort">
         <ng-container matColumnDef="course">
@@ -26,10 +32,21 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
           <td mat-cell *matCellDef="let row"> {{row.status}} </td>
         </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="primary" (click)="openEditUserDialog(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteUser(row)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedUserColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedUserColumns;"></tr>
         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="5">No data matching the filter "{{userInput.value}}"</td>
+          <td class="mat-cell" colspan="6">No data matching the filter "{{userInput.value}}"</td>
         </tr>
       </table>
       <mat-paginator #userPaginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
@@ -41,9 +58,9 @@
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyStudentFilter($event)" placeholder="Ex. name or email" #studentInput>
       </mat-form-field>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="openAddStudentDialog()">
         <mat-icon>add</mat-icon>
-        Add Students
+        Add Student
       </button>
     </div>
     <div class="mat-elevation-z8">
@@ -72,10 +89,21 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
           <td mat-cell *matCellDef="let row"> {{row.email}} </td>
         </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="primary" (click)="openEditStudentDialog(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteStudent(row)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedStudentColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedStudentColumns;"></tr>
         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="6">No data matching the filter "{{studentInput.value}}"</td>
+          <td class="mat-cell" colspan="7">No data matching the filter "{{studentInput.value}}"</td>
         </tr>
       </table>
       <mat-paginator #studentPaginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of students"></mat-paginator>
