@@ -1,32 +1,39 @@
 <div class="courses-container">
-    <div class="courses-header">
-      <h2>Available Courses</h2>
-      <button mat-raised-button color="primary">
-        <mat-icon>add</mat-icon>
-        Add New Course
-      </button>
-    </div>
-  
-    <div class="courses-grid">
-      <mat-card *ngFor="let course of courses" class="course-card">
-        <mat-card-header>
-          <mat-card-title>{{ course.title }}</mat-card-title>
-          <mat-chip-listbox>
-            <mat-chip [class]="course.status">
-              {{ course.status}}
-            </mat-chip>
-          </mat-chip-listbox>
-        </mat-card-header>
-        
-        <mat-card-content>
-          <p>{{ course.description }}</p>
-          <div class="course-details">
-            <div class="detail-item">
-              <mat-icon>schedule</mat-icon>
-              <span>{{ course.duration }}</span>
-            </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
+  <div class="courses-header">
+    <h2>Available Courses</h2>
+    <button mat-raised-button color="primary">
+      <mat-icon>add</mat-icon>
+      Add New Course
+    </button>
   </div>
+
+  <div class="courses-grid">
+    <mat-card *ngFor="let course of courses" class="course-card">
+      <mat-card-header>
+        <mat-card-title>{{ course.title }}</mat-card-title>
+        <mat-chip-listbox>
+          <mat-chip [class]="course.status">
+            {{ course.status }}
+          </mat-chip>
+        </mat-chip-listbox>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>{{ course.description }}</p>
+        <div class="course-details">
+          <div class="detail-item">
+            <mat-icon>schedule</mat-icon>
+            <span>{{ course.duration }}</span>
+          </div>
+        </div>
+
+        <!-- Show course-specific features -->
+        <ul *ngIf="course.features">
+          <li *ngFor="let feature of course.features">
+            {{ feature }}
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

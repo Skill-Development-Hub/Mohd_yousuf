@@ -59,6 +59,8 @@ import { FooterComponent } from './footer/footer.component';
 import { TestResultComponent } from './test-result/test-result.component';
 import { StaffComponent } from './staff/staff.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { StakeholderDashComponent } from './stakeholder-dash/stakeholder-dash.component';
+import { TrainerComponent } from './trainer/trainer.component';
 
 
 @NgModule({
@@ -88,6 +90,9 @@ import { GalleryComponent } from './gallery/gallery.component';
     ContactComponent,
     FooterComponent,
     TestResultComponent,
+    GalleryComponent,
+    StakeholderDashComponent,
+    TrainerComponent,
     StaffComponent,
     GalleryComponent
   ],

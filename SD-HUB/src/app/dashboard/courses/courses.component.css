@@ -18,7 +18,7 @@
   .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
+    gap: 4px;
   }
   
   .course-card {
@@ -58,7 +58,7 @@
     font-size: 12px;
   }
   
-  .active {
+  .ongoing {
     background-color: #4CAF50 !important;
     color: white;
   }
