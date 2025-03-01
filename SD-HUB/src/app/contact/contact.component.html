@@ -1,85 +1,99 @@
 <app-banner></app-banner>
 <app-navbar></app-navbar>
+
 <div class="contact-container">
-    <div class="contact-header">
-      <h1>Contact Us</h1>
-      <p>Get in touch with us for any questions or inquiries</p>
+  <div class="contact-header">
+    <h1>Contact Us</h1>
+    <p>Get in touch with us for any questions or inquiries</p>
+  </div>
+
+  <div class="contact-content">
+    <div class="contact-info">
+      <div class="info-card">
+        <mat-icon>location_on</mat-icon>
+        <h3>Our Location</h3>
+        <p>Skills Development Hub, 2-283/B/1, Santosh Nagar, Mehdipatnam, Hyderabad, Telangana 500028</p>
+      </div>
+      <div class="info-card">
+        <mat-icon>phone</mat-icon>
+        <h3>Phone Number</h3>
+        <p>+91 955-012-5050</p>
+      </div>
+      <div class="info-card">
+        <mat-icon>email</mat-icon>
+        <h3>Email Address</h3>
+        <p>info&#64;sdhub.in</p>
+      </div>
     </div>
-  
-    <div class="contact-content">
-      <div class="contact-info">
-        <div class="info-card">
-          <mat-icon>location_on</mat-icon>
-          <h3>Our Location</h3>
-          <p>Mehdipatnam, Hyderabad, Telangana 500028</p>
-        </div>
-        <div class="info-card">
-          <mat-icon>phone</mat-icon>
-          <h3>Phone Number</h3>
-          <p>+91 955-012-5050</p>
-        </div>
-        <div class="info-card">
-          <mat-icon>email</mat-icon>
-          <h3>Email Address</h3>
-          <p>info&#64;sdhub.in</p>
-        </div>
-      </div>
-  
-      <div class="contact-form-container">
-        <mat-card>
-          <mat-card-content>
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-              <mat-form-field appearance="outline">
-                <mat-label>Name</mat-label>
-                <input matInput formControlName="name" placeholder="Enter your name">
-                <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
-                  Name is required
-                </mat-error>
-              </mat-form-field>
-  
-              <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput formControlName="email" placeholder="Enter your email">
-                <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
-                  Email is required
-                </mat-error>
-                <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
-                  Please enter a valid email address
-                </mat-error>
-              </mat-form-field>
-  
-              <mat-form-field appearance="outline">
-                <mat-label>Phone</mat-label>
-                <input matInput formControlName="phone" placeholder="Enter your phone number">
-                <mat-error *ngIf="contactForm.get('phone')?.hasError('required')">
-                  Phone number is required
-                </mat-error>
-                <mat-error *ngIf="contactForm.get('phone')?.hasError('pattern')">
-                  Please enter a valid 10-digit phone number
-                </mat-error>
-              </mat-form-field>
-  
-              <mat-form-field appearance="outline">
-                <mat-label>Message</mat-label>
-                <textarea matInput formControlName="message" rows="4" placeholder="Enter your message"></textarea>
-                <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
-                  Message is required
-                </mat-error>
-                <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">
-                  Message must be at least 10 characters long
-                </mat-error>
-              </mat-form-field>
-  
-              <button mat-flat-button color="primary" type="submit" [disabled]="isSubmitting || !contactForm.valid">
-                <mat-icon>send</mat-icon>
-                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
-              </button>
-            </form>
-          </mat-card-content>
-        </mat-card>
-      </div>
+
+    <div class="contact-form-container">
+      <mat-card>
+        <mat-card-content>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" placeholder="Enter your name">
+              <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+                Name is required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" placeholder="Enter your email">
+              <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+                Please enter a valid email address
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input matInput formControlName="phone" placeholder="Enter your phone number">
+              <mat-error *ngIf="contactForm.get('phone')?.hasError('required')">
+                Phone number is required
+              </mat-error>
+              <mat-error *ngIf="contactForm.get('phone')?.hasError('pattern')">
+                Please enter a valid 10-digit phone number
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Message</mat-label>
+              <textarea matInput formControlName="message" rows="4" placeholder="Enter your message"></textarea>
+              <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+                Message is required
+              </mat-error>
+              <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">
+                Message must be at least 10 characters long
+              </mat-error>
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" type="submit" [disabled]="isSubmitting || !contactForm.valid">
+              <mat-icon>send</mat-icon>
+              {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 
-  <app-footer></app-footer>
-  <app-chat-widget></app-chat-widget>
+  <div class="map-container">
+    <iframe
+      width="100%"
+      height="400"
+      frameborder="0"
+      style="border: 1px solid #ccc; border-radius: 8px;"
+      allowfullscreen
+      loading="lazy"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=78.42143,17.37528,78.47343,17.42528&layer=mapnik&marker=17.40028,78.44743">
+    </iframe>
+    <!-- <p><a href="https://www.openstreetmap.org/?mlat=17.40028&mlon=78.44743#map=17/17.40028/78.44743" target="_blank">View Larger Map</a></p> -->
+  </div>
+</div>
+
+<app-footer></app-footer>
+<app-chat-widget></app-chat-widget>
