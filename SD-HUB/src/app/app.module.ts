@@ -94,6 +94,7 @@ import { MoreGalleryComponent } from './more-gallery/more-gallery.component';
     ContactComponent,
     FooterComponent,
     TestResultComponent,
+    StaffComponent,
     GalleryComponent,
     StakeholderDashComponent,
     TrainerComponent,
