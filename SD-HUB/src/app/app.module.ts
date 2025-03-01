@@ -64,6 +64,7 @@ import { UserDialogComponent } from './dashboard/students/user-dialog/user-dialo
 import { StudentDialogComponent } from './dashboard/students/student-dialog/student-dialog.component';
 import { StakeholderDashComponent } from './stakeholder-dash/stakeholder-dash.component';
 import { TrainerComponent } from './trainer/trainer.component';
+import { MoreGalleryComponent } from './more-gallery/more-gallery.component';
 
 
 @NgModule({
@@ -100,7 +101,8 @@ import { TrainerComponent } from './trainer/trainer.component';
     GalleryComponent,
     TrainerDialogComponent,
     UserDialogComponent,
-    StudentDialogComponent
+    StudentDialogComponent,
+    MoreGalleryComponent
   ],
   imports: [
     BrowserModule,

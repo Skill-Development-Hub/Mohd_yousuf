@@ -236,3 +236,20 @@
     background-color: #0056b3;
   }
   
+
+  .btn {
+    display: block; /* Make it a block element */
+    width: fit-content; /* Fit the content width */
+    margin: 20px auto; /* Center horizontally */
+    padding: 10px 15px;
+    background-color: #2e53aa;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #007BFF;
+}

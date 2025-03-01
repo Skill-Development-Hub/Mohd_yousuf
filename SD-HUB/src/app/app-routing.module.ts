@@ -23,6 +23,7 @@ import { StdDashboardComponent } from './std-dashboard/std-dashboard.component';
 import { MainCourseComponent } from './main-course/main-course.component';
 import { ContactComponent } from './contact/contact.component';
 import { TestResultComponent } from './test-result/test-result.component';
+import { MoreGalleryComponent } from './more-gallery/more-gallery.component';
 
 
 const routes: Routes = [
@@ -30,13 +31,14 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
-  {path: 'staff', component: StaffComponent},
+  { path: 'staff', component: StaffComponent},
   { path: 'main-course', component: MainCourseComponent },
   // { path: 'aptitue', component: AptituedTestComponent },
   // { path: 'registration', component: RegistrationComponent },
   { path: 'navbar', component: NavbarComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'more-gallery', component: MoreGalleryComponent },
   // {path: 'dashboard', component:DashboardComponent},
   // { path: 'profile', component: ProfileComponent },
   
