@@ -35,8 +35,8 @@ export interface StudentData {
   styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit, AfterViewInit {
-  displayedUserColumns: string[] = ['course', 'name', 'contactNumber', 'email', 'status'];
-  displayedStudentColumns: string[] = ['uniqueId', 'firstName', 'lastName', 'applicationDate', 'course', 'email'];
+  displayedUserColumns: string[] = ['course', 'name', 'contactNumber', 'email', 'status', 'actions'];
+  displayedStudentColumns: string[] = ['uniqueId', 'firstName', 'lastName', 'applicationDate', 'course', 'email', 'actions'];
   
   userDataSource: MatTableDataSource<UserData>;
   studentDataSource: MatTableDataSource<StudentData>;

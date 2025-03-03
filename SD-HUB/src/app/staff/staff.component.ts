@@ -47,8 +47,12 @@ export class StaffComponent implements OnInit {
     this.showSuccessMessage = false;
   }
 
+  
   markPresent() {
     if (this.isWorkingDay(this.selectedDate)) {
+      if (!this.currentAttendance) {
+        this.initializeDate(this.selectedDate);
+      }
       this.currentAttendance = {
         ...this.currentAttendance,
         status: 'present',
@@ -57,9 +61,12 @@ export class StaffComponent implements OnInit {
       this.showSuccessMessage = false;
     }
   }
-
+  
   markAbsent() {
     if (this.isWorkingDay(this.selectedDate)) {
+      if (!this.currentAttendance) {
+        this.initializeDate(this.selectedDate);
+      }
       this.currentAttendance = {
         ...this.currentAttendance,
         status: 'absent',
@@ -68,7 +75,6 @@ export class StaffComponent implements OnInit {
       this.showSuccessMessage = false;
     }
   }
-
   // ADDED MISSING METHOD
   updateReason() {
     this.showSuccessMessage = false;
@@ -87,12 +93,15 @@ export class StaffComponent implements OnInit {
       reason: this.currentAttendance.reason,
       userId: this.userId
     };
-
+  
     if (this.currentAttendance.id) {
       this.attendanceService.updateAttendance(this.currentAttendance.id, attendanceData)
         .subscribe({
           next: () => this.handleSaveSuccess(),
-          error: (err) => console.error('Update failed:', err)
+          error: (err) => {
+            console.error('Update failed:', err);
+            alert(`Update failed: ${err.message}`);
+          }
         });
     } else {
       this.attendanceService.saveAttendance(attendanceData)
@@ -101,7 +110,10 @@ export class StaffComponent implements OnInit {
             this.currentAttendance.id = response.id;
             this.handleSaveSuccess();
           },
-          error: (err) => console.error('Save failed:', err)
+          error: (err) => {
+            console.error('Save failed:', err);
+            alert(`Save failed: ${err.message}`);
+          }
         });
     }
   }

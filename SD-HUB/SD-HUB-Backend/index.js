@@ -182,44 +182,44 @@ app.get('/users', async (req, res) => {
   res.status(200).json(rows);
 });
 
-app.put('/users/:id', (req, res) => {
-  const { id } = req.params;
-  const { name, course, contactNumber, email, status } = req.body;
-  
-  if (!name || !course || !contactNumber || !email || !status) {
-    return res.status(400).json({ error: 'All fields are required' });
-  }
-  
-  const query = 'UPDATE users SET name = ?, course = ?, contactNumber = ?, email = ?, status = ? WHERE id = ?';
-  db.query(query, [name, course, contactNumber, email, status, id], (err, result) => {
-    if (err) {
-      console.error('Error updating user:', err);
-      return res.status(500).json({ error: 'Failed to update user' });
+app.put('/users/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, course, contactNumber, email, status } = req.body;
+    
+    if (!name || !course || !contactNumber || !email || !status) {
+      return res.status(400).json({ error: 'All fields are required' });
     }
+    
+    const query = 'UPDATE user SET name = ?, course = ?, contactNumber = ?, email = ?, status = ? WHERE id = ?';
+    const [result] = await pool.query(query, [name, course, contactNumber, email, status, id]);
     
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
     
     res.json({ id, ...req.body });
-  });
+  } catch (error) {
+    console.error('Error updating user:', error);
+    res.status(500).json({ error: 'Failed to update user' });
+  }
 });
 
-app.delete('/users/:id', (req, res) => {
-  const { id } = req.params;
-  
-  db.query('DELETE FROM users WHERE id = ?', [id], (err, result) => {
-    if (err) {
-      console.error('Error deleting user:', err);
-      return res.status(500).json({ error: 'Failed to delete user' });
-    }
+app.delete('/users/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const [result] = await pool.query('DELETE FROM user WHERE id = ?', [id]);
     
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
     
     res.json({ message: 'User deleted successfully' });
-  });
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).json({ error: 'Failed to delete user' });
+  }
 });
 
 app.get('/signupusers', async (req, res) => {
@@ -379,44 +379,44 @@ app.get('/test-results', async (req, res) => {
   }
 });
 
-app.put('/students/:id', (req, res) => {
-  const { id } = req.params;
-  const { uniqueId, firstName, lastName, applicationDate, course, email } = req.body;
-  
-  if (!uniqueId || !firstName || !lastName || !applicationDate || !course || !email) {
-    return res.status(400).json({ error: 'All fields are required' });
-  }
-  
-  const query = 'UPDATE students SET uniqueId = ?, firstName = ?, lastName = ?, applicationDate = ?, course = ?, email = ? WHERE id = ?';
-  db.query(query, [uniqueId, firstName, lastName, applicationDate, course, email, id], (err, result) => {
-    if (err) {
-      console.error('Error updating student:', err);
-      return res.status(500).json({ error: 'Failed to update student' });
+app.put('/students/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { uniqueId, firstName, lastName, applicationDate, course, email } = req.body;
+    
+    if (!uniqueId || !firstName || !lastName || !applicationDate || !course || !email) {
+      return res.status(400).json({ error: 'All fields are required' });
     }
+    
+    const query = 'UPDATE students SET uniqueId = ?, firstName = ?, lastName = ?, applicationDate = ?, course = ?, email = ? WHERE id = ?';
+    const [result] = await pool.query(query, [uniqueId, firstName, lastName, applicationDate, course, email, id]);
     
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'Student not found' });
     }
     
     res.json({ id, ...req.body });
-  });
+  } catch (error) {
+    console.error('Error updating student:', error);
+    res.status(500).json({ error: 'Failed to update student' });
+  }
 });
 
-app.delete('/students/:id', (req, res) => {
-  const { id } = req.params;
-  
-  db.query('DELETE FROM students WHERE id = ?', [id], (err, result) => {
-    if (err) {
-      console.error('Error deleting student:', err);
-      return res.status(500).json({ error: 'Failed to delete student' });
-    }
+app.delete('/students/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const [result] = await pool.query('DELETE FROM students WHERE id = ?', [id]);
     
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'Student not found' });
     }
     
     res.json({ message: 'Student deleted successfully' });
-  });
+  } catch (error) {
+    console.error('Error deleting student:', error);
+    res.status(500).json({ error: 'Failed to delete student' });
+  }
 });
 
 app.listen(PORT, () => {

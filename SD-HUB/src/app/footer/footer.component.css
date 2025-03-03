@@ -98,3 +98,15 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+
+  .HHF-logo{
+    max-width: 290px;
+  }
+  .PSF-logo{
+    max-width: 290px;
+    margin-bottom: 50px;
+  }
+  .SEED-logo{
+    max-width: 290px;
+    margin-bottom: 50px;
+  }
