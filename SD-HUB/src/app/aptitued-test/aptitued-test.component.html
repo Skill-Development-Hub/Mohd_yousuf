@@ -117,8 +117,8 @@
                   <p class="question-text">{{i + 1}}. {{question.question}}</p>
                   <mat-radio-group 
                     class="options-group"
-                    [(ngModel)]="answers['gk_' + i]"
-                    (change)="onAnswerSelect('gk_' + i, $event.value)">
+                    [(ngModel)]="answers['generalKnowledge_' + i]"
+                    (change)="onAnswerSelect('generalKnowledge_' + i, $event.value)">
                     <mat-radio-button 
                       *ngFor="let option of question.options" 
                       [value]="option.value">
@@ -151,8 +151,8 @@
                   <p class="question-text">{{i + 1}}. {{question.question}}</p>
                   <mat-radio-group 
                     class="options-group"
-                    [(ngModel)]="answers['ct_' + i]"
-                    (change)="onAnswerSelect('ct_' + i, $event.value)">
+                    [(ngModel)]="answers['criticalThinking_' + i]"
+                    (change)="onAnswerSelect('criticalThinking_' + i, $event.value)">
                     <mat-radio-button 
                       *ngFor="let option of question.options" 
                       [value]="option.value">

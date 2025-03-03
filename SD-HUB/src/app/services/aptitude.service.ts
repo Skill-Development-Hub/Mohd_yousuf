@@ -37,11 +37,11 @@ export class AptitudeService {
             questions: questions.filter(q => q.section === 'Aptitude Test').map(q => ({
               question: q.question,
               options: [
-                { text: q.option_a, value: 'a' },
-                { text: q.option_b, value: 'b' },
-                ...(q.option_c ? [{ text: q.option_c, value: 'c' }] : [])
+                { text: q.option_a, value: q.option_a }, // Line 26: Updated value to actual string
+                { text: q.option_b, value: q.option_b }, // Line 27: Updated value to actual string
+                ...(q.option_c ? [{ text: q.option_c, value: q.option_c }] : []) // Line 28: Updated value to actual string
               ],
-              correctAnswer: q.correct_option
+              correctAnswer: q.correct_option // Line 29: Updated to match actual string value
             }))
           }],
           generalKnowledgeQuestions: [{
@@ -49,11 +49,11 @@ export class AptitudeService {
             questions: questions.filter(q => q.section === 'General Knowledge Test').map(q => ({
               question: q.question,
               options: [
-                { text: q.option_a, value: 'a' },
-                { text: q.option_b, value: 'b' },
-                ...(q.option_c ? [{ text: q.option_c, value: 'c' }] : [])
+                { text: q.option_a, value: q.option_a }, // Line 34: Updated value to actual string
+                { text: q.option_b, value: q.option_b }, // Line 35: Updated value to actual string
+                ...(q.option_c ? [{ text: q.option_c, value: q.option_c }] : []) // Line 36: Updated value to actual string
               ],
-              correctAnswer: q.correct_option
+              correctAnswer: q.correct_option // Line 37: Updated to match actual string value
             }))
           }],
           criticalThinkingQuestions: [{
@@ -61,11 +61,11 @@ export class AptitudeService {
             questions: questions.filter(q => q.section === 'Critical Thinking Test').map(q => ({
               question: q.question,
               options: [
-                { text: q.option_a, value: 'a' },
-                { text: q.option_b, value: 'b' },
-                ...(q.option_c ? [{ text: q.option_c, value: 'c' }] : [])
+                { text: q.option_a, value: q.option_a }, // Line 42: Updated value to actual string
+                { text: q.option_b, value: q.option_b }, // Line 43: Updated value to actual string
+                ...(q.option_c ? [{ text: q.option_c, value: q.option_c }] : []) // Line 44: Updated value to actual string
               ],
-              correctAnswer: q.correct_option
+              correctAnswer: q.correct_option // Line 45: Updated to match actual string value
             }))
           }]
         };
@@ -73,22 +73,23 @@ export class AptitudeService {
       })
     );
   }
-
   calculateScore(answers: { [key: string]: string }, questions: any[]): number {
     let score = 0;
     let totalQuestions = 0;
-
+  
     // Calculate score for each section
     ['aptitudeQuestions', 'generalKnowledgeQuestions', 'criticalThinkingQuestions'].forEach(section => {
       questions[0][section][0].questions.forEach((q: any, index: number) => {
         const questionId = section.split('Questions')[0] + '_' + index;
-        if (answers[questionId] === q.correctAnswer) {
+        console.log(`Question ID: ${questionId}, User Answer: ${answers[questionId]}, Correct Answer: ${q.correctAnswer}`);
+        if (answers[questionId] === q.correctAnswer) { // Line 77: Updated to match actual string value
           score++;
         }
         totalQuestions++;
       });
     });
-
+  
+    console.log(`Total Questions: ${totalQuestions}, Score: ${score}`);
     return score;
   }
 
@@ -98,7 +99,7 @@ export class AptitudeService {
         const score = this.calculateScore(testData.answers, questions);
         const submission = {
           ...testData.personalInfo,
-          marksScored: `${score}/${40}`, // Assuming 40 total questions
+          marksScored: `${score}/${43}`, // Assuming 40 total questions
           answers: testData.answers
         };
         return this.http.post(`${this.apiUrl}/submit-test`, submission);
