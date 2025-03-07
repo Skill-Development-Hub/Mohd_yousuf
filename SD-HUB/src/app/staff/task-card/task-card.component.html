@@ -1,0 +1,15 @@
+<div class="task-card" (click)="onTaskClick.emit(task)">
+    <div class="task-header">
+      <div class="trainer-avatar">{{ task.trainer.initials }}</div>
+      <div class="task-title">{{ task.title }}</div>
+    </div>
+    <div class="task-details">{{ task.description }}</div>
+    <div class="task-footer">
+      <div class="priority-indicator priority-{{ task.priority }}">
+        {{ task.priority }}
+      </div>
+      <div *ngIf="task.dueDate">
+        Due: {{ task.dueDate | date:'MMM d' }}
+      </div>
+    </div>
+  </div>

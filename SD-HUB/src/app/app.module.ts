@@ -30,6 +30,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
+
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
@@ -62,9 +65,15 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { TrainerDialogComponent } from './dashboard/trainers/trainer-dialog/trainer-dialog.component';
 import { UserDialogComponent } from './dashboard/students/user-dialog/user-dialog.component';
 import { StudentDialogComponent } from './dashboard/students/student-dialog/student-dialog.component';
-import { StakeholderDashComponent } from './stakeholder-dash/stakeholder-dash.component';
 import { TrainerComponent } from './trainer/trainer.component';
 import { MoreGalleryComponent } from './more-gallery/more-gallery.component';
+import { TaskDialogComponent } from './staff/task-dialog/task-dialog.component';
+import { TaskCardComponent } from './staff/task-card/task-card.component';
+import { KanbanBoardComponent } from './staff/kanban-board/kanban-board.component';
+import { AttendanceComponent } from './staff/attendance/attendance.component';
+import { HelloComponent } from './hello/hello.component';
+import { SyllabusTrackerComponent } from './syllabus-tracker/syllabus-tracker.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -96,14 +105,19 @@ import { MoreGalleryComponent } from './more-gallery/more-gallery.component';
     TestResultComponent,
     StaffComponent,
     GalleryComponent,
-    StakeholderDashComponent,
     TrainerComponent,
     StaffComponent,
     GalleryComponent,
     TrainerDialogComponent,
     UserDialogComponent,
     StudentDialogComponent,
-    MoreGalleryComponent
+    MoreGalleryComponent,
+    TaskDialogComponent,
+    TaskCardComponent,
+    KanbanBoardComponent,
+    AttendanceComponent,
+    HelloComponent,
+    SyllabusTrackerComponent
   ],
   imports: [
     BrowserModule,
@@ -135,7 +149,8 @@ import { MoreGalleryComponent } from './more-gallery/more-gallery.component';
     MatDialogModule,
     MatGridListModule,
     MatProgressSpinnerModule,
-    FormsModule
+    FormsModule,
+    DragDropModule  
   ],
   providers: [
     provideAnimationsAsync(),

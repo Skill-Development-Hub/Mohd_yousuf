@@ -1,0 +1,83 @@
+/* Task-specific styles */
+.task-card {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .task-card:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .add-task-form {
+    margin-top: 10px;
+  }
+  
+  .form-field {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .trainer-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #3f51b5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  
+  .task-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .task-title {
+    font-weight: bold;
+  }
+  
+  .task-details {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .priority-indicator {
+    width: 40px;
+    text-align: center;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  
+  .priority-high {
+    background-color: #ffebee;
+    color: #d32f2f;
+  }
+  
+  .priority-medium {
+    background-color: #fff8e1;
+    color: #ff8f00;
+  }
+  
+  .priority-low {
+    background-color: #e8f5e9;
+    color: #388e3c;
+  }

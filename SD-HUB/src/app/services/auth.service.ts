@@ -5,6 +5,10 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
+  currentUser: any;
+  login(email: any, password: any) {
+    throw new Error('Method not implemented.');
+  }
   private readonly SESSION_EXPIRY_TIME = 3600000; // 1 hour in milliseconds
   private readonly TOKEN_KEY = 'auth_token';
   private readonly EXPIRY_KEY = 'auth_token_expiry';

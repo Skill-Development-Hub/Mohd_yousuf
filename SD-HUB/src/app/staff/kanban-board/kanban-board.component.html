@@ -1,0 +1,40 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="container">
+    <h1>Trainers syllabus board</h1>
+    
+    <div class="board-actions">
+      <button mat-raised-button color="primary" (click)="openAddTaskDialog()">
+        <mat-icon>add</mat-icon> Add Task
+      </button>
+    </div>
+    
+    <div class="board-container">
+      <div 
+        class="column" 
+        *ngFor="let column of columns"
+        [id]="column.id"
+      >
+        <div class="column-header">
+          <span>{{ column.title }}</span>
+          <span>{{ column.tasks.length }}</span>
+        </div>
+        
+        <div 
+          class="task-list"
+          [id]="column.id + '-list'"
+          cdkDropList
+          [cdkDropListData]="column.tasks"
+          [cdkDropListConnectedTo]="getConnectedLists()"
+          (cdkDropListDropped)="onTaskDrop($event)"
+        >
+          <app-task-card 
+            *ngFor="let task of column.tasks" 
+            [task]="task"
+            cdkDrag
+            (onTaskClick)="openEditTaskDialog(task)"
+          ></app-task-card>
+        </div>
+      </div>
+    </div>
+  </div>

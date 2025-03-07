@@ -1,0 +1,148 @@
+/* General Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Attendance Page */
+  .attendance-page {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Card Container */
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Filter Section */
+  .filters {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+  }
+  
+  label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+  }
+  
+  input[type="date"]:focus {
+    border-color: #007bff;
+    background-color: #fff;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  td {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  td span {
+    font-weight: bold;
+  }
+  
+  .status-present {
+    color: #28a745;
+  }
+  
+  .status-absent {
+    color: #dc3545;
+  }
+  
+  /* Empty Table Row */
+  .text-center {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  /* Hours Worked Column */
+  .hours-worked {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+    }
+  
+    .form-group {
+      margin-bottom: 10px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  
+    table th, table td {
+      font-size: 0.9rem;
+    }
+  }
+  

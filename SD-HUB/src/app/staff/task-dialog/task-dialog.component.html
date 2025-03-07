@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>{{ data.task ? 'Edit Task' : 'Add Task' }}</h2>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="task.title" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="task.description" rows="3"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Trainer</mat-label>
+    <mat-select [(ngModel)]="selectedTrainerId" required>
+      <mat-option *ngFor="let trainer of trainers" [value]="trainer.id">
+        {{ trainer.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Due Date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="task.dueDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Priority</mat-label>
+    <mat-select [(ngModel)]="task.priority" required>
+      <mat-option value="low">Low</mat-option>
+      <mat-option value="medium">Medium</mat-option>
+      <mat-option value="high">High</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="task.status" required>
+      <mat-option value="todo">To Do</mat-option>
+      <mat-option value="in-progress">In Progress</mat-option>
+      <mat-option value="review">Review</mat-option>
+      <mat-option value="done">Done</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="warn" *ngIf="data.task" (click)="onDelete()">Delete</button>
+  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="!isValid()">
+    {{ data.task ? 'Update' : 'Add' }}
+  </button>
+</div>

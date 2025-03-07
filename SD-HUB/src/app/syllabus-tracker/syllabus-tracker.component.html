@@ -1,0 +1,83 @@
+<div class="trello-container">
+    <div class="header">
+      <h1>Syllabus Tracker</h1>
+      
+      <div class="progress-container">
+        <div class="progress-section">
+          <h3>Block {{ currentBlock + 1 }} Progress (Weeks {{ currentBlock * 4 + 1 }}-{{ (currentBlock + 1) * 4 }})</h3>
+          <div class="progress-bar">
+            <div class="progress" [style.width.%]="blockProgress"></div>
+            <div class="progress-text">{{ blockProgress }}%</div>
+          </div>
+        </div>
+  
+        <div class="progress-section">
+          <h3>Overall Progress</h3>
+          <div class="progress-bar">
+            <div class="progress" [style.width.%]="overallProgress"></div>
+            <div class="progress-text">{{ overallProgress }}%</div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="navigation">
+        <button (click)="previousBlock()" [disabled]="currentBlock === 0">‹ Previous</button>
+        <button (click)="nextBlock()">Next ›</button>
+      </div>
+    </div>
+  
+    <div class="board-container" cdkDropListGroup>
+      <div class="board">
+        <div *ngFor="let week of displayedWeeks" class="week-column"
+             cdkDropList
+             [cdkDropListData]="week"
+             (cdkDropListDropped)="drop($event)">
+          
+          <div class="column-header">
+            <h3>Week {{ week.week }}</h3>
+            <div class="week-progress">
+              <span>{{ week.completionPercentage }}%</span>
+              <div class="progress-circle" 
+                   [style.background]="'conic-gradient(#5aac44 ' + week.completionPercentage + '%, #ddd ' + week.completionPercentage + '%)'">
+              </div>
+            </div>
+          </div>
+  
+          <div class="topic-list">
+            <div class="topic-card" 
+                 *ngFor="let topic of week.topics" 
+                 cdkDrag
+                 [cdkDragData]="topic"
+                 [class.completed]="topic.completed">
+              <div class="card-content">
+                <div class="card-handle" cdkDragHandle>⠿</div>
+                <div class="card-body">
+                  <div class="card-title" (click)="syllabusService.toggleComplete(topic.id)">
+                    {{ topic.title }}
+                  </div>
+                  <button class="delete-btn" (click)="syllabusService.deleteTopic(topic.id)">×</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="add-topic">
+            <div *ngIf="isAddingTopic === week.week" class="add-topic-form">
+              <textarea [(ngModel)]="newTopicText" 
+                        placeholder="New topic..."
+                        (keydown.enter)="addTopic(week.week)"></textarea>
+              <div class="form-actions">
+                <button class="add-btn" (click)="addTopic(week.week)">Add</button>
+                <button class="cancel-btn" (click)="isAddingTopic = null">Cancel</button>
+              </div>
+            </div>
+            <button *ngIf="isAddingTopic !== week.week" 
+                    class="add-topic-btn" 
+                    (click)="isAddingTopic = week.week">
+              + Add Topic
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

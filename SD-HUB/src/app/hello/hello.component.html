@@ -1,0 +1,230 @@
+<div class="dashboard">
+    <h2>Dashboard</h2>
+    
+    <div class="dashboard-stats">
+      <div class="stat-card">
+        <h3>Total Staff</h3>
+        <div class="number">{{ totalStaff }}</div>
+      </div>
+      <div class="stat-card">
+        <h3>Total Trainers</h3>
+        <div class="number">{{ totalTrainers }}</div>
+      </div>
+      <div class="stat-card">
+        <h3>Present Today</h3>
+        <div class="number">{{ presentToday }}</div>
+      </div>
+      <div class="stat-card">
+        <h3>Absent Today</h3>
+        <div class="number">{{ absentToday }}</div>
+      </div>
+    </div>
+
+
+
+
+    
+
+    <div class="staff-page">
+      <h2>Staff Management</h2>
+      
+      <div class="card">
+        <div class="actions">
+          <button class="btn" (click)="showAddUserForm()">Add New User</button>
+        </div>
+        
+        <div *ngIf="showForm" class="user-form card">
+          <h3>{{ editingUser ? 'Edit User' : 'Add New User' }}</h3>
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" formControlName="name" class="form-control">
+              <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched" class="error-message">
+                Name is required
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" formControlName="email" class="form-control">
+              <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="error-message">
+                Valid email is required
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="role">Role</label>
+              <select id="role" formControlName="role" class="form-control">
+                <option value="staff">Staff</option>
+                <option value="trainer">Trainer</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="department">Department</label>
+              <input type="text" id="department" formControlName="department" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="position">Position</label>
+              <input type="text" id="position" formControlName="position" class="form-control">
+            </div>
+            
+            <div *ngIf="!editingUser" class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" formControlName="password" class="form-control">
+              <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" class="error-message">
+                Password is required (min 6 characters)
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">
+                {{ editingUser ? 'Update' : 'Add' }} User
+              </button>
+              <button type="button" class="btn" (click)="cancelForm()">Cancel</button>
+            </div>
+          </form>
+        </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Department</th>
+              <th>Position</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.role }}</td>
+              <td>{{ user.department }}</td>
+              <td>{{ user.position }}</td>
+              <td>
+                <span [ngClass]="{'status-active': user.isActive, 'status-inactive': !user.isActive}">
+                  {{ user.isActive ? 'Active' : 'Inactive' }}
+                </span>
+              </td>
+              <td>
+                <button class="btn btn-sm" (click)="editUser(user)">Edit</button>
+                <button class="btn btn-sm" (click)="toggleUserStatus(user)">
+                  {{ user.isActive ? 'Deactivate' : 'Activate' }}
+                </button>
+              </td>
+            </tr>
+            <tr *ngIf="users.length === 0">
+              <td colspan="7" class="text-center">No users found</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card">
+      <h3>Today's Attendance</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of todayAttendance">
+            <td>{{ record.userName }}</td>
+            <td>{{ record.userRole }}</td>
+            <td>{{ record.checkInTime || 'Not checked in' }}</td>
+            <td>{{ record.checkOutTime || 'Not checked out' }}</td>
+            <td>
+              <span [ngClass]="{'status-present': record.status === 'present', 'status-absent': record.status === 'absent'}">
+                {{ record.status }}
+              </span>
+            </td>
+          </tr>
+          <tr *ngIf="todayAttendance.length === 0">
+            <td colspan="5" class="text-center">No attendance records for today</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="attendance-page">
+    <h2>Attendance Records</h2>
+    
+    <div class="card">
+      <div class="filters">
+        <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" [(ngModel)]="startDate" class="form-control" (change)="loadAttendanceData()">
+        </div>
+        <div class="form-group">
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" [(ngModel)]="endDate" class="form-control" (change)="loadAttendanceData()">
+        </div>
+        <button class="btn" (click)="exportReport()">Export Report</button>
+      </div>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+            <th>Hours Worked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of attendanceRecords">
+            <td>{{ record.date | date:'mediumDate' }}</td>
+            <td>{{ record.userName }}</td>
+            <td>{{ record.userRole }}</td>
+            <td>{{ record.checkInTime || 'Not checked in' }}</td>
+            <td>{{ record.checkOutTime || 'Not checked out' }}</td>
+            <td>
+              <span [ngClass]="{'status-present': record.status === 'present', 'status-absent': record.status === 'absent'}">
+                {{ record.status }}
+              </span>
+            </td>
+            <td>{{ calculateHoursWorked(record) }}</td>
+          </tr>
+          <tr *ngIf="attendanceRecords.length === 0">
+            <td colspan="7" class="text-center">No attendance records found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

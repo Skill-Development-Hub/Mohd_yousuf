@@ -24,6 +24,11 @@ import { MainCourseComponent } from './main-course/main-course.component';
 import { ContactComponent } from './contact/contact.component';
 import { TestResultComponent } from './test-result/test-result.component';
 import { MoreGalleryComponent } from './more-gallery/more-gallery.component';
+import { KanbanBoardComponent } from './staff/kanban-board/kanban-board.component';
+import { AttendanceComponent } from './staff/attendance/attendance.component';
+import { HelloComponent } from './hello/hello.component';
+import { SyllabusTrackerComponent } from './syllabus-tracker/syllabus-tracker.component';
+
 
 
 const routes: Routes = [
@@ -39,6 +44,12 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'more-gallery', component: MoreGalleryComponent },
+  { path: 'KanbanBoard', component: KanbanBoardComponent },
+  { path: 'attw', component: AttendanceComponent },
+  { path: 'hello', component: HelloComponent },
+  { path: 'syllabus', component: SyllabusTrackerComponent },
+
+  
   // {path: 'dashboard', component:DashboardComponent},
   // { path: 'profile', component: ProfileComponent },
   
